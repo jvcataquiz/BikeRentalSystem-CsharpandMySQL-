@@ -75,7 +75,6 @@
             this.buttonBike = new System.Windows.Forms.Button();
             this.timerUpdater = new System.Windows.Forms.Timer(this.components);
             this.timerUpdaterBike = new System.Windows.Forms.Timer(this.components);
-            this.textBoxLocation = new System.Windows.Forms.TextBox();
             this.tabControlAdminDashboard.SuspendLayout();
             this.tabPageadmin.SuspendLayout();
             this.tabPageCashier.SuspendLayout();
@@ -465,7 +464,6 @@
             // 
             // panelBikeInput
             // 
-            this.panelBikeInput.Controls.Add(this.textBoxLocation);
             this.panelBikeInput.Controls.Add(this.pictureBoxBikeImage);
             this.panelBikeInput.Controls.Add(this.buttonChooseBikeImage);
             this.panelBikeInput.Controls.Add(this.label7);
@@ -584,13 +582,6 @@
             this.timerUpdaterBike.Enabled = true;
             this.timerUpdaterBike.Tick += new System.EventHandler(this.timerUpdaterBike_Tick);
             // 
-            // textBoxLocation
-            // 
-            this.textBoxLocation.Location = new System.Drawing.Point(106, 110);
-            this.textBoxLocation.Name = "textBoxLocation";
-            this.textBoxLocation.Size = new System.Drawing.Size(116, 20);
-            this.textBoxLocation.TabIndex = 11;
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,6 +668,5 @@
         private System.Windows.Forms.Button buttonBike;
         private System.Windows.Forms.PictureBox pictureBoxBikeImage;
         private System.Windows.Forms.Button buttonChooseBikeImage;
-        private System.Windows.Forms.TextBox textBoxLocation;
     }
 }

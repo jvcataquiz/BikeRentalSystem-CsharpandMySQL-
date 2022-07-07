@@ -36,14 +36,14 @@
             // timerImage
             // 
             this.timerImage.Enabled = true;
-            this.timerImage.Interval = 2000;
             this.timerImage.Tick += new System.EventHandler(this.timerImage_Tick);
             // 
             // flowLayoutPanelDisplay
             // 
-            this.flowLayoutPanelDisplay.Location = new System.Drawing.Point(0, 12);
+            this.flowLayoutPanelDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelDisplay.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelDisplay.Name = "flowLayoutPanelDisplay";
-            this.flowLayoutPanelDisplay.Size = new System.Drawing.Size(800, 438);
+            this.flowLayoutPanelDisplay.Size = new System.Drawing.Size(800, 450);
             this.flowLayoutPanelDisplay.TabIndex = 0;
             // 
             // ImageSlider

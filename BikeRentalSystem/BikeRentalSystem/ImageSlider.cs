@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using MySql.Data.MySqlClient;
-using System.IO;
 namespace BikeRentalSystem
 {
     public partial class ImageSlider : Form
@@ -20,6 +19,7 @@ namespace BikeRentalSystem
         //  bool flag = true;
         private PictureBox pic ;
         private TextBox bikeid;
+        private Button select;
         public ImageSlider()
         {
             InitializeComponent();
@@ -30,94 +30,80 @@ namespace BikeRentalSystem
 
         private void timerImage_Tick(object sender, EventArgs e)
         {
-            //if (flag)
-            //{
-            //    _counter++;
-            //    nexandprev(fileCount, 0);
-            //}
-            //else
-            //{
-            //    _counter--;
-            //    nexandprev(0, fileCount);
-            //}
+            if ( bikeconnection.State == ConnectionState.Closed)
+            {
+                bikeconnection.Open();
+                MySqlCommand bikecmd = new MySqlCommand("select bikeimg , id from biketable where bikeavailability='" + 1 + "'", bikeconnection);
+                bikereader = bikecmd.ExecuteReader();
+            }
+            else
+            {
 
-             
+                while (bikereader.Read())
+                {
+                    long len = bikereader.GetBytes(0, 0, null, 0, 0);
+                    byte[] array = new byte[System.Convert.ToInt32(len) + 1];
+                    bikereader.GetBytes(0, 0, array, 0, System.Convert.ToInt32(len));
 
+                    pic = new PictureBox();
+                    pic.Width = 150;
+                    pic.Height = 150;
+                    pic.BackgroundImageLayout = ImageLayout.Stretch;
+
+                    bikeid = new TextBox();
+                    bikeid.Text = bikereader["id"].ToString();
+                    bikeid.Size = new System.Drawing.Size(228, 20);
+                    bikeid.Dock = DockStyle.Top;
+
+
+
+                    select = new Button();
+                    if (select.Enabled)
+                    {
+                        select.Text = "Select";
+                    }
+                    else
+                    {
+                        select.Text = bikereader["id"].ToString();
+                    }
+
+                    select.Dock = DockStyle.Bottom;
+
+
+                    select.Click += new EventHandler(myButton_Click);
+                    MemoryStream ms = new MemoryStream(array);
+                    Bitmap bitmap = new Bitmap(ms);
+                    pic.BackgroundImage = bitmap;
+
+
+                    pic.Controls.Add(bikeid);
+                    pic.Controls.Add(select);
+                    flowLayoutPanelDisplay.Controls.Add(pic);
+
+
+                }
+
+                bikeconnection.Close();
             }
 
+
+        
+            
+}
+      private  void myButton_Click( object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.Enabled = false;
+           
+        }
         private void ImageSlider_Load(object sender, EventArgs e)
         {
 
-            bikeconnection.Open();
-            MySqlCommand bikecmd = new MySqlCommand("select bikeimg from biketable where bikeavailability=@value", bikeconnection);
-            bikecmd.Parameters.AddWithValue("@value", 1);
-            bikereader = bikecmd.ExecuteReader();
+        
 
-            int count = 0;
-
-            while (bikereader.Read())
-            {
-
-
-                long len = bikereader.GetBytes(0, 0, null, 0, 0);
-                byte[] array = new byte[System.Convert.ToInt32(len) + 1];
-                bikereader.GetBytes(0, 0, array, 0, System.Convert.ToInt32(len));
-
-
-                pic = new PictureBox();
-                pic.Width = 150;
-                pic.Height = 150;
-
-                bikeid = new TextBox();
-                bikeid.Text = bikereader["id"].ToString();
-
-
-                pic.BackgroundImageLayout = ImageLayout.Stretch;
-                MemoryStream ms = new MemoryStream(array);
-                Bitmap bitmap = new Bitmap(ms);
-                pic.BackgroundImage = bitmap;
-               
-                flowLayoutPanelDisplay.Controls.Add(pic);
-
-
-            }
 
         }
+       
     }
 
-
-    //private void buttonPrev_Click(object sender, EventArgs e)
-    //{
-    //    //_counter--;
-    //    //timerImage.Stop();
-    //    //nexandprev(0, fileCount);
-    //    //timerImage.Start();
-    //    //flag = false;
-    //}
-
-    //private void buttonNext_Click(object sender, EventArgs e)
-    //{
-    //    //_counter++;
-    //    //timerImage.Stop();
-    //    //nexandprev(fileCount,0);
-    //    //timerImage.Start();
-    //    //flag = true;
-    //}
-
-
-    //private void nexandprev(int x, int y)
-    //{
-
-    //    //if (_counter == x)
-    //    //{
-    //    //    _counter = y;
-    //    //}
-    //    //else
-    //    //{
-    //    //    pictureBoxImageSlider.Image = new Bitmap(@"Controls/Design/imgtry/" + _counter + ".jpg");
-    //    //}
-    //}
-  
-
-        
     }

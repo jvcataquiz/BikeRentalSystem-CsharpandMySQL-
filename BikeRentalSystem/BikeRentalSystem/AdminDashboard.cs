@@ -255,15 +255,22 @@ namespace BikeRentalSystem
                     MySqlCommand bikecmd = new MySqlCommand("select * from biketable where id=@id", bikeconnection);
                     bikecmd.Parameters.AddWithValue("@id", this.textBoxBikeId.Text);
                     bikereader = bikecmd.ExecuteReader();
+                    
                 }
                 else
                 {
+                    bikereader.Read();
 
-                    if (bikereader.Read())
+                    if (bikereader.HasRows)
                     {
                         textBoxBikeName.Text = bikereader["bikename"].ToString();
                         textBoxBikeColor.Text = bikereader["bikecolor"].ToString();
-                        pictureBoxBikeImage.Image = new Bitmap(bikereader["bikeimg"].ToString());
+                        byte[] image = ((byte[])bikereader["bikeimg"]);
+                        
+                        MemoryStream mstreem = new MemoryStream(image);
+                        pictureBoxBikeImage.Image = Image.FromStream(mstreem);
+                       
+                      
                         timerUpdaterBike.Stop();
 
                     }
@@ -306,8 +313,8 @@ namespace BikeRentalSystem
 
                 if (buttonBike.Text == "Add")
             {
-               
 
+                bikeconnection.Close();
                 MemoryStream ms = new MemoryStream();
                 pictureBoxBikeImage.Image.Save(ms, pictureBoxBikeImage.Image.RawFormat);
                 byte[] img = ms.ToArray();
@@ -328,6 +335,7 @@ namespace BikeRentalSystem
             }
             else if (buttonBike.Text == "Update")
             {
+                bikeconnection.Close();
                 MemoryStream ms = new MemoryStream();
                 pictureBoxBikeImage.Image.Save(ms, pictureBoxBikeImage.Image.RawFormat);
                 byte[] img = ms.ToArray();
@@ -341,7 +349,7 @@ namespace BikeRentalSystem
                     bikecmd.Parameters.AddWithValue("@color", this.textBoxBikeColor.Text);
                     bikecmd.Parameters.AddWithValue("@img", img);
                     bikereader = bikecmd.ExecuteReader();
-                   
+                    bikeconnection.Close();
 
                     //if (!File.Exists(@"DatabaseImages\" + Path.GetFileName(pictureBoxBikeImage.ImageLocation)))
                     //{
@@ -357,7 +365,7 @@ namespace BikeRentalSystem
                     bikecmd.Parameters.AddWithValue("@name", this.textBoxBikeName.Text);
                     bikecmd.Parameters.AddWithValue("@color", this.textBoxBikeColor.Text);
                     bikereader = bikecmd.ExecuteReader();
-                    
+                    bikeconnection.Close();
                 }
                 MessageBox.Show("Data successcully Updated");
                 bikeconnection.Close();
@@ -367,6 +375,7 @@ namespace BikeRentalSystem
             }
             else
             {
+                bikeconnection.Close();
                 MySqlCommand bikecmd = new MySqlCommand("Delete From biketable where id=@id", bikeconnection);
                 bikeconnection.Open();
                 bikecmd.Parameters.AddWithValue("@id", this.textBoxBikeId.Text);
@@ -390,9 +399,13 @@ namespace BikeRentalSystem
             DataTable bikedata_table = new DataTable();
             bikedata.Fill(bikedata_table);
             dataGridViewBike.DataSource = bikedata_table;
+            dataGridViewBike.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
 
-            //DataGridViewImageColumn datagrid = new DataGridViewImageColumn();
-            //datagrid = (DataGridViewImageColumn)dataGridViewBike.Columns[4];
+            DataGridViewImageColumn datagrid = new DataGridViewImageColumn();
+            datagrid = (DataGridViewImageColumn)dataGridViewBike.Columns[4];
+            datagrid.ImageLayout = DataGridViewImageCellLayout.Zoom;
+           
             bikeconnection.Close();
 
         }
