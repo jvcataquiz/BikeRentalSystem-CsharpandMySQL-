@@ -56,8 +56,6 @@
             this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
             this.buttonAddorUpdateorDelete = new System.Windows.Forms.Button();
             this.tabPagebike = new System.Windows.Forms.TabPage();
-            this.timerUpdater = new System.Windows.Forms.Timer(this.components);
-            this.timerUpdaterBike = new System.Windows.Forms.Timer(this.components);
             this.panelrightbike = new System.Windows.Forms.Panel();
             this.dataGridViewBike = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -65,21 +63,19 @@
             this.comboBoxDropdownBike = new System.Windows.Forms.ComboBox();
             this.panelleftbike = new System.Windows.Forms.Panel();
             this.panelBikeInput = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBoxBikeImage = new System.Windows.Forms.PictureBox();
+            this.buttonChooseBikeImage = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxBikeColor = new System.Windows.Forms.TextBox();
+            this.textBoxBikeName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxBikeId = new System.Windows.Forms.TextBox();
+            this.buttonBike = new System.Windows.Forms.Button();
+            this.timerUpdater = new System.Windows.Forms.Timer(this.components);
+            this.timerUpdaterBike = new System.Windows.Forms.Timer(this.components);
+            this.textBoxLocation = new System.Windows.Forms.TextBox();
             this.tabControlAdminDashboard.SuspendLayout();
             this.tabPageadmin.SuspendLayout();
             this.tabPageCashier.SuspendLayout();
@@ -94,6 +90,7 @@
             this.panel2.SuspendLayout();
             this.panelleftbike.SuspendLayout();
             this.panelBikeInput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBikeImage)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlAdminDashboard
@@ -109,6 +106,7 @@
             this.tabControlAdminDashboard.SelectedIndex = 0;
             this.tabControlAdminDashboard.Size = new System.Drawing.Size(772, 446);
             this.tabControlAdminDashboard.TabIndex = 0;
+            this.tabControlAdminDashboard.TabStop = false;
             this.tabControlAdminDashboard.SelectedIndexChanged += new System.EventHandler(this.tabControlAdminDashboard_SelectedIndexChanged);
             // 
             // tabPageadmin
@@ -158,13 +156,19 @@
             // 
             // dataGridViewDisplayAll
             // 
+            this.dataGridViewDisplayAll.AllowUserToAddRows = false;
+            this.dataGridViewDisplayAll.AllowUserToDeleteRows = false;
             this.dataGridViewDisplayAll.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewDisplayAll.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewDisplayAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewDisplayAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewDisplayAll.GridColor = System.Drawing.Color.MediumAquamarine;
             this.dataGridViewDisplayAll.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewDisplayAll.Name = "dataGridViewDisplayAll";
+            this.dataGridViewDisplayAll.ReadOnly = true;
             this.dataGridViewDisplayAll.Size = new System.Drawing.Size(497, 403);
             this.dataGridViewDisplayAll.TabIndex = 0;
+            this.dataGridViewDisplayAll.TabStop = false;
             // 
             // panel
             // 
@@ -369,7 +373,7 @@
             this.buttonAddorUpdateorDelete.Location = new System.Drawing.Point(77, 355);
             this.buttonAddorUpdateorDelete.Name = "buttonAddorUpdateorDelete";
             this.buttonAddorUpdateorDelete.Size = new System.Drawing.Size(79, 30);
-            this.buttonAddorUpdateorDelete.TabIndex = 0;
+            this.buttonAddorUpdateorDelete.TabIndex = 12;
             this.buttonAddorUpdateorDelete.Text = "Add";
             this.buttonAddorUpdateorDelete.UseVisualStyleBackColor = true;
             this.buttonAddorUpdateorDelete.Click += new System.EventHandler(this.buttonAddorUpdateorDelete_Click);
@@ -386,16 +390,6 @@
             this.tabPagebike.Text = "Bike";
             this.tabPagebike.UseVisualStyleBackColor = true;
             // 
-            // timerUpdater
-            // 
-            this.timerUpdater.Enabled = true;
-            this.timerUpdater.Tick += new System.EventHandler(this.timerUpdater_Tick);
-            // 
-            // timerUpdaterBike
-            // 
-            this.timerUpdaterBike.Enabled = true;
-            this.timerUpdaterBike.Tick += new System.EventHandler(this.timerUpdaterBike_Tick);
-            // 
             // panelrightbike
             // 
             this.panelrightbike.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -408,11 +402,14 @@
             // 
             // dataGridViewBike
             // 
+            this.dataGridViewBike.AllowUserToAddRows = false;
+            this.dataGridViewBike.AllowUserToDeleteRows = false;
             this.dataGridViewBike.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewBike.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewBike.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewBike.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewBike.Name = "dataGridViewBike";
+            this.dataGridViewBike.ReadOnly = true;
             this.dataGridViewBike.Size = new System.Drawing.Size(497, 403);
             this.dataGridViewBike.TabIndex = 0;
             // 
@@ -451,14 +448,15 @@
             this.comboBoxDropdownBike.Size = new System.Drawing.Size(113, 21);
             this.comboBoxDropdownBike.TabIndex = 2;
             this.comboBoxDropdownBike.TabStop = false;
+            this.comboBoxDropdownBike.SelectedIndexChanged += new System.EventHandler(this.comboBoxDropdownBike_SelectedIndexChanged);
             // 
             // panelleftbike
             // 
             this.panelleftbike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
             this.panelleftbike.Controls.Add(this.panelBikeInput);
             this.panelleftbike.Controls.Add(this.label10);
-            this.panelleftbike.Controls.Add(this.textBox7);
-            this.panelleftbike.Controls.Add(this.button1);
+            this.panelleftbike.Controls.Add(this.textBoxBikeId);
+            this.panelleftbike.Controls.Add(this.buttonBike);
             this.panelleftbike.Location = new System.Drawing.Point(3, 35);
             this.panelleftbike.Name = "panelleftbike";
             this.panelleftbike.Size = new System.Drawing.Size(234, 403);
@@ -467,60 +465,37 @@
             // 
             // panelBikeInput
             // 
-            this.panelBikeInput.Controls.Add(this.label4);
-            this.panelBikeInput.Controls.Add(this.textBox1);
-            this.panelBikeInput.Controls.Add(this.label5);
-            this.panelBikeInput.Controls.Add(this.label6);
+            this.panelBikeInput.Controls.Add(this.textBoxLocation);
+            this.panelBikeInput.Controls.Add(this.pictureBoxBikeImage);
+            this.panelBikeInput.Controls.Add(this.buttonChooseBikeImage);
             this.panelBikeInput.Controls.Add(this.label7);
             this.panelBikeInput.Controls.Add(this.label8);
             this.panelBikeInput.Controls.Add(this.label9);
-            this.panelBikeInput.Controls.Add(this.textBox2);
-            this.panelBikeInput.Controls.Add(this.textBox3);
-            this.panelBikeInput.Controls.Add(this.textBox4);
-            this.panelBikeInput.Controls.Add(this.textBox5);
-            this.panelBikeInput.Controls.Add(this.textBox6);
+            this.panelBikeInput.Controls.Add(this.textBoxBikeColor);
+            this.panelBikeInput.Controls.Add(this.textBoxBikeName);
             this.panelBikeInput.Location = new System.Drawing.Point(0, 75);
             this.panelBikeInput.Name = "panelBikeInput";
-            this.panelBikeInput.Size = new System.Drawing.Size(231, 274);
+            this.panelBikeInput.Size = new System.Drawing.Size(231, 284);
             this.panelBikeInput.TabIndex = 15;
             // 
-            // label4
+            // pictureBoxBikeImage
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 226);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 16);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Email";
+            this.pictureBoxBikeImage.Location = new System.Drawing.Point(44, 139);
+            this.pictureBoxBikeImage.Name = "pictureBoxBikeImage";
+            this.pictureBoxBikeImage.Size = new System.Drawing.Size(140, 132);
+            this.pictureBoxBikeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBikeImage.TabIndex = 10;
+            this.pictureBoxBikeImage.TabStop = false;
             // 
-            // textBox1
+            // buttonChooseBikeImage
             // 
-            this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(3, 245);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 23);
-            this.textBox1.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 181);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Contact";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 136);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 16);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Address";
+            this.buttonChooseBikeImage.Location = new System.Drawing.Point(6, 110);
+            this.buttonChooseBikeImage.Name = "buttonChooseBikeImage";
+            this.buttonChooseBikeImage.Size = new System.Drawing.Size(94, 23);
+            this.buttonChooseBikeImage.TabIndex = 9;
+            this.buttonChooseBikeImage.Text = "Choose Image";
+            this.buttonChooseBikeImage.UseVisualStyleBackColor = true;
+            this.buttonChooseBikeImage.Click += new System.EventHandler(this.buttonChooseBikeImage_Click);
             // 
             // label7
             // 
@@ -528,9 +503,9 @@
             this.label7.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 91);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 16);
+            this.label7.Size = new System.Drawing.Size(84, 16);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Name";
+            this.label7.Text = "Bike Image:";
             // 
             // label8
             // 
@@ -538,9 +513,9 @@
             this.label8.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(3, 46);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 16);
+            this.label8.Size = new System.Drawing.Size(77, 16);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Password";
+            this.label8.Text = "Bike Color:";
             // 
             // label9
             // 
@@ -548,49 +523,25 @@
             this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 1);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 16);
+            this.label9.Size = new System.Drawing.Size(80, 16);
             this.label9.TabIndex = 6;
-            this.label9.Text = "Username";
+            this.label9.Text = "Bike Name:";
             // 
-            // textBox2
+            // textBoxBikeColor
             // 
-            this.textBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(3, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 23);
-            this.textBox2.TabIndex = 5;
+            this.textBoxBikeColor.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBikeColor.Location = new System.Drawing.Point(3, 65);
+            this.textBoxBikeColor.Name = "textBoxBikeColor";
+            this.textBoxBikeColor.Size = new System.Drawing.Size(225, 23);
+            this.textBoxBikeColor.TabIndex = 2;
             // 
-            // textBox3
+            // textBoxBikeName
             // 
-            this.textBox3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(3, 155);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 23);
-            this.textBox3.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(3, 110);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(225, 23);
-            this.textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(3, 65);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(225, 23);
-            this.textBox5.TabIndex = 2;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(3, 20);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(225, 23);
-            this.textBox6.TabIndex = 1;
+            this.textBoxBikeName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBikeName.Location = new System.Drawing.Point(3, 20);
+            this.textBoxBikeName.Name = "textBoxBikeName";
+            this.textBoxBikeName.Size = new System.Drawing.Size(225, 23);
+            this.textBoxBikeName.TabIndex = 1;
             // 
             // label10
             // 
@@ -598,28 +549,47 @@
             this.label10.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 29);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 16);
+            this.label10.Size = new System.Drawing.Size(52, 16);
             this.label10.TabIndex = 14;
-            this.label10.Text = "Employee ID";
+            this.label10.Text = "Bike ID";
             // 
-            // textBox7
+            // textBoxBikeId
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(3, 48);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(225, 23);
-            this.textBox7.TabIndex = 13;
+            this.textBoxBikeId.Enabled = false;
+            this.textBoxBikeId.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBikeId.Location = new System.Drawing.Point(3, 48);
+            this.textBoxBikeId.Name = "textBoxBikeId";
+            this.textBoxBikeId.Size = new System.Drawing.Size(225, 23);
+            this.textBoxBikeId.TabIndex = 13;
+            this.textBoxBikeId.TextChanged += new System.EventHandler(this.textBoxBikeId_TextChanged);
             // 
-            // button1
+            // buttonBike
             // 
-            this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(77, 355);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonBike.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBike.Location = new System.Drawing.Point(74, 365);
+            this.buttonBike.Name = "buttonBike";
+            this.buttonBike.Size = new System.Drawing.Size(79, 30);
+            this.buttonBike.TabIndex = 0;
+            this.buttonBike.Text = "Add";
+            this.buttonBike.UseVisualStyleBackColor = true;
+            this.buttonBike.Click += new System.EventHandler(this.buttonBike_Click);
+            // 
+            // timerUpdater
+            // 
+            this.timerUpdater.Enabled = true;
+            this.timerUpdater.Tick += new System.EventHandler(this.timerUpdater_Tick);
+            // 
+            // timerUpdaterBike
+            // 
+            this.timerUpdaterBike.Enabled = true;
+            this.timerUpdaterBike.Tick += new System.EventHandler(this.timerUpdaterBike_Tick);
+            // 
+            // textBoxLocation
+            // 
+            this.textBoxLocation.Location = new System.Drawing.Point(106, 110);
+            this.textBoxLocation.Name = "textBoxLocation";
+            this.textBoxLocation.Size = new System.Drawing.Size(116, 20);
+            this.textBoxLocation.TabIndex = 11;
             // 
             // AdminDashboard
             // 
@@ -627,7 +597,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 446);
             this.Controls.Add(this.tabControlAdminDashboard);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AdminDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDashboard";
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.tabControlAdminDashboard.ResumeLayout(false);
@@ -651,6 +624,7 @@
             this.panelleftbike.PerformLayout();
             this.panelBikeInput.ResumeLayout(false);
             this.panelBikeInput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBikeImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -693,20 +667,16 @@
         private System.Windows.Forms.ComboBox comboBoxDropdownBike;
         private System.Windows.Forms.Panel panelleftbike;
         private System.Windows.Forms.Panel panelBikeInput;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxBikeColor;
+        private System.Windows.Forms.TextBox textBoxBikeName;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxBikeId;
+        private System.Windows.Forms.Button buttonBike;
+        private System.Windows.Forms.PictureBox pictureBoxBikeImage;
+        private System.Windows.Forms.Button buttonChooseBikeImage;
+        private System.Windows.Forms.TextBox textBoxLocation;
     }
 }
