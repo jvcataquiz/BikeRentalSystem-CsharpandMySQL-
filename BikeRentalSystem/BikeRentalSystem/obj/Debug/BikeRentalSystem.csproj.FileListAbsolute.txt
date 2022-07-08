@@ -40,3 +40,5 @@ C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\b
 C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\bin\Debug\System.Memory.xml
 C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\obj\Debug\BikeRentalSystem.ViewImage.resources
+C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\obj\Debug\BikeRentalSystem.EmployeeOption.resources

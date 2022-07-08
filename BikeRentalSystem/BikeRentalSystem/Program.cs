@@ -16,7 +16,7 @@ namespace BikeRentalSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ImageSlider());
+            Application.Run(new Admin());
         }
     }
 }

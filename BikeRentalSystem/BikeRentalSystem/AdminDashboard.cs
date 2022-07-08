@@ -301,15 +301,7 @@ namespace BikeRentalSystem
 
         private void buttonBike_Click(object sender, EventArgs e)
         {
-            //pictureBoxBikeImage.ImageLocation = pathpicture;
-
-
-            //byte[] images = null;
-            //    FileStream Streem = new FileStream(pathpicture, FileMode.Open, FileAccess.Read);
-            //    BinaryReader br = new BinaryReader(Streem);
-            //    images = br.ReadBytes((int)Streem.Length);
-
-
+            
 
                 if (buttonBike.Text == "Add")
             {

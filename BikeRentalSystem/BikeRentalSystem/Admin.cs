@@ -71,9 +71,12 @@ namespace BikeRentalSystem
                 {
                     MessageBox.Show("Welcome  " + textBoxUsername.Text);
                     Employeeconnection.Close();
-                    Dashboard employee = new Dashboard();
+                    EmployeeOption employeeopt = new EmployeeOption();
+                    employeeopt.Show();
+
                     this.Hide();
-                    employee.Show();
+
+                   
                 }
                 else
                 {
