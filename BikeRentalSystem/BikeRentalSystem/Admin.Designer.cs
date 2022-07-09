@@ -37,7 +37,7 @@
             this.labelLogin = new System.Windows.Forms.Label();
             this.textBoxPassword = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonPowerOff = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +51,9 @@
             this.panelDisplay.Controls.Add(this.labelPassword);
             this.panelDisplay.Controls.Add(this.labelLogin);
             this.panelDisplay.Controls.Add(this.textBoxPassword);
-            this.panelDisplay.Controls.Add(this.pictureBox1);
-            this.panelDisplay.Location = new System.Drawing.Point(40, 85);
+            this.panelDisplay.Location = new System.Drawing.Point(56, 90);
             this.panelDisplay.Name = "panelDisplay";
-            this.panelDisplay.Size = new System.Drawing.Size(542, 361);
+            this.panelDisplay.Size = new System.Drawing.Size(522, 301);
             this.panelDisplay.TabIndex = 0;
             // 
             // buttonLogin
@@ -65,7 +64,7 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLogin.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonLogin.Location = new System.Drawing.Point(335, 250);
+            this.buttonLogin.Location = new System.Drawing.Point(333, 238);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(87, 32);
             this.buttonLogin.TabIndex = 3;
@@ -87,8 +86,10 @@
             this.textBoxUsername.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.textBoxUsername.CustomButton.UseSelectable = true;
             this.textBoxUsername.CustomButton.Visible = false;
+            this.textBoxUsername.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.textBoxUsername.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.textBoxUsername.Lines = new string[0];
-            this.textBoxUsername.Location = new System.Drawing.Point(115, 130);
+            this.textBoxUsername.Location = new System.Drawing.Point(113, 97);
             this.textBoxUsername.MaxLength = 32767;
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.PasswordChar = '\0';
@@ -110,7 +111,7 @@
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.labelUsername.Location = new System.Drawing.Point(111, 106);
+            this.labelUsername.Location = new System.Drawing.Point(109, 73);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(98, 21);
             this.labelUsername.TabIndex = 5;
@@ -121,7 +122,7 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.labelPassword.Location = new System.Drawing.Point(111, 171);
+            this.labelPassword.Location = new System.Drawing.Point(109, 152);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(95, 21);
             this.labelPassword.TabIndex = 4;
@@ -132,11 +133,11 @@
             this.labelLogin.AutoSize = true;
             this.labelLogin.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.labelLogin.Location = new System.Drawing.Point(95, 33);
+            this.labelLogin.Location = new System.Drawing.Point(224, 33);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(71, 24);
+            this.labelLogin.Size = new System.Drawing.Size(63, 24);
             this.labelLogin.TabIndex = 3;
-            this.labelLogin.Text = "Log In";
+            this.labelLogin.Text = "Login";
             // 
             // textBoxPassword
             // 
@@ -155,7 +156,7 @@
             this.textBoxPassword.CustomButton.Visible = false;
             this.textBoxPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.textBoxPassword.Lines = new string[0];
-            this.textBoxPassword.Location = new System.Drawing.Point(115, 195);
+            this.textBoxPassword.Location = new System.Drawing.Point(113, 176);
             this.textBoxPassword.MaxLength = 32767;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
@@ -176,43 +177,46 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(14, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(56, 39);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 45);
+            this.pictureBox1.Size = new System.Drawing.Size(81, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonPowerOff
+            // label1
             // 
-            this.buttonPowerOff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPowerOff.BackgroundImage")));
-            this.buttonPowerOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPowerOff.FlatAppearance.BorderSize = 0;
-            this.buttonPowerOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPowerOff.Location = new System.Drawing.Point(545, 34);
-            this.buttonPowerOff.Name = "buttonPowerOff";
-            this.buttonPowerOff.Size = new System.Drawing.Size(37, 34);
-            this.buttonPowerOff.TabIndex = 1;
-            this.buttonPowerOff.UseVisualStyleBackColor = true;
-            this.buttonPowerOff.Click += new System.EventHandler(this.buttonPowerOff_Click);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe Script", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(129, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(245, 57);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Bike Rental";
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(625, 485);
-            this.Controls.Add(this.buttonPowerOff);
+            this.ClientSize = new System.Drawing.Size(632, 424);
             this.Controls.Add(this.panelDisplay);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Chocolate;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Admin";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Admin";
+            this.Text = "Login Page";
             this.panelDisplay.ResumeLayout(false);
             this.panelDisplay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -226,7 +230,7 @@
         private System.Windows.Forms.Label labelLogin;
         private MetroFramework.Controls.MetroTextBox textBoxUsername;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Button buttonPowerOff;
+        private System.Windows.Forms.Label label1;
     }
 }
 

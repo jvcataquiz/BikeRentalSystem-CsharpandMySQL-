@@ -154,5 +154,15 @@ namespace BikeRentalSystem
         {
             timerCustomerSelection.Start();
         }
+
+        private void labelPayment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPayment_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

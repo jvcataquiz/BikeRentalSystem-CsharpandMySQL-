@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelAside = new System.Windows.Forms.Panel();
             this.buttonBorrow = new System.Windows.Forms.Button();
             this.buttonRegistration = new System.Windows.Forms.Button();
@@ -58,24 +57,34 @@
             this.labelFullname = new System.Windows.Forms.Label();
             this.tabPageBorrow = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelCAddress = new System.Windows.Forms.Label();
+            this.labelCIDtype = new System.Windows.Forms.Label();
+            this.labelCEmail = new System.Windows.Forms.Label();
+            this.labelCFullname = new System.Windows.Forms.Label();
             this.panelPayment = new System.Windows.Forms.Panel();
             this.textBoxPayment = new System.Windows.Forms.TextBox();
             this.numericUpDownHour = new System.Windows.Forms.NumericUpDown();
             this.buttonConfrim = new System.Windows.Forms.Button();
             this.labelPayment = new System.Windows.Forms.Label();
             this.labelHours = new System.Windows.Forms.Label();
-            this.labelCustomerName = new System.Windows.Forms.Label();
+            this.labelCbikename = new System.Windows.Forms.Label();
             this.pictureBoxCamera = new System.Windows.Forms.PictureBox();
             this.labelImage = new System.Windows.Forms.Label();
             this.labelInformation = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.buttonPowerOff = new System.Windows.Forms.Button();
             this.timerCustomerSelection = new System.Windows.Forms.Timer(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelCbikeID = new System.Windows.Forms.Label();
+            this.labelCrefID = new System.Windows.Forms.Label();
+            this.labelCBID = new System.Windows.Forms.Label();
+            this.labelCBN = new System.Windows.Forms.Label();
+            this.labelCE = new System.Windows.Forms.Label();
+            this.labelCFN = new System.Windows.Forms.Label();
+            this.labelCIDT = new System.Windows.Forms.Label();
+            this.labelCRID = new System.Windows.Forms.Label();
+            this.labelCAdd = new System.Windows.Forms.Label();
             this.panelAside.SuspendLayout();
             this.tabControlDashboard.SuspendLayout();
             this.tabPageRegistration.SuspendLayout();
@@ -104,7 +113,7 @@
             this.buttonBorrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
             this.buttonBorrow.FlatAppearance.BorderSize = 0;
             this.buttonBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBorrow.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBorrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(187)))), ((int)(((byte)(214)))));
             this.buttonBorrow.Location = new System.Drawing.Point(3, 174);
             this.buttonBorrow.Name = "buttonBorrow";
@@ -119,7 +128,7 @@
             this.buttonRegistration.BackColor = System.Drawing.Color.Gray;
             this.buttonRegistration.FlatAppearance.BorderSize = 0;
             this.buttonRegistration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegistration.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(187)))), ((int)(((byte)(214)))));
             this.buttonRegistration.Location = new System.Drawing.Point(3, 78);
             this.buttonRegistration.Name = "buttonRegistration";
@@ -155,6 +164,8 @@
             // panelDashboard
             // 
             this.panelDashboard.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelDashboard.Controls.Add(this.label7);
+            this.panelDashboard.Controls.Add(this.label6);
             this.panelDashboard.Controls.Add(this.textBoxBikeID);
             this.panelDashboard.Controls.Add(this.button2);
             this.panelDashboard.Controls.Add(this.buttonCapture);
@@ -183,25 +194,29 @@
             // 
             // textBoxBikeID
             // 
-            this.textBoxBikeID.Location = new System.Drawing.Point(173, 33);
+            this.textBoxBikeID.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBikeID.Location = new System.Drawing.Point(159, 67);
             this.textBoxBikeID.Name = "textBoxBikeID";
             this.textBoxBikeID.ReadOnly = true;
-            this.textBoxBikeID.Size = new System.Drawing.Size(123, 20);
+            this.textBoxBikeID.Size = new System.Drawing.Size(123, 26);
             this.textBoxBikeID.TabIndex = 24;
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(22, 379);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 25);
+            this.button2.Size = new System.Drawing.Size(104, 29);
             this.button2.TabIndex = 23;
             this.button2.Text = "Bike Selection";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonCapture
             // 
-            this.buttonCapture.Location = new System.Drawing.Point(372, 226);
+            this.buttonCapture.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCapture.Location = new System.Drawing.Point(387, 201);
             this.buttonCapture.Name = "buttonCapture";
             this.buttonCapture.Size = new System.Drawing.Size(88, 29);
             this.buttonCapture.TabIndex = 22;
@@ -212,9 +227,9 @@
             // pictureBoxCameraImage
             // 
             this.pictureBoxCameraImage.BackColor = System.Drawing.Color.White;
-            this.pictureBoxCameraImage.Location = new System.Drawing.Point(325, 33);
+            this.pictureBoxCameraImage.Location = new System.Drawing.Point(325, 45);
             this.pictureBoxCameraImage.Name = "pictureBoxCameraImage";
-            this.pictureBoxCameraImage.Size = new System.Drawing.Size(200, 187);
+            this.pictureBoxCameraImage.Size = new System.Drawing.Size(200, 154);
             this.pictureBoxCameraImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCameraImage.TabIndex = 21;
             this.pictureBoxCameraImage.TabStop = false;
@@ -222,64 +237,69 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(384, 6);
+            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(389, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 24);
+            this.label3.Size = new System.Drawing.Size(77, 21);
             this.label3.TabIndex = 20;
             this.label3.Text = "Camera";
             // 
             // richTextBoxAddress
             // 
-            this.richTextBoxAddress.Location = new System.Drawing.Point(30, 329);
+            this.richTextBoxAddress.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxAddress.Location = new System.Drawing.Point(22, 333);
             this.richTextBoxAddress.Name = "richTextBoxAddress";
-            this.richTextBoxAddress.Size = new System.Drawing.Size(494, 35);
+            this.richTextBoxAddress.Size = new System.Drawing.Size(502, 35);
             this.richTextBoxAddress.TabIndex = 19;
             this.richTextBoxAddress.Text = "";
             // 
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.ForeColor = System.Drawing.Color.White;
-            this.labelAddress.Location = new System.Drawing.Point(20, 302);
+            this.labelAddress.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddress.ForeColor = System.Drawing.Color.Black;
+            this.labelAddress.Location = new System.Drawing.Point(18, 309);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(85, 24);
+            this.labelAddress.Size = new System.Drawing.Size(85, 21);
             this.labelAddress.TabIndex = 18;
             this.labelAddress.Text = "Address:";
             // 
             // textBoxSelected
             // 
-            this.textBoxSelected.Location = new System.Drawing.Point(30, 33);
+            this.textBoxSelected.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSelected.Location = new System.Drawing.Point(24, 67);
             this.textBoxSelected.Name = "textBoxSelected";
             this.textBoxSelected.ReadOnly = true;
-            this.textBoxSelected.Size = new System.Drawing.Size(123, 20);
+            this.textBoxSelected.Size = new System.Drawing.Size(129, 26);
             this.textBoxSelected.TabIndex = 17;
             // 
             // labelCustomerBikeSelected
             // 
             this.labelCustomerBikeSelected.AutoSize = true;
-            this.labelCustomerBikeSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCustomerBikeSelected.ForeColor = System.Drawing.Color.White;
-            this.labelCustomerBikeSelected.Location = new System.Drawing.Point(3, 0);
+            this.labelCustomerBikeSelected.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCustomerBikeSelected.ForeColor = System.Drawing.Color.Black;
+            this.labelCustomerBikeSelected.Location = new System.Drawing.Point(3, 7);
             this.labelCustomerBikeSelected.Name = "labelCustomerBikeSelected";
-            this.labelCustomerBikeSelected.Size = new System.Drawing.Size(229, 24);
+            this.labelCustomerBikeSelected.Size = new System.Drawing.Size(242, 21);
             this.labelCustomerBikeSelected.TabIndex = 16;
             this.labelCustomerBikeSelected.Text = "Customer\'s Bike Selected:";
             // 
             // buttonBikeSelection
             // 
-            this.buttonBikeSelection.Location = new System.Drawing.Point(436, 379);
+            this.buttonBikeSelection.BackColor = System.Drawing.Color.White;
+            this.buttonBikeSelection.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBikeSelection.Location = new System.Drawing.Point(437, 379);
             this.buttonBikeSelection.Name = "buttonBikeSelection";
             this.buttonBikeSelection.Size = new System.Drawing.Size(88, 29);
             this.buttonBikeSelection.TabIndex = 15;
             this.buttonBikeSelection.Text = "Next";
-            this.buttonBikeSelection.UseVisualStyleBackColor = true;
+            this.buttonBikeSelection.UseVisualStyleBackColor = false;
             this.buttonBikeSelection.Click += new System.EventHandler(this.buttonBikeSelection_Click);
             // 
             // comboBoxIDtype
             // 
+            this.comboBoxIDtype.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxIDtype.FormattingEnabled = true;
             this.comboBoxIDtype.Items.AddRange(new object[] {
             "",
@@ -289,91 +309,95 @@
             "Brgy ID",
             "Postal ID",
             "Other"});
-            this.comboBoxIDtype.Location = new System.Drawing.Point(24, 278);
+            this.comboBoxIDtype.Location = new System.Drawing.Point(22, 279);
             this.comboBoxIDtype.Name = "comboBoxIDtype";
-            this.comboBoxIDtype.Size = new System.Drawing.Size(224, 21);
+            this.comboBoxIDtype.Size = new System.Drawing.Size(224, 27);
             this.comboBoxIDtype.TabIndex = 14;
             // 
             // textBoxPhoneNumber
             // 
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(28, 212);
+            this.textBoxPhoneNumber.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(22, 226);
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
-            this.textBoxPhoneNumber.Size = new System.Drawing.Size(228, 20);
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(224, 26);
             this.textBoxPhoneNumber.TabIndex = 13;
             // 
             // textBoxRefid
             // 
-            this.textBoxRefid.Location = new System.Drawing.Point(296, 279);
+            this.textBoxRefid.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRefid.Location = new System.Drawing.Point(297, 280);
             this.textBoxRefid.Name = "textBoxRefid";
-            this.textBoxRefid.Size = new System.Drawing.Size(228, 20);
+            this.textBoxRefid.Size = new System.Drawing.Size(228, 26);
             this.textBoxRefid.TabIndex = 12;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(30, 153);
+            this.textBoxEmail.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(23, 173);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(228, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(259, 26);
             this.textBoxEmail.TabIndex = 8;
             // 
             // textBoxFullname
             // 
-            this.textBoxFullname.Location = new System.Drawing.Point(29, 103);
+            this.textBoxFullname.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFullname.Location = new System.Drawing.Point(24, 120);
             this.textBoxFullname.Name = "textBoxFullname";
-            this.textBoxFullname.Size = new System.Drawing.Size(228, 20);
+            this.textBoxFullname.Size = new System.Drawing.Size(258, 26);
             this.textBoxFullname.TabIndex = 7;
             // 
             // labelPhoneNumber
             // 
             this.labelPhoneNumber.AutoSize = true;
-            this.labelPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhoneNumber.ForeColor = System.Drawing.Color.White;
-            this.labelPhoneNumber.Location = new System.Drawing.Point(13, 185);
+            this.labelPhoneNumber.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhoneNumber.ForeColor = System.Drawing.Color.Black;
+            this.labelPhoneNumber.Location = new System.Drawing.Point(18, 202);
             this.labelPhoneNumber.Name = "labelPhoneNumber";
-            this.labelPhoneNumber.Size = new System.Drawing.Size(140, 24);
+            this.labelPhoneNumber.Size = new System.Drawing.Size(140, 21);
             this.labelPhoneNumber.TabIndex = 6;
             this.labelPhoneNumber.Text = "Phone Number";
             // 
             // labelRefId
             // 
             this.labelRefId.AutoSize = true;
-            this.labelRefId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRefId.ForeColor = System.Drawing.Color.White;
-            this.labelRefId.Location = new System.Drawing.Point(292, 252);
+            this.labelRefId.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRefId.ForeColor = System.Drawing.Color.Black;
+            this.labelRefId.Location = new System.Drawing.Point(293, 257);
             this.labelRefId.Name = "labelRefId";
-            this.labelRefId.Size = new System.Drawing.Size(58, 24);
+            this.labelRefId.Size = new System.Drawing.Size(57, 19);
             this.labelRefId.TabIndex = 5;
             this.labelRefId.Text = "Ref Id";
             // 
             // labelIDtype
             // 
             this.labelIDtype.AutoSize = true;
-            this.labelIDtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIDtype.ForeColor = System.Drawing.Color.White;
-            this.labelIDtype.Location = new System.Drawing.Point(20, 245);
+            this.labelIDtype.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIDtype.ForeColor = System.Drawing.Color.Black;
+            this.labelIDtype.Location = new System.Drawing.Point(18, 255);
             this.labelIDtype.Name = "labelIDtype";
-            this.labelIDtype.Size = new System.Drawing.Size(75, 24);
+            this.labelIDtype.Size = new System.Drawing.Size(78, 21);
             this.labelIDtype.TabIndex = 4;
             this.labelIDtype.Text = "ID Type";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.ForeColor = System.Drawing.Color.White;
-            this.labelEmail.Location = new System.Drawing.Point(20, 126);
+            this.labelEmail.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.ForeColor = System.Drawing.Color.Black;
+            this.labelEmail.Location = new System.Drawing.Point(19, 149);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(62, 24);
+            this.labelEmail.Size = new System.Drawing.Size(59, 21);
             this.labelEmail.TabIndex = 3;
             this.labelEmail.Text = "Email:";
             // 
             // labelFullname
             // 
             this.labelFullname.AutoSize = true;
-            this.labelFullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFullname.ForeColor = System.Drawing.Color.White;
-            this.labelFullname.Location = new System.Drawing.Point(13, 66);
+            this.labelFullname.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFullname.ForeColor = System.Drawing.Color.Black;
+            this.labelFullname.Location = new System.Drawing.Point(18, 96);
             this.labelFullname.Name = "labelFullname";
-            this.labelFullname.Size = new System.Drawing.Size(94, 24);
+            this.labelFullname.Size = new System.Drawing.Size(92, 21);
             this.labelFullname.TabIndex = 1;
             this.labelFullname.Text = "Fullname:";
             // 
@@ -391,12 +415,21 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelCAdd);
+            this.panel1.Controls.Add(this.labelCRID);
+            this.panel1.Controls.Add(this.labelCIDT);
+            this.panel1.Controls.Add(this.labelCFN);
+            this.panel1.Controls.Add(this.labelCE);
+            this.panel1.Controls.Add(this.labelCBN);
+            this.panel1.Controls.Add(this.labelCBID);
+            this.panel1.Controls.Add(this.labelCrefID);
+            this.panel1.Controls.Add(this.labelCbikeID);
+            this.panel1.Controls.Add(this.labelCAddress);
+            this.panel1.Controls.Add(this.labelCIDtype);
+            this.panel1.Controls.Add(this.labelCEmail);
+            this.panel1.Controls.Add(this.labelCFullname);
             this.panel1.Controls.Add(this.panelPayment);
-            this.panel1.Controls.Add(this.labelCustomerName);
+            this.panel1.Controls.Add(this.labelCbikename);
             this.panel1.Controls.Add(this.pictureBoxCamera);
             this.panel1.Controls.Add(this.labelImage);
             this.panel1.Controls.Add(this.labelInformation);
@@ -406,88 +439,93 @@
             this.panel1.Size = new System.Drawing.Size(556, 422);
             this.panel1.TabIndex = 17;
             // 
-            // label5
+            // labelCAddress
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(45, 156);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 24);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Customer\'s Name";
+            this.labelCAddress.AutoSize = true;
+            this.labelCAddress.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCAddress.ForeColor = System.Drawing.Color.Black;
+            this.labelCAddress.Location = new System.Drawing.Point(13, 240);
+            this.labelCAddress.Name = "labelCAddress";
+            this.labelCAddress.Size = new System.Drawing.Size(81, 21);
+            this.labelCAddress.TabIndex = 20;
+            this.labelCAddress.Text = "Address";
             // 
-            // label4
+            // labelCIDtype
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(45, 132);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 24);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Customer\'s Name";
+            this.labelCIDtype.AutoSize = true;
+            this.labelCIDtype.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCIDtype.ForeColor = System.Drawing.Color.Black;
+            this.labelCIDtype.Location = new System.Drawing.Point(13, 186);
+            this.labelCIDtype.Name = "labelCIDtype";
+            this.labelCIDtype.Size = new System.Drawing.Size(78, 21);
+            this.labelCIDtype.TabIndex = 19;
+            this.labelCIDtype.Text = "ID Type";
             // 
-            // label2
+            // labelCEmail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(45, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 24);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Customer\'s Name";
+            this.labelCEmail.AutoSize = true;
+            this.labelCEmail.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCEmail.ForeColor = System.Drawing.Color.Black;
+            this.labelCEmail.Location = new System.Drawing.Point(13, 139);
+            this.labelCEmail.Name = "labelCEmail";
+            this.labelCEmail.Size = new System.Drawing.Size(55, 21);
+            this.labelCEmail.TabIndex = 18;
+            this.labelCEmail.Text = "Email";
             // 
-            // label1
+            // labelCFullname
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(45, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 24);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Customer\'s Name";
+            this.labelCFullname.AutoSize = true;
+            this.labelCFullname.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCFullname.ForeColor = System.Drawing.Color.Black;
+            this.labelCFullname.Location = new System.Drawing.Point(13, 90);
+            this.labelCFullname.Name = "labelCFullname";
+            this.labelCFullname.Size = new System.Drawing.Size(88, 21);
+            this.labelCFullname.TabIndex = 17;
+            this.labelCFullname.Text = "Fullname";
             // 
             // panelPayment
             // 
+            this.panelPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.panelPayment.Controls.Add(this.textBoxPayment);
             this.panelPayment.Controls.Add(this.numericUpDownHour);
             this.panelPayment.Controls.Add(this.buttonConfrim);
             this.panelPayment.Controls.Add(this.labelPayment);
             this.panelPayment.Controls.Add(this.labelHours);
             this.panelPayment.Enabled = false;
-            this.panelPayment.Location = new System.Drawing.Point(3, 259);
+            this.panelPayment.Location = new System.Drawing.Point(83, 279);
             this.panelPayment.Name = "panelPayment";
-            this.panelPayment.Size = new System.Drawing.Size(550, 140);
+            this.panelPayment.Size = new System.Drawing.Size(413, 140);
             this.panelPayment.TabIndex = 16;
             // 
             // textBoxPayment
             // 
-            this.textBoxPayment.Location = new System.Drawing.Point(345, 46);
+            this.textBoxPayment.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPayment.Location = new System.Drawing.Point(198, 55);
             this.textBoxPayment.Name = "textBoxPayment";
-            this.textBoxPayment.Size = new System.Drawing.Size(150, 20);
+            this.textBoxPayment.Size = new System.Drawing.Size(150, 28);
             this.textBoxPayment.TabIndex = 22;
+            this.textBoxPayment.TextChanged += new System.EventHandler(this.textBoxPayment_TextChanged);
             // 
             // numericUpDownHour
             // 
-            this.numericUpDownHour.Location = new System.Drawing.Point(29, 46);
+            this.numericUpDownHour.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownHour.Location = new System.Drawing.Point(67, 56);
             this.numericUpDownHour.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.numericUpDownHour.Name = "numericUpDownHour";
-            this.numericUpDownHour.Size = new System.Drawing.Size(110, 20);
+            this.numericUpDownHour.Size = new System.Drawing.Size(110, 28);
             this.numericUpDownHour.TabIndex = 21;
             this.numericUpDownHour.ValueChanged += new System.EventHandler(this.numericUpDownHour_ValueChanged);
             // 
             // buttonConfrim
             // 
-            this.buttonConfrim.Location = new System.Drawing.Point(431, 102);
+            this.buttonConfrim.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfrim.Location = new System.Drawing.Point(307, 89);
             this.buttonConfrim.Name = "buttonConfrim";
-            this.buttonConfrim.Size = new System.Drawing.Size(64, 27);
+            this.buttonConfrim.Size = new System.Drawing.Size(70, 27);
             this.buttonConfrim.TabIndex = 20;
             this.buttonConfrim.Text = "Confirm";
             this.buttonConfrim.UseVisualStyleBackColor = true;
@@ -496,35 +534,36 @@
             // labelPayment
             // 
             this.labelPayment.AutoSize = true;
-            this.labelPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPayment.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPayment.ForeColor = System.Drawing.Color.White;
-            this.labelPayment.Location = new System.Drawing.Point(373, 19);
+            this.labelPayment.Location = new System.Drawing.Point(194, 32);
             this.labelPayment.Name = "labelPayment";
-            this.labelPayment.Size = new System.Drawing.Size(83, 24);
+            this.labelPayment.Size = new System.Drawing.Size(87, 21);
             this.labelPayment.TabIndex = 19;
             this.labelPayment.Text = "Payment";
+            this.labelPayment.Click += new System.EventHandler(this.labelPayment_Click);
             // 
             // labelHours
             // 
             this.labelHours.AutoSize = true;
-            this.labelHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHours.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHours.ForeColor = System.Drawing.Color.White;
-            this.labelHours.Location = new System.Drawing.Point(25, 10);
+            this.labelHours.Location = new System.Drawing.Point(63, 32);
             this.labelHours.Name = "labelHours";
-            this.labelHours.Size = new System.Drawing.Size(61, 24);
+            this.labelHours.Size = new System.Drawing.Size(62, 21);
             this.labelHours.TabIndex = 17;
             this.labelHours.Text = "Hours";
             // 
-            // labelCustomerName
+            // labelCbikename
             // 
-            this.labelCustomerName.AutoSize = true;
-            this.labelCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCustomerName.ForeColor = System.Drawing.Color.White;
-            this.labelCustomerName.Location = new System.Drawing.Point(45, 60);
-            this.labelCustomerName.Name = "labelCustomerName";
-            this.labelCustomerName.Size = new System.Drawing.Size(160, 24);
-            this.labelCustomerName.TabIndex = 15;
-            this.labelCustomerName.Text = "Customer\'s Name";
+            this.labelCbikename.AutoSize = true;
+            this.labelCbikename.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCbikename.ForeColor = System.Drawing.Color.Black;
+            this.labelCbikename.Location = new System.Drawing.Point(13, 41);
+            this.labelCbikename.Name = "labelCbikename";
+            this.labelCbikename.Size = new System.Drawing.Size(103, 21);
+            this.labelCbikename.TabIndex = 15;
+            this.labelCbikename.Text = "Bike Name";
             // 
             // pictureBoxCamera
             // 
@@ -539,22 +578,22 @@
             // labelImage
             // 
             this.labelImage.AutoSize = true;
-            this.labelImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelImage.ForeColor = System.Drawing.Color.White;
-            this.labelImage.Location = new System.Drawing.Point(397, 17);
+            this.labelImage.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImage.ForeColor = System.Drawing.Color.Black;
+            this.labelImage.Location = new System.Drawing.Point(399, 23);
             this.labelImage.Name = "labelImage";
-            this.labelImage.Size = new System.Drawing.Size(62, 24);
+            this.labelImage.Size = new System.Drawing.Size(61, 21);
             this.labelImage.TabIndex = 3;
             this.labelImage.Text = "Image";
             // 
             // labelInformation
             // 
             this.labelInformation.AutoSize = true;
-            this.labelInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInformation.ForeColor = System.Drawing.Color.White;
-            this.labelInformation.Location = new System.Drawing.Point(26, 17);
+            this.labelInformation.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInformation.ForeColor = System.Drawing.Color.Black;
+            this.labelInformation.Location = new System.Drawing.Point(49, 2);
             this.labelInformation.Name = "labelInformation";
-            this.labelInformation.Size = new System.Drawing.Size(206, 24);
+            this.labelInformation.Size = new System.Drawing.Size(241, 21);
             this.labelInformation.TabIndex = 1;
             this.labelInformation.Text = "Customer\'s Information:";
             // 
@@ -562,7 +601,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.panel2.Controls.Add(this.labelTitle);
-            this.panel2.Controls.Add(this.buttonPowerOff);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(776, 44);
@@ -571,31 +609,137 @@
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Segoe Script", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(296, 23);
+            this.labelTitle.Location = new System.Drawing.Point(319, 12);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(213, 24);
+            this.labelTitle.Size = new System.Drawing.Size(314, 40);
             this.labelTitle.TabIndex = 23;
             this.labelTitle.Text = "BIKE RENTAL SYSTEM";
-            // 
-            // buttonPowerOff
-            // 
-            this.buttonPowerOff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPowerOff.BackgroundImage")));
-            this.buttonPowerOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPowerOff.FlatAppearance.BorderSize = 0;
-            this.buttonPowerOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPowerOff.Location = new System.Drawing.Point(736, 3);
-            this.buttonPowerOff.Name = "buttonPowerOff";
-            this.buttonPowerOff.Size = new System.Drawing.Size(37, 34);
-            this.buttonPowerOff.TabIndex = 4;
-            this.buttonPowerOff.UseVisualStyleBackColor = true;
-            this.buttonPowerOff.Click += new System.EventHandler(this.buttonPowerOff_Click);
             // 
             // timerCustomerSelection
             // 
             this.timerCustomerSelection.Enabled = true;
             this.timerCustomerSelection.Tick += new System.EventHandler(this.timerCustomerSelection_Tick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(103, 21);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Bike Name";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(155, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 21);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Bike ID";
+            // 
+            // labelCbikeID
+            // 
+            this.labelCbikeID.AutoSize = true;
+            this.labelCbikeID.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCbikeID.ForeColor = System.Drawing.Color.Black;
+            this.labelCbikeID.Location = new System.Drawing.Point(176, 41);
+            this.labelCbikeID.Name = "labelCbikeID";
+            this.labelCbikeID.Size = new System.Drawing.Size(73, 21);
+            this.labelCbikeID.TabIndex = 21;
+            this.labelCbikeID.Text = "Bike ID";
+            // 
+            // labelCrefID
+            // 
+            this.labelCrefID.AutoSize = true;
+            this.labelCrefID.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCrefID.ForeColor = System.Drawing.Color.Black;
+            this.labelCrefID.Location = new System.Drawing.Point(162, 186);
+            this.labelCrefID.Name = "labelCrefID";
+            this.labelCrefID.Size = new System.Drawing.Size(65, 21);
+            this.labelCrefID.TabIndex = 22;
+            this.labelCrefID.Text = "Ref ID";
+            // 
+            // labelCBID
+            // 
+            this.labelCBID.AutoSize = true;
+            this.labelCBID.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCBID.ForeColor = System.Drawing.Color.Black;
+            this.labelCBID.Location = new System.Drawing.Point(177, 62);
+            this.labelCBID.Name = "labelCBID";
+            this.labelCBID.Size = new System.Drawing.Size(54, 15);
+            this.labelCBID.TabIndex = 23;
+            this.labelCBID.Text = "Bike ID";
+            // 
+            // labelCBN
+            // 
+            this.labelCBN.AutoSize = true;
+            this.labelCBN.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCBN.ForeColor = System.Drawing.Color.Black;
+            this.labelCBN.Location = new System.Drawing.Point(14, 62);
+            this.labelCBN.Name = "labelCBN";
+            this.labelCBN.Size = new System.Drawing.Size(76, 15);
+            this.labelCBN.TabIndex = 24;
+            this.labelCBN.Text = "Bike Name";
+            // 
+            // labelCE
+            // 
+            this.labelCE.AutoSize = true;
+            this.labelCE.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCE.ForeColor = System.Drawing.Color.Black;
+            this.labelCE.Location = new System.Drawing.Point(14, 160);
+            this.labelCE.Name = "labelCE";
+            this.labelCE.Size = new System.Drawing.Size(39, 15);
+            this.labelCE.TabIndex = 25;
+            this.labelCE.Text = "Email";
+            // 
+            // labelCFN
+            // 
+            this.labelCFN.AutoSize = true;
+            this.labelCFN.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCFN.ForeColor = System.Drawing.Color.Black;
+            this.labelCFN.Location = new System.Drawing.Point(14, 111);
+            this.labelCFN.Name = "labelCFN";
+            this.labelCFN.Size = new System.Drawing.Size(63, 15);
+            this.labelCFN.TabIndex = 26;
+            this.labelCFN.Text = "Fullname";
+            // 
+            // labelCIDT
+            // 
+            this.labelCIDT.AutoSize = true;
+            this.labelCIDT.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCIDT.ForeColor = System.Drawing.Color.Black;
+            this.labelCIDT.Location = new System.Drawing.Point(14, 209);
+            this.labelCIDT.Name = "labelCIDT";
+            this.labelCIDT.Size = new System.Drawing.Size(57, 15);
+            this.labelCIDT.TabIndex = 27;
+            this.labelCIDT.Text = "ID Type";
+            // 
+            // labelCRID
+            // 
+            this.labelCRID.AutoSize = true;
+            this.labelCRID.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCRID.ForeColor = System.Drawing.Color.Black;
+            this.labelCRID.Location = new System.Drawing.Point(163, 209);
+            this.labelCRID.Name = "labelCRID";
+            this.labelCRID.Size = new System.Drawing.Size(45, 15);
+            this.labelCRID.TabIndex = 28;
+            this.labelCRID.Text = "Ref Id";
+            // 
+            // labelCAdd
+            // 
+            this.labelCAdd.AutoSize = true;
+            this.labelCAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCAdd.ForeColor = System.Drawing.Color.Black;
+            this.labelCAdd.Location = new System.Drawing.Point(14, 261);
+            this.labelCAdd.Name = "labelCAdd";
+            this.labelCAdd.Size = new System.Drawing.Size(57, 15);
+            this.labelCAdd.TabIndex = 29;
+            this.labelCAdd.Text = "Address";
             // 
             // Dashboard
             // 
@@ -606,8 +750,10 @@
             this.Controls.Add(this.panelAside);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControlDashboard);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Dashboard";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
@@ -648,12 +794,11 @@
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelFullname;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelCustomerName;
+        private System.Windows.Forms.Label labelCbikename;
         private System.Windows.Forms.PictureBox pictureBoxCamera;
         private System.Windows.Forms.Label labelImage;
         private System.Windows.Forms.Label labelInformation;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonPowerOff;
         private System.Windows.Forms.Panel panelPayment;
         private System.Windows.Forms.Label labelPayment;
         private System.Windows.Forms.Label labelHours;
@@ -668,14 +813,25 @@
         private System.Windows.Forms.TextBox textBoxSelected;
         private System.Windows.Forms.Label labelCustomerBikeSelected;
         private System.Windows.Forms.Button buttonBikeSelection;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelCEmail;
+        private System.Windows.Forms.Label labelCFullname;
+        private System.Windows.Forms.Label labelCAddress;
+        private System.Windows.Forms.Label labelCIDtype;
         private System.Windows.Forms.TextBox textBoxPayment;
         private System.Windows.Forms.NumericUpDown numericUpDownHour;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBoxBikeID;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelCbikeID;
+        private System.Windows.Forms.Label labelCrefID;
+        private System.Windows.Forms.Label labelCAdd;
+        private System.Windows.Forms.Label labelCRID;
+        private System.Windows.Forms.Label labelCIDT;
+        private System.Windows.Forms.Label labelCFN;
+        private System.Windows.Forms.Label labelCE;
+        private System.Windows.Forms.Label labelCBN;
+        private System.Windows.Forms.Label labelCBID;
     }
 }
