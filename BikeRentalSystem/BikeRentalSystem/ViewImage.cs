@@ -14,6 +14,7 @@ namespace BikeRentalSystem
     public partial class ViewImage : Form
     {
         public string viewname;
+        string bikeid;
         public ViewImage()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace BikeRentalSystem
 
            
             viewconnection.Open();
-            MySqlCommand viewcmd = new MySqlCommand("select bikeimg from biketable where bikename=@name", viewconnection);
+            MySqlCommand viewcmd = new MySqlCommand("select bikeimg, id from biketable where bikename=@name", viewconnection);
             viewcmd.Parameters.AddWithValue("@name", viewname);
             viewreader = viewcmd.ExecuteReader();
             viewreader.Read();
@@ -36,6 +37,7 @@ namespace BikeRentalSystem
                 byte[] image = ((byte[])viewreader["bikeimg"]);
                 MemoryStream mstreem = new MemoryStream(image);
                 pictureBoxView.Image = Image.FromStream(mstreem);
+                bikeid = viewreader["id"].ToString();
 
             }
             viewconnection.Close();
@@ -55,7 +57,7 @@ namespace BikeRentalSystem
             ImageSlider obj = (ImageSlider)Application.OpenForms["ImageSlider"];
             obj.Close();
             dashboarddata.customerSelected = buttonSelect.Text;
-          
+            dashboarddata.customerSelectedid = bikeid;
                 dashboarddata.Show();
                 this.Hide();
            

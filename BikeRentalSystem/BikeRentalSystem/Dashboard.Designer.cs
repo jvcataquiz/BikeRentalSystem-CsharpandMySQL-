@@ -36,6 +36,16 @@
             this.tabControlDashboard = new System.Windows.Forms.TabControl();
             this.tabPageRegistration = new System.Windows.Forms.TabPage();
             this.panelDashboard = new System.Windows.Forms.Panel();
+            this.textBoxBikeID = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.buttonCapture = new System.Windows.Forms.Button();
+            this.pictureBoxCameraImage = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.richTextBoxAddress = new System.Windows.Forms.RichTextBox();
+            this.labelAddress = new System.Windows.Forms.Label();
+            this.textBoxSelected = new System.Windows.Forms.TextBox();
+            this.labelCustomerBikeSelected = new System.Windows.Forms.Label();
+            this.buttonBikeSelection = new System.Windows.Forms.Button();
             this.comboBoxIDtype = new System.Windows.Forms.ComboBox();
             this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
             this.textBoxRefid = new System.Windows.Forms.TextBox();
@@ -48,7 +58,13 @@
             this.labelFullname = new System.Windows.Forms.Label();
             this.tabPageBorrow = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelPayment = new System.Windows.Forms.Panel();
+            this.textBoxPayment = new System.Windows.Forms.TextBox();
+            this.numericUpDownHour = new System.Windows.Forms.NumericUpDown();
             this.buttonConfrim = new System.Windows.Forms.Button();
             this.labelPayment = new System.Windows.Forms.Label();
             this.labelHours = new System.Windows.Forms.Label();
@@ -57,35 +73,20 @@
             this.labelImage = new System.Windows.Forms.Label();
             this.labelInformation = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.buttonPowerOff = new System.Windows.Forms.Button();
             this.timerCustomerSelection = new System.Windows.Forms.Timer(this.components);
-            this.buttonBikeSelection = new System.Windows.Forms.Button();
-            this.textBoxSelected = new System.Windows.Forms.TextBox();
-            this.labelCustomerBikeSelected = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.richTextBoxAddress = new System.Windows.Forms.RichTextBox();
-            this.labelAddress = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.buttonCapture = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.panelAside.SuspendLayout();
             this.tabControlDashboard.SuspendLayout();
             this.tabPageRegistration.SuspendLayout();
             this.panelDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCameraImage)).BeginInit();
             this.tabPageBorrow.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelPayment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAside
@@ -154,9 +155,10 @@
             // panelDashboard
             // 
             this.panelDashboard.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelDashboard.Controls.Add(this.textBoxBikeID);
             this.panelDashboard.Controls.Add(this.button2);
             this.panelDashboard.Controls.Add(this.buttonCapture);
-            this.panelDashboard.Controls.Add(this.pictureBox1);
+            this.panelDashboard.Controls.Add(this.pictureBoxCameraImage);
             this.panelDashboard.Controls.Add(this.label3);
             this.panelDashboard.Controls.Add(this.richTextBoxAddress);
             this.panelDashboard.Controls.Add(this.labelAddress);
@@ -179,6 +181,103 @@
             this.panelDashboard.Size = new System.Drawing.Size(556, 422);
             this.panelDashboard.TabIndex = 16;
             // 
+            // textBoxBikeID
+            // 
+            this.textBoxBikeID.Location = new System.Drawing.Point(173, 33);
+            this.textBoxBikeID.Name = "textBoxBikeID";
+            this.textBoxBikeID.ReadOnly = true;
+            this.textBoxBikeID.Size = new System.Drawing.Size(123, 20);
+            this.textBoxBikeID.TabIndex = 24;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(22, 379);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(102, 25);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Bike Selection";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // buttonCapture
+            // 
+            this.buttonCapture.Location = new System.Drawing.Point(372, 226);
+            this.buttonCapture.Name = "buttonCapture";
+            this.buttonCapture.Size = new System.Drawing.Size(88, 29);
+            this.buttonCapture.TabIndex = 22;
+            this.buttonCapture.Text = "Capture";
+            this.buttonCapture.UseVisualStyleBackColor = true;
+            this.buttonCapture.Click += new System.EventHandler(this.buttonCapture_Click);
+            // 
+            // pictureBoxCameraImage
+            // 
+            this.pictureBoxCameraImage.BackColor = System.Drawing.Color.White;
+            this.pictureBoxCameraImage.Location = new System.Drawing.Point(325, 33);
+            this.pictureBoxCameraImage.Name = "pictureBoxCameraImage";
+            this.pictureBoxCameraImage.Size = new System.Drawing.Size(200, 187);
+            this.pictureBoxCameraImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCameraImage.TabIndex = 21;
+            this.pictureBoxCameraImage.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(384, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 24);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Camera";
+            // 
+            // richTextBoxAddress
+            // 
+            this.richTextBoxAddress.Location = new System.Drawing.Point(30, 329);
+            this.richTextBoxAddress.Name = "richTextBoxAddress";
+            this.richTextBoxAddress.Size = new System.Drawing.Size(494, 35);
+            this.richTextBoxAddress.TabIndex = 19;
+            this.richTextBoxAddress.Text = "";
+            // 
+            // labelAddress
+            // 
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddress.ForeColor = System.Drawing.Color.White;
+            this.labelAddress.Location = new System.Drawing.Point(20, 302);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(85, 24);
+            this.labelAddress.TabIndex = 18;
+            this.labelAddress.Text = "Address:";
+            // 
+            // textBoxSelected
+            // 
+            this.textBoxSelected.Location = new System.Drawing.Point(30, 33);
+            this.textBoxSelected.Name = "textBoxSelected";
+            this.textBoxSelected.ReadOnly = true;
+            this.textBoxSelected.Size = new System.Drawing.Size(123, 20);
+            this.textBoxSelected.TabIndex = 17;
+            // 
+            // labelCustomerBikeSelected
+            // 
+            this.labelCustomerBikeSelected.AutoSize = true;
+            this.labelCustomerBikeSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCustomerBikeSelected.ForeColor = System.Drawing.Color.White;
+            this.labelCustomerBikeSelected.Location = new System.Drawing.Point(3, 0);
+            this.labelCustomerBikeSelected.Name = "labelCustomerBikeSelected";
+            this.labelCustomerBikeSelected.Size = new System.Drawing.Size(229, 24);
+            this.labelCustomerBikeSelected.TabIndex = 16;
+            this.labelCustomerBikeSelected.Text = "Customer\'s Bike Selected:";
+            // 
+            // buttonBikeSelection
+            // 
+            this.buttonBikeSelection.Location = new System.Drawing.Point(436, 379);
+            this.buttonBikeSelection.Name = "buttonBikeSelection";
+            this.buttonBikeSelection.Size = new System.Drawing.Size(88, 29);
+            this.buttonBikeSelection.TabIndex = 15;
+            this.buttonBikeSelection.Text = "Next";
+            this.buttonBikeSelection.UseVisualStyleBackColor = true;
+            this.buttonBikeSelection.Click += new System.EventHandler(this.buttonBikeSelection_Click);
+            // 
             // comboBoxIDtype
             // 
             this.comboBoxIDtype.FormattingEnabled = true;
@@ -197,7 +296,7 @@
             // 
             // textBoxPhoneNumber
             // 
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(24, 212);
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(28, 212);
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(228, 20);
             this.textBoxPhoneNumber.TabIndex = 13;
@@ -218,7 +317,7 @@
             // 
             // textBoxFullname
             // 
-            this.textBoxFullname.Location = new System.Drawing.Point(30, 103);
+            this.textBoxFullname.Location = new System.Drawing.Point(29, 103);
             this.textBoxFullname.Name = "textBoxFullname";
             this.textBoxFullname.Size = new System.Drawing.Size(228, 20);
             this.textBoxFullname.TabIndex = 7;
@@ -284,7 +383,7 @@
             this.tabPageBorrow.Location = new System.Drawing.Point(4, 25);
             this.tabPageBorrow.Name = "tabPageBorrow";
             this.tabPageBorrow.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBorrow.Size = new System.Drawing.Size(562, 408);
+            this.tabPageBorrow.Size = new System.Drawing.Size(562, 428);
             this.tabPageBorrow.TabIndex = 1;
             this.tabPageBorrow.Text = "Borrow";
             this.tabPageBorrow.UseVisualStyleBackColor = true;
@@ -304,13 +403,57 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(556, 402);
+            this.panel1.Size = new System.Drawing.Size(556, 422);
             this.panel1.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(45, 156);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(160, 24);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Customer\'s Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(45, 132);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(160, 24);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Customer\'s Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(45, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 24);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Customer\'s Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(45, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 24);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Customer\'s Name";
             // 
             // panelPayment
             // 
-            this.panelPayment.Controls.Add(this.textBox1);
-            this.panelPayment.Controls.Add(this.numericUpDown1);
+            this.panelPayment.Controls.Add(this.textBoxPayment);
+            this.panelPayment.Controls.Add(this.numericUpDownHour);
             this.panelPayment.Controls.Add(this.buttonConfrim);
             this.panelPayment.Controls.Add(this.labelPayment);
             this.panelPayment.Controls.Add(this.labelHours);
@@ -319,6 +462,26 @@
             this.panelPayment.Name = "panelPayment";
             this.panelPayment.Size = new System.Drawing.Size(550, 140);
             this.panelPayment.TabIndex = 16;
+            // 
+            // textBoxPayment
+            // 
+            this.textBoxPayment.Location = new System.Drawing.Point(345, 46);
+            this.textBoxPayment.Name = "textBoxPayment";
+            this.textBoxPayment.Size = new System.Drawing.Size(150, 20);
+            this.textBoxPayment.TabIndex = 22;
+            // 
+            // numericUpDownHour
+            // 
+            this.numericUpDownHour.Location = new System.Drawing.Point(29, 46);
+            this.numericUpDownHour.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownHour.Name = "numericUpDownHour";
+            this.numericUpDownHour.Size = new System.Drawing.Size(110, 20);
+            this.numericUpDownHour.TabIndex = 21;
+            this.numericUpDownHour.ValueChanged += new System.EventHandler(this.numericUpDownHour_ValueChanged);
             // 
             // buttonConfrim
             // 
@@ -369,6 +532,7 @@
             this.pictureBoxCamera.Location = new System.Drawing.Point(334, 44);
             this.pictureBoxCamera.Name = "pictureBoxCamera";
             this.pictureBoxCamera.Size = new System.Drawing.Size(189, 180);
+            this.pictureBoxCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCamera.TabIndex = 14;
             this.pictureBoxCamera.TabStop = false;
             // 
@@ -401,8 +565,19 @@
             this.panel2.Controls.Add(this.buttonPowerOff);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 72);
+            this.panel2.Size = new System.Drawing.Size(776, 44);
             this.panel2.TabIndex = 3;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTitle.Location = new System.Drawing.Point(296, 23);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(213, 24);
+            this.labelTitle.TabIndex = 23;
+            this.labelTitle.Text = "BIKE RENTAL SYSTEM";
             // 
             // buttonPowerOff
             // 
@@ -420,161 +595,7 @@
             // timerCustomerSelection
             // 
             this.timerCustomerSelection.Enabled = true;
-            // 
-            // buttonBikeSelection
-            // 
-            this.buttonBikeSelection.Location = new System.Drawing.Point(436, 379);
-            this.buttonBikeSelection.Name = "buttonBikeSelection";
-            this.buttonBikeSelection.Size = new System.Drawing.Size(88, 29);
-            this.buttonBikeSelection.TabIndex = 15;
-            this.buttonBikeSelection.Text = "Next";
-            this.buttonBikeSelection.UseVisualStyleBackColor = true;
-            // 
-            // textBoxSelected
-            // 
-            this.textBoxSelected.Location = new System.Drawing.Point(30, 33);
-            this.textBoxSelected.Name = "textBoxSelected";
-            this.textBoxSelected.ReadOnly = true;
-            this.textBoxSelected.Size = new System.Drawing.Size(228, 20);
-            this.textBoxSelected.TabIndex = 17;
-            // 
-            // labelCustomerBikeSelected
-            // 
-            this.labelCustomerBikeSelected.AutoSize = true;
-            this.labelCustomerBikeSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCustomerBikeSelected.ForeColor = System.Drawing.Color.White;
-            this.labelCustomerBikeSelected.Location = new System.Drawing.Point(3, 0);
-            this.labelCustomerBikeSelected.Name = "labelCustomerBikeSelected";
-            this.labelCustomerBikeSelected.Size = new System.Drawing.Size(229, 24);
-            this.labelCustomerBikeSelected.TabIndex = 16;
-            this.labelCustomerBikeSelected.Text = "Customer\'s Bike Selected:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(45, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 24);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Customer\'s Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(45, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 24);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Customer\'s Name";
-            // 
-            // richTextBoxAddress
-            // 
-            this.richTextBoxAddress.Location = new System.Drawing.Point(30, 329);
-            this.richTextBoxAddress.Name = "richTextBoxAddress";
-            this.richTextBoxAddress.Size = new System.Drawing.Size(494, 35);
-            this.richTextBoxAddress.TabIndex = 19;
-            this.richTextBoxAddress.Text = "";
-            // 
-            // labelAddress
-            // 
-            this.labelAddress.AutoSize = true;
-            this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.ForeColor = System.Drawing.Color.White;
-            this.labelAddress.Location = new System.Drawing.Point(20, 302);
-            this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(85, 24);
-            this.labelAddress.TabIndex = 18;
-            this.labelAddress.Text = "Address:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(324, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 187);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(377, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 24);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Camera";
-            // 
-            // buttonCapture
-            // 
-            this.buttonCapture.Location = new System.Drawing.Point(381, 226);
-            this.buttonCapture.Name = "buttonCapture";
-            this.buttonCapture.Size = new System.Drawing.Size(88, 29);
-            this.buttonCapture.TabIndex = 22;
-            this.buttonCapture.Text = "Capture";
-            this.buttonCapture.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(29, 46);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(110, 20);
-            this.numericUpDown1.TabIndex = 21;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(345, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 22;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(45, 132);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 24);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Customer\'s Name";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(45, 156);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 24);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Customer\'s Name";
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(296, 23);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(213, 24);
-            this.labelTitle.TabIndex = 23;
-            this.labelTitle.Text = "BIKE RENTAL SYSTEM";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(22, 379);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 25);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Bike Selection";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.timerCustomerSelection.Tick += new System.EventHandler(this.timerCustomerSelection_Tick);
             // 
             // Dashboard
             // 
@@ -595,16 +616,16 @@
             this.tabPageRegistration.ResumeLayout(false);
             this.panelDashboard.ResumeLayout(false);
             this.panelDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCameraImage)).EndInit();
             this.tabPageBorrow.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelPayment.ResumeLayout(false);
             this.panelPayment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamera)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -640,7 +661,7 @@
         private System.Windows.Forms.ComboBox comboBoxIDtype;
         private System.Windows.Forms.Timer timerCustomerSelection;
         private System.Windows.Forms.Button buttonCapture;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxCameraImage;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBoxAddress;
         private System.Windows.Forms.Label labelAddress;
@@ -651,9 +672,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox textBoxPayment;
+        private System.Windows.Forms.NumericUpDown numericUpDownHour;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBoxBikeID;
     }
 }
