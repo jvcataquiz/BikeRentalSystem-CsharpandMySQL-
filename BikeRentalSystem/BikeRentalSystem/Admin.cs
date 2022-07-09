@@ -86,5 +86,10 @@ namespace BikeRentalSystem
                
             }
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+            this.MaximizeBox = false;
+        }
     }
 }

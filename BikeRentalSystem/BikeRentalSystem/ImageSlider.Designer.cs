@@ -45,7 +45,7 @@
             this.flowLayoutPanelDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelDisplay.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelDisplay.Name = "flowLayoutPanelDisplay";
-            this.flowLayoutPanelDisplay.Size = new System.Drawing.Size(800, 450);
+            this.flowLayoutPanelDisplay.Size = new System.Drawing.Size(827, 450);
             this.flowLayoutPanelDisplay.TabIndex = 0;
             // 
             // CustomerSelected
@@ -62,13 +62,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(827, 450);
             this.Controls.Add(this.CustomerSelected);
             this.Controls.Add(this.flowLayoutPanelDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ImageSlider";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ImageSlider";
+            this.Text = "ImageList";
             this.Load += new System.EventHandler(this.ImageSlider_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

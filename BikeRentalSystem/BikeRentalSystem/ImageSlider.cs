@@ -20,6 +20,13 @@ namespace BikeRentalSystem
         private PictureBox pic ;
         private Button view;
         public string selectflag;
+        //for old data of customer
+        public string customerNameImage;
+        public string customerEmailImage;
+        public string customerPhoneNumberImage;
+        public string customerIDtypeImage;
+        public string customerIdRefImage;
+        public string customerAddressImage;
         public ImageSlider()
         {
             InitializeComponent();
@@ -40,7 +47,13 @@ namespace BikeRentalSystem
             ViewImage view = new ViewImage();
            
             view.viewname = btn.Text;
-            view.Show();
+            view.customerNameview = customerNameImage;
+            view.customerEmailview = customerEmailImage;
+            view.customerPhoneNumberview =  customerPhoneNumberImage;
+            view.customerIDtypeview = customerIDtypeImage;
+            view.customerIdRefview = customerIdRefImage;
+           view.customerAddressview= customerAddressImage;
+        view.Show();
             //textBoxCustomerSelected.Text = btn.Text;
         }
         private void ImageSlider_Load(object sender, EventArgs e)
@@ -59,14 +72,15 @@ namespace BikeRentalSystem
                 bikereader.GetBytes(0, 0, array, 0, System.Convert.ToInt32(len));
 
                 pic = new PictureBox();
-                pic.Width = 150;
-                pic.Height = 150;
+                pic.Width = 200;
+                pic.Height = 200;
                 pic.BackgroundImageLayout = ImageLayout.Stretch;
                 view= new Button();
 
                 view.Text = bikereader["bikename"].ToString();
                 view.TabStop = false;
                 view.Dock = DockStyle.Bottom;
+                view.Size = new System.Drawing.Size(87, 32);
 
                 //view = new Button();
                 //select.Text = bikereader["bikename"].ToString();
@@ -74,7 +88,7 @@ namespace BikeRentalSystem
                 //select.Dock = DockStyle.Bottom;
 
 
-               view.Click += new EventHandler(myButton_Click);
+                view.Click += new EventHandler(myButton_Click);
                 MemoryStream ms = new MemoryStream(array);
                 Bitmap bitmap = new Bitmap(ms);
                 pic.BackgroundImage = bitmap;

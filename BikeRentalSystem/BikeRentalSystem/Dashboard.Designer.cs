@@ -35,6 +35,8 @@
             this.tabControlDashboard = new System.Windows.Forms.TabControl();
             this.tabPageRegistration = new System.Windows.Forms.TabPage();
             this.panelDashboard = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.textBoxBikeID = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonCapture = new System.Windows.Forms.Button();
@@ -57,6 +59,15 @@
             this.labelFullname = new System.Windows.Forms.Label();
             this.tabPageBorrow = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelCAdd = new System.Windows.Forms.Label();
+            this.labelCRID = new System.Windows.Forms.Label();
+            this.labelCIDT = new System.Windows.Forms.Label();
+            this.labelCFN = new System.Windows.Forms.Label();
+            this.labelCE = new System.Windows.Forms.Label();
+            this.labelCBN = new System.Windows.Forms.Label();
+            this.labelCBID = new System.Windows.Forms.Label();
+            this.labelCrefID = new System.Windows.Forms.Label();
+            this.labelCbikeID = new System.Windows.Forms.Label();
             this.labelCAddress = new System.Windows.Forms.Label();
             this.labelCIDtype = new System.Windows.Forms.Label();
             this.labelCEmail = new System.Windows.Forms.Label();
@@ -74,17 +85,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.timerCustomerSelection = new System.Windows.Forms.Timer(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelCbikeID = new System.Windows.Forms.Label();
-            this.labelCrefID = new System.Windows.Forms.Label();
-            this.labelCBID = new System.Windows.Forms.Label();
-            this.labelCBN = new System.Windows.Forms.Label();
-            this.labelCE = new System.Windows.Forms.Label();
-            this.labelCFN = new System.Windows.Forms.Label();
-            this.labelCIDT = new System.Windows.Forms.Label();
-            this.labelCRID = new System.Windows.Forms.Label();
-            this.labelCAdd = new System.Windows.Forms.Label();
+            this.buttonOpenCam = new System.Windows.Forms.Button();
             this.panelAside.SuspendLayout();
             this.tabControlDashboard.SuspendLayout();
             this.tabPageRegistration.SuspendLayout();
@@ -164,6 +165,7 @@
             // panelDashboard
             // 
             this.panelDashboard.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelDashboard.Controls.Add(this.buttonOpenCam);
             this.panelDashboard.Controls.Add(this.label7);
             this.panelDashboard.Controls.Add(this.label6);
             this.panelDashboard.Controls.Add(this.textBoxBikeID);
@@ -192,6 +194,26 @@
             this.panelDashboard.Size = new System.Drawing.Size(556, 422);
             this.panelDashboard.TabIndex = 16;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(155, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 21);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Bike ID";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(103, 21);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Bike Name";
+            // 
             // textBoxBikeID
             // 
             this.textBoxBikeID.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,8 +237,9 @@
             // 
             // buttonCapture
             // 
+            this.buttonCapture.Enabled = false;
             this.buttonCapture.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCapture.Location = new System.Drawing.Point(387, 201);
+            this.buttonCapture.Location = new System.Drawing.Point(436, 205);
             this.buttonCapture.Name = "buttonCapture";
             this.buttonCapture.Size = new System.Drawing.Size(88, 29);
             this.buttonCapture.TabIndex = 22;
@@ -439,6 +462,105 @@
             this.panel1.Size = new System.Drawing.Size(556, 422);
             this.panel1.TabIndex = 17;
             // 
+            // labelCAdd
+            // 
+            this.labelCAdd.AutoSize = true;
+            this.labelCAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCAdd.ForeColor = System.Drawing.Color.Black;
+            this.labelCAdd.Location = new System.Drawing.Point(14, 261);
+            this.labelCAdd.Name = "labelCAdd";
+            this.labelCAdd.Size = new System.Drawing.Size(57, 15);
+            this.labelCAdd.TabIndex = 29;
+            this.labelCAdd.Text = "Address";
+            // 
+            // labelCRID
+            // 
+            this.labelCRID.AutoSize = true;
+            this.labelCRID.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCRID.ForeColor = System.Drawing.Color.Black;
+            this.labelCRID.Location = new System.Drawing.Point(163, 209);
+            this.labelCRID.Name = "labelCRID";
+            this.labelCRID.Size = new System.Drawing.Size(45, 15);
+            this.labelCRID.TabIndex = 28;
+            this.labelCRID.Text = "Ref Id";
+            // 
+            // labelCIDT
+            // 
+            this.labelCIDT.AutoSize = true;
+            this.labelCIDT.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCIDT.ForeColor = System.Drawing.Color.Black;
+            this.labelCIDT.Location = new System.Drawing.Point(14, 209);
+            this.labelCIDT.Name = "labelCIDT";
+            this.labelCIDT.Size = new System.Drawing.Size(57, 15);
+            this.labelCIDT.TabIndex = 27;
+            this.labelCIDT.Text = "ID Type";
+            // 
+            // labelCFN
+            // 
+            this.labelCFN.AutoSize = true;
+            this.labelCFN.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCFN.ForeColor = System.Drawing.Color.Black;
+            this.labelCFN.Location = new System.Drawing.Point(14, 111);
+            this.labelCFN.Name = "labelCFN";
+            this.labelCFN.Size = new System.Drawing.Size(63, 15);
+            this.labelCFN.TabIndex = 26;
+            this.labelCFN.Text = "Fullname";
+            // 
+            // labelCE
+            // 
+            this.labelCE.AutoSize = true;
+            this.labelCE.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCE.ForeColor = System.Drawing.Color.Black;
+            this.labelCE.Location = new System.Drawing.Point(14, 160);
+            this.labelCE.Name = "labelCE";
+            this.labelCE.Size = new System.Drawing.Size(39, 15);
+            this.labelCE.TabIndex = 25;
+            this.labelCE.Text = "Email";
+            // 
+            // labelCBN
+            // 
+            this.labelCBN.AutoSize = true;
+            this.labelCBN.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCBN.ForeColor = System.Drawing.Color.Black;
+            this.labelCBN.Location = new System.Drawing.Point(14, 62);
+            this.labelCBN.Name = "labelCBN";
+            this.labelCBN.Size = new System.Drawing.Size(76, 15);
+            this.labelCBN.TabIndex = 24;
+            this.labelCBN.Text = "Bike Name";
+            // 
+            // labelCBID
+            // 
+            this.labelCBID.AutoSize = true;
+            this.labelCBID.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCBID.ForeColor = System.Drawing.Color.Black;
+            this.labelCBID.Location = new System.Drawing.Point(177, 62);
+            this.labelCBID.Name = "labelCBID";
+            this.labelCBID.Size = new System.Drawing.Size(54, 15);
+            this.labelCBID.TabIndex = 23;
+            this.labelCBID.Text = "Bike ID";
+            // 
+            // labelCrefID
+            // 
+            this.labelCrefID.AutoSize = true;
+            this.labelCrefID.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCrefID.ForeColor = System.Drawing.Color.Black;
+            this.labelCrefID.Location = new System.Drawing.Point(162, 186);
+            this.labelCrefID.Name = "labelCrefID";
+            this.labelCrefID.Size = new System.Drawing.Size(65, 21);
+            this.labelCrefID.TabIndex = 22;
+            this.labelCrefID.Text = "Ref ID";
+            // 
+            // labelCbikeID
+            // 
+            this.labelCbikeID.AutoSize = true;
+            this.labelCbikeID.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCbikeID.ForeColor = System.Drawing.Color.Black;
+            this.labelCbikeID.Location = new System.Drawing.Point(176, 41);
+            this.labelCbikeID.Name = "labelCbikeID";
+            this.labelCbikeID.Size = new System.Drawing.Size(73, 21);
+            this.labelCbikeID.TabIndex = 21;
+            this.labelCbikeID.Text = "Bike ID";
+            // 
             // labelCAddress
             // 
             this.labelCAddress.AutoSize = true;
@@ -504,7 +626,6 @@
             this.textBoxPayment.Name = "textBoxPayment";
             this.textBoxPayment.Size = new System.Drawing.Size(150, 28);
             this.textBoxPayment.TabIndex = 22;
-            this.textBoxPayment.TextChanged += new System.EventHandler(this.textBoxPayment_TextChanged);
             // 
             // numericUpDownHour
             // 
@@ -523,7 +644,7 @@
             // buttonConfrim
             // 
             this.buttonConfrim.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfrim.Location = new System.Drawing.Point(307, 89);
+            this.buttonConfrim.Location = new System.Drawing.Point(307, 98);
             this.buttonConfrim.Name = "buttonConfrim";
             this.buttonConfrim.Size = new System.Drawing.Size(70, 27);
             this.buttonConfrim.TabIndex = 20;
@@ -541,7 +662,6 @@
             this.labelPayment.Size = new System.Drawing.Size(87, 21);
             this.labelPayment.TabIndex = 19;
             this.labelPayment.Text = "Payment";
-            this.labelPayment.Click += new System.EventHandler(this.labelPayment_Click);
             // 
             // labelHours
             // 
@@ -568,9 +688,9 @@
             // pictureBoxCamera
             // 
             this.pictureBoxCamera.BackColor = System.Drawing.Color.White;
-            this.pictureBoxCamera.Location = new System.Drawing.Point(334, 44);
+            this.pictureBoxCamera.Location = new System.Drawing.Point(334, 62);
             this.pictureBoxCamera.Name = "pictureBoxCamera";
-            this.pictureBoxCamera.Size = new System.Drawing.Size(189, 180);
+            this.pictureBoxCamera.Size = new System.Drawing.Size(200, 154);
             this.pictureBoxCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCamera.TabIndex = 14;
             this.pictureBoxCamera.TabStop = false;
@@ -622,124 +742,16 @@
             this.timerCustomerSelection.Enabled = true;
             this.timerCustomerSelection.Tick += new System.EventHandler(this.timerCustomerSelection_Tick);
             // 
-            // label6
+            // buttonOpenCam
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 21);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Bike Name";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(155, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 21);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Bike ID";
-            // 
-            // labelCbikeID
-            // 
-            this.labelCbikeID.AutoSize = true;
-            this.labelCbikeID.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCbikeID.ForeColor = System.Drawing.Color.Black;
-            this.labelCbikeID.Location = new System.Drawing.Point(176, 41);
-            this.labelCbikeID.Name = "labelCbikeID";
-            this.labelCbikeID.Size = new System.Drawing.Size(73, 21);
-            this.labelCbikeID.TabIndex = 21;
-            this.labelCbikeID.Text = "Bike ID";
-            // 
-            // labelCrefID
-            // 
-            this.labelCrefID.AutoSize = true;
-            this.labelCrefID.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCrefID.ForeColor = System.Drawing.Color.Black;
-            this.labelCrefID.Location = new System.Drawing.Point(162, 186);
-            this.labelCrefID.Name = "labelCrefID";
-            this.labelCrefID.Size = new System.Drawing.Size(65, 21);
-            this.labelCrefID.TabIndex = 22;
-            this.labelCrefID.Text = "Ref ID";
-            // 
-            // labelCBID
-            // 
-            this.labelCBID.AutoSize = true;
-            this.labelCBID.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCBID.ForeColor = System.Drawing.Color.Black;
-            this.labelCBID.Location = new System.Drawing.Point(177, 62);
-            this.labelCBID.Name = "labelCBID";
-            this.labelCBID.Size = new System.Drawing.Size(54, 15);
-            this.labelCBID.TabIndex = 23;
-            this.labelCBID.Text = "Bike ID";
-            // 
-            // labelCBN
-            // 
-            this.labelCBN.AutoSize = true;
-            this.labelCBN.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCBN.ForeColor = System.Drawing.Color.Black;
-            this.labelCBN.Location = new System.Drawing.Point(14, 62);
-            this.labelCBN.Name = "labelCBN";
-            this.labelCBN.Size = new System.Drawing.Size(76, 15);
-            this.labelCBN.TabIndex = 24;
-            this.labelCBN.Text = "Bike Name";
-            // 
-            // labelCE
-            // 
-            this.labelCE.AutoSize = true;
-            this.labelCE.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCE.ForeColor = System.Drawing.Color.Black;
-            this.labelCE.Location = new System.Drawing.Point(14, 160);
-            this.labelCE.Name = "labelCE";
-            this.labelCE.Size = new System.Drawing.Size(39, 15);
-            this.labelCE.TabIndex = 25;
-            this.labelCE.Text = "Email";
-            // 
-            // labelCFN
-            // 
-            this.labelCFN.AutoSize = true;
-            this.labelCFN.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCFN.ForeColor = System.Drawing.Color.Black;
-            this.labelCFN.Location = new System.Drawing.Point(14, 111);
-            this.labelCFN.Name = "labelCFN";
-            this.labelCFN.Size = new System.Drawing.Size(63, 15);
-            this.labelCFN.TabIndex = 26;
-            this.labelCFN.Text = "Fullname";
-            // 
-            // labelCIDT
-            // 
-            this.labelCIDT.AutoSize = true;
-            this.labelCIDT.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCIDT.ForeColor = System.Drawing.Color.Black;
-            this.labelCIDT.Location = new System.Drawing.Point(14, 209);
-            this.labelCIDT.Name = "labelCIDT";
-            this.labelCIDT.Size = new System.Drawing.Size(57, 15);
-            this.labelCIDT.TabIndex = 27;
-            this.labelCIDT.Text = "ID Type";
-            // 
-            // labelCRID
-            // 
-            this.labelCRID.AutoSize = true;
-            this.labelCRID.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCRID.ForeColor = System.Drawing.Color.Black;
-            this.labelCRID.Location = new System.Drawing.Point(163, 209);
-            this.labelCRID.Name = "labelCRID";
-            this.labelCRID.Size = new System.Drawing.Size(45, 15);
-            this.labelCRID.TabIndex = 28;
-            this.labelCRID.Text = "Ref Id";
-            // 
-            // labelCAdd
-            // 
-            this.labelCAdd.AutoSize = true;
-            this.labelCAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCAdd.ForeColor = System.Drawing.Color.Black;
-            this.labelCAdd.Location = new System.Drawing.Point(14, 261);
-            this.labelCAdd.Name = "labelCAdd";
-            this.labelCAdd.Size = new System.Drawing.Size(57, 15);
-            this.labelCAdd.TabIndex = 29;
-            this.labelCAdd.Text = "Address";
+            this.buttonOpenCam.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpenCam.Location = new System.Drawing.Point(325, 205);
+            this.buttonOpenCam.Name = "buttonOpenCam";
+            this.buttonOpenCam.Size = new System.Drawing.Size(88, 29);
+            this.buttonOpenCam.TabIndex = 27;
+            this.buttonOpenCam.Text = "Open";
+            this.buttonOpenCam.UseVisualStyleBackColor = true;
+            this.buttonOpenCam.Click += new System.EventHandler(this.buttonOpenCam_Click);
             // 
             // Dashboard
             // 
@@ -833,5 +845,6 @@
         private System.Windows.Forms.Label labelCE;
         private System.Windows.Forms.Label labelCBN;
         private System.Windows.Forms.Label labelCBID;
+        private System.Windows.Forms.Button buttonOpenCam;
     }
 }

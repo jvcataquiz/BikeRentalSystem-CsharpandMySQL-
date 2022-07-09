@@ -14,7 +14,17 @@ namespace BikeRentalSystem
     public partial class ViewImage : Form
     {
         public string viewname;
+
+
         string bikeid;
+
+        //for old data of the customer
+        public string customerNameview;
+        public string customerEmailview;
+        public string customerPhoneNumberview;
+        public string customerIDtypeview;
+        public string customerIdRefview;
+        public string customerAddressview;
         public ViewImage()
         {
             InitializeComponent();
@@ -49,8 +59,8 @@ namespace BikeRentalSystem
         {
             
             
-                buttonSelect.Text = viewname;
-                Dashboard dashboarddata = new Dashboard();
+            buttonSelect.Text = viewname;
+            Dashboard dashboarddata = new Dashboard();
             ImageSlider imgslide = new ImageSlider();
 
 
@@ -58,7 +68,16 @@ namespace BikeRentalSystem
             obj.Close();
             dashboarddata.customerSelected = buttonSelect.Text;
             dashboarddata.customerSelectedid = bikeid;
-                dashboarddata.Show();
+
+
+        dashboarddata.customerName = customerNameview;
+        dashboarddata.customerEmail  = customerEmailview;
+         dashboarddata.customerPhoneNumber=customerPhoneNumberview;
+         dashboarddata.customerIDtype=customerIDtypeview;
+         dashboarddata.customerIdRef=customerIdRefview;
+         dashboarddata.customerAddress=customerAddressview;
+
+        dashboarddata.Show();
                 this.Hide();
            
         }

@@ -207,11 +207,11 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Chocolate;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "Admin";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Page";
+            this.Load += new System.EventHandler(this.Admin_Load);
             this.panelDisplay.ResumeLayout(false);
             this.panelDisplay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
