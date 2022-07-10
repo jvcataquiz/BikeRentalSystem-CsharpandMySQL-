@@ -22,6 +22,10 @@ namespace BikeRentalSystem
         public string customerSelectedid;
         VideoCaptureDevice cameraDisplay;
         FilterInfoCollection videocamCollection;
+        string dateborrowed;
+        string timeborrowed;
+        public string cashierusername;
+
 
         //for old data of the customer
         public string customerName;
@@ -71,40 +75,109 @@ namespace BikeRentalSystem
 
         private void buttonConfrim_Click(object sender, EventArgs e)
         {
+
+            DateTime dateborrowed = DateTime.Now;
+            DateTime timeborrowed = DateTime.Now;
+
             MySqlConnection customerconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
             MySqlDataReader customerreader;
+            MemoryStream ms = new MemoryStream();
 
+            int width = Convert.ToInt32(pictureBoxCamera.Width);
+            int height = Convert.ToInt32(pictureBoxCamera.Height);
+            Bitmap bmp = new Bitmap(width, height);
+            pictureBoxCamera.DrawToBitmap(bmp, new Rectangle(0, 0, width, height));
 
+           bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            byte[] img = ms.ToArray();
 
-            //MemoryStream ms = new MemoryStream();
-            //pictureBoxBikeImage.Image.Save(ms, pictureBoxBikeImage.Image.RawFormat);
-            //byte[] img = ms.ToArray();
-            //MySqlCommand customercmd = new MySqlCommand("INSERT INTO customer (customername, customeraddress, customeremail,customerphone,customeridtype,customerrefid,bikeid,bikename, borrowdate,borrowtime,borrowhour,payment,customerimg)
-            //SELECT bike.id, bikename from biketable bike
-            //VALUES(@customername,@customeraddress, @customeremail,@customerphone,@customeridtype,@customerrefid,@bikeid, @bikename, @borrowdate,@borrowtime,@borrowhour,@payment,@customerimg);", customerconnection);
+            string timebr = Convert.ToString(timeborrowed.AddHours(Convert.ToDouble(numericUpDownHour.Value)));
+            string[] timeparts = timebr.Split();
 
-
-
+            MySqlCommand customercmd = new MySqlCommand("INSERT INTO cutomer (customername, customeraddress, customeremail,customerphone,customeridtype,customerrefid,bikeid,bikename, borrowdate,borrowtime,borrowhour,returntime,payment,customerimg) VALUES(@customername, @customeraddress, @customeremail, @customerphone, @customeridtype, @customerrefid, @bikeid, @bikename, @borrowdate, @borrowtime, @borrowhour,@returntime, @payment, @customerimg); ", customerconnection);
             customerconnection.Open();
 
-            //customercmd.Parameters.AddWithValue("@customername", this.textBoxBikeName.Text);
-            //customercmd.Parameters.AddWithValue("@customeraddress", this.textBoxBikeColor.Text);
-            //customercmd.Parameters.AddWithValue("@customeremail", true);
-            //customercmd.Parameters.AddWithValue("@customerphone", this.textBoxBikeName.Text);
-            //customercmd.Parameters.AddWithValue("@customeridtype", this.textBoxBikeColor.Text);
-            //customercmd.Parameters.AddWithValue("@customerrefid", true);
-            //customercmd.Parameters.AddWithValue("@bikeid", this.textBoxBikeName.Text);
-            //customercmd.Parameters.AddWithValue("@bikename", this.textBoxBikeColor.Text);
-            //customercmd.Parameters.AddWithValue("@borrowdate", this.textBoxBikeName.Text);
-            //customercmd.Parameters.AddWithValue("@borrowtime", this.textBoxBikeColor.Text);
-            //customercmd.Parameters.AddWithValue("@borrowthour", true);
-            //customercmd.Parameters.AddWithValue("@payment", true);
-            //customercmd.Parameters.AddWithValue("@customerimg", img);
 
-            //customerreader = customercmd.ExecuteReader();
-         
-            MessageBox.Show("Data successcully Added");
+            customercmd.Parameters.AddWithValue("@customername", this.textBoxFullname.Text);
+            customercmd.Parameters.AddWithValue("@customeraddress", this.richTextBoxAddress.Text);
+            customercmd.Parameters.AddWithValue("@customeremail", this.textBoxEmail.Text);
+            customercmd.Parameters.AddWithValue("@customerphone", this.textBoxPhoneNumber.Text);
+            customercmd.Parameters.AddWithValue("@customeridtype", comboBoxIDtype.Text);
+            customercmd.Parameters.AddWithValue("@customerrefid", this.textBoxRefid.Text);
+            customercmd.Parameters.AddWithValue("@bikeid", this.textBoxBikeID.Text);
+            customercmd.Parameters.AddWithValue("@bikename", this.textBoxSelected.Text);
+            customercmd.Parameters.AddWithValue("@borrowdate", dateborrowed.ToShortDateString());
+            customercmd.Parameters.AddWithValue("@borrowtime", timeborrowed.ToLongTimeString());
+            customercmd.Parameters.AddWithValue("@borrowhour",this.numericUpDownHour.Value);
+            customercmd.Parameters.AddWithValue("@returntime", timeparts[1]);
+            customercmd.Parameters.AddWithValue("@payment", Convert.ToInt32(this.textBoxPayment.Text));
+            customercmd.Parameters.AddWithValue("@customerimg", img);
+
+            customerreader = customercmd.ExecuteReader();
             customerconnection.Close();
+
+
+            //**************************************************************************************************************************************
+
+
+
+
+
+
+            MySqlConnection bikeconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+            MySqlDataReader bikereader;
+            MySqlCommand bikecmd = new MySqlCommand("UPDATE biketable SET bikeavailability=@bikeavailability where id=@id", bikeconnection);
+            bikeconnection.Open();
+            bikecmd.Parameters.AddWithValue("@id", this.textBoxBikeID.Text);
+            bikecmd.Parameters.AddWithValue("@bikeavailability", 0);
+            bikereader = bikecmd.ExecuteReader();
+            bikeconnection.Close();
+
+
+            //**************************************************************************************************************************************
+
+
+            MySqlConnection returnconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+            MySqlDataReader returnreader;
+
+            string timebreturn = Convert.ToString(timeborrowed.AddHours(Convert.ToDouble(numericUpDownHour.Value)));
+            string[] returnparts = timebreturn.Split();
+
+            MySqlCommand returncmd = new MySqlCommand("INSERT INTO bikereturn(cashierusernameborrow,dateborrow,timeborrow,hours,returntime,payment,customername,bikeid,bikename) VALUES(@cashierusernameborrow,@dateborrow,@timeborrow,@hours,@rtime,@payment_total,@customer_name,@bike_id,@bike_name); ", returnconnection);
+            returnconnection.Open();
+
+
+            returncmd.Parameters.AddWithValue("@cashierusernameborrow", cashierusername );
+            returncmd.Parameters.AddWithValue("@customer_name", this.textBoxFullname.Text);
+
+            returncmd.Parameters.AddWithValue("@dateborrow", dateborrowed.ToShortDateString());
+            returncmd.Parameters.AddWithValue("@timeborrow", timeborrowed.ToLongTimeString());
+            returncmd.Parameters.AddWithValue("@hours", this.numericUpDownHour.Value);
+            returncmd.Parameters.AddWithValue("@rtime", returnparts[1]);
+
+            returncmd.Parameters.AddWithValue("@payment_total", Convert.ToInt32(this.textBoxPayment.Text));
+
+            returncmd.Parameters.AddWithValue("@bike_id", this.textBoxBikeID.Text);
+            returncmd.Parameters.AddWithValue("@bike_name", this.textBoxSelected.Text);
+
+            returnreader = returncmd.ExecuteReader();
+            returnconnection.Close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            MessageBox.Show("Data successcully Added");
+          
             TextBox[] btnonettext = new[] { textBoxFullname, textBoxEmail, textBoxPhoneNumber, textBoxRefid };
             foreach (var i in btnonettext)
             {
@@ -117,6 +190,8 @@ namespace BikeRentalSystem
             tabControlDashboard.SelectedIndex = 0;
             buttonRegistration.BackColor = System.Drawing.Color.Gray;
             buttonBorrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
+     
+        
         }
 
        
@@ -187,7 +262,7 @@ namespace BikeRentalSystem
                 buttonCapture.Text = "Captured";
                 cameraDisplay.Stop();
                
-                pictureBoxCamera.Image = pictureBoxCameraImage.Image;
+                pictureBoxCamera.Image = new Bitmap(pictureBoxCameraImage.Image);
             }
             else
             {
@@ -199,6 +274,16 @@ namespace BikeRentalSystem
 
         private void timerCustomerSelection_Tick(object sender, EventArgs e)
         {
+
+           string datenow= DateTime.Now.ToString();
+           string[] parts =   datenow.Split();
+         
+            labeldate.Text = parts[0];
+            labeltime.Text = parts[1];
+
+
+            labeltimeanddate.Text = datenow;
+
             if (numericUpDownHour.Value != 0)
             {
                 textBoxPayment.Text = Convert.ToString(100 * numericUpDownHour.Value);

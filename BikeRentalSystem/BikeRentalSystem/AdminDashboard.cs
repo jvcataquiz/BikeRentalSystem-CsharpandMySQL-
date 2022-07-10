@@ -276,7 +276,7 @@ namespace BikeRentalSystem
                     }
                     else
                     {
-
+                        bikefillnodata();
                         timerUpdaterBike.Start();
                     }
 
@@ -321,9 +321,9 @@ namespace BikeRentalSystem
                 bikereader = bikecmd.ExecuteReader();
                 MessageBox.Show("Data successcully Added");
                 bikeconnection.Close();
-               
+                pictureBoxBikeImage.Image = null;
                 BikeAllData();
-                //resetdata();
+                bikeresetdata();
             }
             else if (buttonBike.Text == "Update")
             {
@@ -342,12 +342,8 @@ namespace BikeRentalSystem
                     bikecmd.Parameters.AddWithValue("@img", img);
                     bikereader = bikecmd.ExecuteReader();
                     bikeconnection.Close();
+                    pictureBoxBikeImage.Image = null;
 
-                    //if (!File.Exists(@"DatabaseImages\" + Path.GetFileName(pictureBoxBikeImage.ImageLocation)))
-                    //{
-                    //    File.Copy(location, Application.StartupPath + @"\DatabaseImages\" + Path.GetFileName(pictureBoxBikeImage.ImageLocation));
-
-                    //}
                 }
                 else
                 {
@@ -363,7 +359,7 @@ namespace BikeRentalSystem
                 bikeconnection.Close();
                 BikeAllData();
                 timerUpdaterBike.Start();
-                //resetdata();
+                bikeresetdata();
             }
             else
             {
@@ -426,6 +422,30 @@ namespace BikeRentalSystem
         private void comboBoxDropdownBike_SelectedIndexChanged(object sender, EventArgs e)
         {
             timerUpdaterBike.Start();
+            bikeresetdata();
+            textBoxBikeId.Text = "";
+        }
+
+
+        private void bikeresetdata()
+        {
+            TextBox[] btnonetoninereset = new[] { textBoxBikeName, textBoxBikeColor };
+            foreach (var i in btnonetoninereset)
+            {
+                i.Text = "";
+            }
+            pictureBoxBikeImage.Image = null;
+
+        }
+
+        private void bikefillnodata()
+        {
+            TextBox[] btnonetoninereset = new[] { textBoxBikeName, textBoxBikeColor };
+            foreach (var i in btnonetoninereset)
+            {
+                i.Text = "No Data Found";
+            }
+            pictureBoxBikeImage.Image = null;
         }
     }
 }

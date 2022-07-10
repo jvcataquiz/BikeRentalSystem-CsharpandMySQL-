@@ -14,8 +14,7 @@ namespace BikeRentalSystem
     public partial class ViewImage : Form
     {
         public string viewname;
-
-
+        public string cashierusername;
         string bikeid;
 
         //for old data of the customer
@@ -69,7 +68,7 @@ namespace BikeRentalSystem
             dashboarddata.customerSelected = buttonSelect.Text;
             dashboarddata.customerSelectedid = bikeid;
 
-
+            dashboarddata.cashierusername = cashierusername;
         dashboarddata.customerName = customerNameview;
         dashboarddata.customerEmail  = customerEmailview;
          dashboarddata.customerPhoneNumber=customerPhoneNumberview;

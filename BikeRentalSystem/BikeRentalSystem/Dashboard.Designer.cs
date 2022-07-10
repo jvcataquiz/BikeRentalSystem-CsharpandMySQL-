@@ -35,6 +35,7 @@
             this.tabControlDashboard = new System.Windows.Forms.TabControl();
             this.tabPageRegistration = new System.Windows.Forms.TabPage();
             this.panelDashboard = new System.Windows.Forms.Panel();
+            this.buttonOpenCam = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxBikeID = new System.Windows.Forms.TextBox();
@@ -85,7 +86,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.timerCustomerSelection = new System.Windows.Forms.Timer(this.components);
-            this.buttonOpenCam = new System.Windows.Forms.Button();
+            this.labeltimeanddate = new System.Windows.Forms.Label();
+            this.labeldate = new System.Windows.Forms.Label();
+            this.labeltime = new System.Windows.Forms.Label();
             this.panelAside.SuspendLayout();
             this.tabControlDashboard.SuspendLayout();
             this.tabPageRegistration.SuspendLayout();
@@ -193,6 +196,17 @@
             this.panelDashboard.Name = "panelDashboard";
             this.panelDashboard.Size = new System.Drawing.Size(556, 422);
             this.panelDashboard.TabIndex = 16;
+            // 
+            // buttonOpenCam
+            // 
+            this.buttonOpenCam.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpenCam.Location = new System.Drawing.Point(325, 205);
+            this.buttonOpenCam.Name = "buttonOpenCam";
+            this.buttonOpenCam.Size = new System.Drawing.Size(88, 29);
+            this.buttonOpenCam.TabIndex = 27;
+            this.buttonOpenCam.Text = "Open";
+            this.buttonOpenCam.UseVisualStyleBackColor = true;
+            this.buttonOpenCam.Click += new System.EventHandler(this.buttonOpenCam_Click);
             // 
             // label7
             // 
@@ -438,6 +452,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Controls.Add(this.labeltime);
+            this.panel1.Controls.Add(this.labeldate);
+            this.panel1.Controls.Add(this.labeltimeanddate);
             this.panel1.Controls.Add(this.labelCAdd);
             this.panel1.Controls.Add(this.labelCRID);
             this.panel1.Controls.Add(this.labelCIDT);
@@ -688,7 +705,7 @@
             // pictureBoxCamera
             // 
             this.pictureBoxCamera.BackColor = System.Drawing.Color.White;
-            this.pictureBoxCamera.Location = new System.Drawing.Point(334, 62);
+            this.pictureBoxCamera.Location = new System.Drawing.Point(330, 107);
             this.pictureBoxCamera.Name = "pictureBoxCamera";
             this.pictureBoxCamera.Size = new System.Drawing.Size(200, 154);
             this.pictureBoxCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -700,7 +717,7 @@
             this.labelImage.AutoSize = true;
             this.labelImage.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImage.ForeColor = System.Drawing.Color.Black;
-            this.labelImage.Location = new System.Drawing.Point(399, 23);
+            this.labelImage.Location = new System.Drawing.Point(399, 75);
             this.labelImage.Name = "labelImage";
             this.labelImage.Size = new System.Drawing.Size(61, 21);
             this.labelImage.TabIndex = 3;
@@ -742,16 +759,34 @@
             this.timerCustomerSelection.Enabled = true;
             this.timerCustomerSelection.Tick += new System.EventHandler(this.timerCustomerSelection_Tick);
             // 
-            // buttonOpenCam
+            // labeltimeanddate
             // 
-            this.buttonOpenCam.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOpenCam.Location = new System.Drawing.Point(325, 205);
-            this.buttonOpenCam.Name = "buttonOpenCam";
-            this.buttonOpenCam.Size = new System.Drawing.Size(88, 29);
-            this.buttonOpenCam.TabIndex = 27;
-            this.buttonOpenCam.Text = "Open";
-            this.buttonOpenCam.UseVisualStyleBackColor = true;
-            this.buttonOpenCam.Click += new System.EventHandler(this.buttonOpenCam_Click);
+            this.labeltimeanddate.AutoSize = true;
+            this.labeltimeanddate.BackColor = System.Drawing.Color.White;
+            this.labeltimeanddate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeltimeanddate.Location = new System.Drawing.Point(303, 43);
+            this.labeltimeanddate.Name = "labeltimeanddate";
+            this.labeltimeanddate.Size = new System.Drawing.Size(45, 19);
+            this.labeltimeanddate.TabIndex = 30;
+            this.labeltimeanddate.Text = "Time";
+            // 
+            // labeldate
+            // 
+            this.labeldate.AutoSize = true;
+            this.labeldate.Location = new System.Drawing.Point(346, 17);
+            this.labeldate.Name = "labeldate";
+            this.labeldate.Size = new System.Drawing.Size(35, 13);
+            this.labeldate.TabIndex = 31;
+            this.labeldate.Text = "label1";
+            // 
+            // labeltime
+            // 
+            this.labeltime.AutoSize = true;
+            this.labeltime.Location = new System.Drawing.Point(452, 17);
+            this.labeltime.Name = "labeltime";
+            this.labeltime.Size = new System.Drawing.Size(35, 13);
+            this.labeltime.TabIndex = 32;
+            this.labeltime.Text = "label2";
             // 
             // Dashboard
             // 
@@ -846,5 +881,8 @@
         private System.Windows.Forms.Label labelCBN;
         private System.Windows.Forms.Label labelCBID;
         private System.Windows.Forms.Button buttonOpenCam;
+        private System.Windows.Forms.Label labeltimeanddate;
+        private System.Windows.Forms.Label labeltime;
+        private System.Windows.Forms.Label labeldate;
     }
 }

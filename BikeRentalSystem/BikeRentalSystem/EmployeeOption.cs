@@ -12,6 +12,9 @@ namespace BikeRentalSystem
 {
     public partial class EmployeeOption : Form
     {
+
+        public string cashierusername;
+
         public EmployeeOption()
         {
             InitializeComponent();
@@ -20,6 +23,7 @@ namespace BikeRentalSystem
         private void buttonBorrow_Click(object sender, EventArgs e)
         {
             ImageSlider imgslider = new ImageSlider();
+            imgslider.cashierusername = cashierusername;
             imgslider.Show();
             this.Hide();
         }

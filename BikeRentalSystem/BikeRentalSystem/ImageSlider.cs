@@ -14,6 +14,7 @@ namespace BikeRentalSystem
 {
     public partial class ImageSlider : Form
     {
+        public string cashierusername;
         //int  _counter=0;
         //int fileCount = Directory.GetFiles(@"Controls/Design/imgtry/").Length;
         //  bool flag = true;
@@ -53,6 +54,7 @@ namespace BikeRentalSystem
             view.customerIDtypeview = customerIDtypeImage;
             view.customerIdRefview = customerIdRefImage;
            view.customerAddressview= customerAddressImage;
+            view.cashierusername = cashierusername;
         view.Show();
             //textBoxCustomerSelected.Text = btn.Text;
         }
@@ -74,6 +76,7 @@ namespace BikeRentalSystem
                 pic = new PictureBox();
                 pic.Width = 200;
                 pic.Height = 200;
+
                 pic.BackgroundImageLayout = ImageLayout.Stretch;
                 view= new Button();
 
