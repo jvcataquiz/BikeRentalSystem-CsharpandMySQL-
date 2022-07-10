@@ -60,6 +60,9 @@
             this.labelFullname = new System.Windows.Forms.Label();
             this.tabPageBorrow = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labeltime = new System.Windows.Forms.Label();
+            this.labeldate = new System.Windows.Forms.Label();
+            this.labeltimeanddate = new System.Windows.Forms.Label();
             this.labelCAdd = new System.Windows.Forms.Label();
             this.labelCRID = new System.Windows.Forms.Label();
             this.labelCIDT = new System.Windows.Forms.Label();
@@ -86,9 +89,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.timerCustomerSelection = new System.Windows.Forms.Timer(this.components);
-            this.labeltimeanddate = new System.Windows.Forms.Label();
-            this.labeldate = new System.Windows.Forms.Label();
-            this.labeltime = new System.Windows.Forms.Label();
             this.panelAside.SuspendLayout();
             this.tabControlDashboard.SuspendLayout();
             this.tabPageRegistration.SuspendLayout();
@@ -479,6 +479,35 @@
             this.panel1.Size = new System.Drawing.Size(556, 422);
             this.panel1.TabIndex = 17;
             // 
+            // labeltime
+            // 
+            this.labeltime.AutoSize = true;
+            this.labeltime.Location = new System.Drawing.Point(452, 17);
+            this.labeltime.Name = "labeltime";
+            this.labeltime.Size = new System.Drawing.Size(35, 13);
+            this.labeltime.TabIndex = 32;
+            this.labeltime.Text = "label2";
+            // 
+            // labeldate
+            // 
+            this.labeldate.AutoSize = true;
+            this.labeldate.Location = new System.Drawing.Point(346, 17);
+            this.labeldate.Name = "labeldate";
+            this.labeldate.Size = new System.Drawing.Size(35, 13);
+            this.labeldate.TabIndex = 31;
+            this.labeldate.Text = "label1";
+            // 
+            // labeltimeanddate
+            // 
+            this.labeltimeanddate.AutoSize = true;
+            this.labeltimeanddate.BackColor = System.Drawing.Color.White;
+            this.labeltimeanddate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeltimeanddate.Location = new System.Drawing.Point(303, 43);
+            this.labeltimeanddate.Name = "labeltimeanddate";
+            this.labeltimeanddate.Size = new System.Drawing.Size(45, 19);
+            this.labeltimeanddate.TabIndex = 30;
+            this.labeltimeanddate.Text = "Time";
+            // 
             // labelCAdd
             // 
             this.labelCAdd.AutoSize = true;
@@ -740,7 +769,7 @@
             this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 44);
+            this.panel2.Size = new System.Drawing.Size(776, 72);
             this.panel2.TabIndex = 3;
             // 
             // labelTitle
@@ -758,35 +787,6 @@
             // 
             this.timerCustomerSelection.Enabled = true;
             this.timerCustomerSelection.Tick += new System.EventHandler(this.timerCustomerSelection_Tick);
-            // 
-            // labeltimeanddate
-            // 
-            this.labeltimeanddate.AutoSize = true;
-            this.labeltimeanddate.BackColor = System.Drawing.Color.White;
-            this.labeltimeanddate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltimeanddate.Location = new System.Drawing.Point(303, 43);
-            this.labeltimeanddate.Name = "labeltimeanddate";
-            this.labeltimeanddate.Size = new System.Drawing.Size(45, 19);
-            this.labeltimeanddate.TabIndex = 30;
-            this.labeltimeanddate.Text = "Time";
-            // 
-            // labeldate
-            // 
-            this.labeldate.AutoSize = true;
-            this.labeldate.Location = new System.Drawing.Point(346, 17);
-            this.labeldate.Name = "labeldate";
-            this.labeldate.Size = new System.Drawing.Size(35, 13);
-            this.labeldate.TabIndex = 31;
-            this.labeldate.Text = "label1";
-            // 
-            // labeltime
-            // 
-            this.labeltime.AutoSize = true;
-            this.labeltime.Location = new System.Drawing.Point(452, 17);
-            this.labeltime.Name = "labeltime";
-            this.labeltime.Size = new System.Drawing.Size(35, 13);
-            this.labeltime.TabIndex = 32;
-            this.labeltime.Text = "label2";
             // 
             // Dashboard
             // 

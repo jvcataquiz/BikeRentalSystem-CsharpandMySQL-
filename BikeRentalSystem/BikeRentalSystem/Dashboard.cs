@@ -22,8 +22,7 @@ namespace BikeRentalSystem
         public string customerSelectedid;
         VideoCaptureDevice cameraDisplay;
         FilterInfoCollection videocamCollection;
-        string dateborrowed;
-        string timeborrowed;
+      
         public string cashierusername;
 
 
@@ -75,21 +74,22 @@ namespace BikeRentalSystem
 
         private void buttonConfrim_Click(object sender, EventArgs e)
         {
+            MemoryStream ms = new MemoryStream();
+
+            int width = Convert.ToInt32(pictureBoxCamera.Width );
+            int height = Convert.ToInt32(pictureBoxCamera.Height);
+            Bitmap bmp = new Bitmap(width, height);
+            pictureBoxCamera.DrawToBitmap(bmp, new Rectangle(0, 0, width, height));
+
+            bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            byte[] img = ms.ToArray();
 
             DateTime dateborrowed = DateTime.Now;
             DateTime timeborrowed = DateTime.Now;
 
             MySqlConnection customerconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
             MySqlDataReader customerreader;
-            MemoryStream ms = new MemoryStream();
-
-            int width = Convert.ToInt32(pictureBoxCamera.Width);
-            int height = Convert.ToInt32(pictureBoxCamera.Height);
-            Bitmap bmp = new Bitmap(width, height);
-            pictureBoxCamera.DrawToBitmap(bmp, new Rectangle(0, 0, width, height));
-
-           bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            byte[] img = ms.ToArray();
+           
 
             string timebr = Convert.ToString(timeborrowed.AddHours(Convert.ToDouble(numericUpDownHour.Value)));
             string[] timeparts = timebr.Split();
@@ -142,18 +142,20 @@ namespace BikeRentalSystem
 
             string timebreturn = Convert.ToString(timeborrowed.AddHours(Convert.ToDouble(numericUpDownHour.Value)));
             string[] returnparts = timebreturn.Split();
+            MessageBox.Show(returnparts[1] + " " + returnparts[2]);
 
-            MySqlCommand returncmd = new MySqlCommand("INSERT INTO bikereturn(cashierusernameborrow,dateborrow,timeborrow,hours,returntime,payment,customername,bikeid,bikename) VALUES(@cashierusernameborrow,@dateborrow,@timeborrow,@hours,@rtime,@payment_total,@customer_name,@bike_id,@bike_name); ", returnconnection);
+            MySqlCommand returncmd = new MySqlCommand("INSERT INTO bikereturn(cashierusernameborrow,dateborrow,timeborrow,hours,returntime,payment,customername,cusimage,bikeid,bikename) VALUES(@cashierusernameborrow,@dateborrow,@timeborrow,@hours,@rtime,@payment_total,@customer_name,@cusimage,@bike_id,@bike_name); ", returnconnection);
             returnconnection.Open();
 
 
             returncmd.Parameters.AddWithValue("@cashierusernameborrow", cashierusername );
             returncmd.Parameters.AddWithValue("@customer_name", this.textBoxFullname.Text);
+            returncmd.Parameters.AddWithValue("@cusimage", img);
 
             returncmd.Parameters.AddWithValue("@dateborrow", dateborrowed.ToShortDateString());
             returncmd.Parameters.AddWithValue("@timeborrow", timeborrowed.ToLongTimeString());
             returncmd.Parameters.AddWithValue("@hours", this.numericUpDownHour.Value);
-            returncmd.Parameters.AddWithValue("@rtime", returnparts[1]);
+            returncmd.Parameters.AddWithValue("@rtime", returnparts[1] + " "+ returnparts[2]); 
 
             returncmd.Parameters.AddWithValue("@payment_total", Convert.ToInt32(this.textBoxPayment.Text));
 

@@ -48,3 +48,4 @@ C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\b
 C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\bin\Debug\AForge.xml
 C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\bin\Debug\AForge.Video.xml
 C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\jvcat\source\repos\BikeRentalSystem\BikeRentalSystem\BikeRentalSystem\obj\Debug\BikeRentalSystem.BikeReturn.resources

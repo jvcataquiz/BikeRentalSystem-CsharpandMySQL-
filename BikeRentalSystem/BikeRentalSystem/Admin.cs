@@ -35,13 +35,8 @@ namespace BikeRentalSystem
             admincmd.Parameters.AddWithValue("@password", this.textBoxPassword.Text);
             adminconnection.Open();
             adminreader = admincmd.ExecuteReader();
-            int count = 0;
-            while (adminreader.Read())
-            {
-                count = count + 1;
-            }
-
-            if (count == 1)
+           
+            if (adminreader.Read())
             {
                 MessageBox.Show("Welcome  " + textBoxUsername.Text);
               

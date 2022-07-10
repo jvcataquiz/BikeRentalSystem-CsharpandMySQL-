@@ -30,7 +30,10 @@ namespace BikeRentalSystem
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
-
+           BikeReturn returnbike = new BikeReturn();
+            returnbike.cashierusername = cashierusername;
+            returnbike.Show();
+            this.Hide();
         }
     }
 }
