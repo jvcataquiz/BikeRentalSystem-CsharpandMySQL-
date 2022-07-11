@@ -28,7 +28,7 @@ namespace BikeRentalSystem
         private void buttonLogin_Click(object sender, EventArgs e)
         {
 
-            MySqlConnection adminconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+            MySqlConnection adminconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
             MySqlCommand admincmd = new MySqlCommand("select * from admintable where username=@username and password=@password;", adminconnection);
             MySqlDataReader adminreader;
             admincmd.Parameters.AddWithValue("@username", this.textBoxUsername.Text);
@@ -50,7 +50,7 @@ namespace BikeRentalSystem
             {
                 adminconnection.Close();
 
-                MySqlConnection Employeeconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+                MySqlConnection Employeeconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
                 MySqlCommand Employeecmd = new MySqlCommand("select * from employeetable where username=@username and password=@password;", Employeeconnection);
                 MySqlDataReader Employeereader;
                 Employeecmd.Parameters.AddWithValue("@username", this.textBoxUsername.Text);

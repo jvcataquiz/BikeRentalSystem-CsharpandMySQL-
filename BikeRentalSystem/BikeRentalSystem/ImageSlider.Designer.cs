@@ -32,6 +32,7 @@
             this.timerImage = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanelDisplay = new System.Windows.Forms.FlowLayoutPanel();
             this.CustomerSelected = new System.Windows.Forms.Label();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timerImage
@@ -42,10 +43,10 @@
             // flowLayoutPanelDisplay
             // 
             this.flowLayoutPanelDisplay.AutoScroll = true;
-            this.flowLayoutPanelDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelDisplay.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanelDisplay.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelDisplay.Name = "flowLayoutPanelDisplay";
-            this.flowLayoutPanelDisplay.Size = new System.Drawing.Size(827, 450);
+            this.flowLayoutPanelDisplay.Size = new System.Drawing.Size(827, 414);
             this.flowLayoutPanelDisplay.TabIndex = 0;
             // 
             // CustomerSelected
@@ -58,11 +59,22 @@
             this.CustomerSelected.Size = new System.Drawing.Size(0, 13);
             this.CustomerSelected.TabIndex = 2;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(740, 420);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(75, 23);
+            this.buttonBack.TabIndex = 0;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // ImageSlider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 450);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.CustomerSelected);
             this.Controls.Add(this.flowLayoutPanelDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -79,5 +91,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelDisplay;
         private System.Windows.Forms.Label CustomerSelected;
         public System.Windows.Forms.Timer timerImage;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

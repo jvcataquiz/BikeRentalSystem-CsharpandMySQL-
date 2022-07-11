@@ -60,8 +60,6 @@
             this.labelFullname = new System.Windows.Forms.Label();
             this.tabPageBorrow = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labeltime = new System.Windows.Forms.Label();
-            this.labeldate = new System.Windows.Forms.Label();
             this.labeltimeanddate = new System.Windows.Forms.Label();
             this.labelCAdd = new System.Windows.Forms.Label();
             this.labelCRID = new System.Windows.Forms.Label();
@@ -89,6 +87,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.timerCustomerSelection = new System.Windows.Forms.Timer(this.components);
+            this.buttonback = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelAside.SuspendLayout();
             this.tabControlDashboard.SuspendLayout();
             this.tabPageRegistration.SuspendLayout();
@@ -288,7 +288,7 @@
             this.richTextBoxAddress.Location = new System.Drawing.Point(22, 333);
             this.richTextBoxAddress.Name = "richTextBoxAddress";
             this.richTextBoxAddress.Size = new System.Drawing.Size(502, 35);
-            this.richTextBoxAddress.TabIndex = 19;
+            this.richTextBoxAddress.TabIndex = 12;
             this.richTextBoxAddress.Text = "";
             // 
             // labelAddress
@@ -329,7 +329,7 @@
             this.buttonBikeSelection.Location = new System.Drawing.Point(437, 379);
             this.buttonBikeSelection.Name = "buttonBikeSelection";
             this.buttonBikeSelection.Size = new System.Drawing.Size(88, 29);
-            this.buttonBikeSelection.TabIndex = 15;
+            this.buttonBikeSelection.TabIndex = 13;
             this.buttonBikeSelection.Text = "Next";
             this.buttonBikeSelection.UseVisualStyleBackColor = false;
             this.buttonBikeSelection.Click += new System.EventHandler(this.buttonBikeSelection_Click);
@@ -349,15 +349,16 @@
             this.comboBoxIDtype.Location = new System.Drawing.Point(22, 279);
             this.comboBoxIDtype.Name = "comboBoxIDtype";
             this.comboBoxIDtype.Size = new System.Drawing.Size(224, 27);
-            this.comboBoxIDtype.TabIndex = 14;
+            this.comboBoxIDtype.TabIndex = 10;
             // 
             // textBoxPhoneNumber
             // 
             this.textBoxPhoneNumber.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPhoneNumber.Location = new System.Drawing.Point(22, 226);
+            this.textBoxPhoneNumber.MaxLength = 11;
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(224, 26);
-            this.textBoxPhoneNumber.TabIndex = 13;
+            this.textBoxPhoneNumber.TabIndex = 9;
             // 
             // textBoxRefid
             // 
@@ -365,7 +366,7 @@
             this.textBoxRefid.Location = new System.Drawing.Point(297, 280);
             this.textBoxRefid.Name = "textBoxRefid";
             this.textBoxRefid.Size = new System.Drawing.Size(228, 26);
-            this.textBoxRefid.TabIndex = 12;
+            this.textBoxRefid.TabIndex = 11;
             // 
             // textBoxEmail
             // 
@@ -452,8 +453,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Controls.Add(this.labeltime);
-            this.panel1.Controls.Add(this.labeldate);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.labeltimeanddate);
             this.panel1.Controls.Add(this.labelCAdd);
             this.panel1.Controls.Add(this.labelCRID);
@@ -479,30 +479,12 @@
             this.panel1.Size = new System.Drawing.Size(556, 422);
             this.panel1.TabIndex = 17;
             // 
-            // labeltime
-            // 
-            this.labeltime.AutoSize = true;
-            this.labeltime.Location = new System.Drawing.Point(452, 17);
-            this.labeltime.Name = "labeltime";
-            this.labeltime.Size = new System.Drawing.Size(35, 13);
-            this.labeltime.TabIndex = 32;
-            this.labeltime.Text = "label2";
-            // 
-            // labeldate
-            // 
-            this.labeldate.AutoSize = true;
-            this.labeldate.Location = new System.Drawing.Point(346, 17);
-            this.labeldate.Name = "labeldate";
-            this.labeldate.Size = new System.Drawing.Size(35, 13);
-            this.labeldate.TabIndex = 31;
-            this.labeldate.Text = "label1";
-            // 
             // labeltimeanddate
             // 
             this.labeltimeanddate.AutoSize = true;
             this.labeltimeanddate.BackColor = System.Drawing.Color.White;
             this.labeltimeanddate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltimeanddate.Location = new System.Drawing.Point(303, 43);
+            this.labeltimeanddate.Location = new System.Drawing.Point(319, 43);
             this.labeltimeanddate.Name = "labeltimeanddate";
             this.labeltimeanddate.Size = new System.Drawing.Size(45, 19);
             this.labeltimeanddate.TabIndex = 30;
@@ -766,10 +748,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.panel2.Controls.Add(this.buttonback);
             this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 72);
+            this.panel2.Size = new System.Drawing.Size(776, 77);
             this.panel2.TabIndex = 3;
             // 
             // labelTitle
@@ -777,7 +760,7 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe Script", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(319, 12);
+            this.labelTitle.Location = new System.Drawing.Point(22, 18);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(314, 40);
             this.labelTitle.TabIndex = 23;
@@ -787,6 +770,25 @@
             // 
             this.timerCustomerSelection.Enabled = true;
             this.timerCustomerSelection.Tick += new System.EventHandler(this.timerCustomerSelection_Tick);
+            // 
+            // buttonback
+            // 
+            this.buttonback.Location = new System.Drawing.Point(685, 18);
+            this.buttonback.Name = "buttonback";
+            this.buttonback.Size = new System.Drawing.Size(84, 37);
+            this.buttonback.TabIndex = 24;
+            this.buttonback.Text = "Back";
+            this.buttonback.UseVisualStyleBackColor = true;
+            this.buttonback.Click += new System.EventHandler(this.buttonback_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(302, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Date & Time:";
             // 
             // Dashboard
             // 
@@ -882,7 +884,7 @@
         private System.Windows.Forms.Label labelCBID;
         private System.Windows.Forms.Button buttonOpenCam;
         private System.Windows.Forms.Label labeltimeanddate;
-        private System.Windows.Forms.Label labeltime;
-        private System.Windows.Forms.Label labeldate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonback;
     }
 }

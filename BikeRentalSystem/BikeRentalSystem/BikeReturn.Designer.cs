@@ -32,18 +32,20 @@
             this.timerReturn = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewDisplay = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labeltime = new System.Windows.Forms.Label();
+            this.labelTimeleft = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelinput = new System.Windows.Forms.Panel();
+            this.textBoxExtention = new System.Windows.Forms.TextBox();
+            this.buttonEnter = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.richTextBoxremark = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.textBoxReturnID = new System.Windows.Forms.TextBox();
-            this.richTextBoxremark = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.buttonEnter = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labelTimeleft = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelinput.SuspendLayout();
@@ -72,6 +74,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labeltime);
             this.panel1.Controls.Add(this.labelTimeleft);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.panelinput);
@@ -85,8 +88,36 @@
             this.panel1.Size = new System.Drawing.Size(921, 138);
             this.panel1.TabIndex = 1;
             // 
+            // labeltime
+            // 
+            this.labeltime.AutoSize = true;
+            this.labeltime.Location = new System.Drawing.Point(23, 15);
+            this.labeltime.Name = "labeltime";
+            this.labeltime.Size = new System.Drawing.Size(26, 13);
+            this.labeltime.TabIndex = 7;
+            this.labeltime.Text = "time";
+            // 
+            // labelTimeleft
+            // 
+            this.labelTimeleft.AutoSize = true;
+            this.labelTimeleft.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTimeleft.Location = new System.Drawing.Point(83, 107);
+            this.labelTimeleft.Name = "labelTimeleft";
+            this.labelTimeleft.Size = new System.Drawing.Size(0, 19);
+            this.labelTimeleft.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Time Left:";
+            // 
             // panelinput
             // 
+            this.panelinput.Controls.Add(this.textBoxExtention);
             this.panelinput.Controls.Add(this.buttonEnter);
             this.panelinput.Controls.Add(this.label4);
             this.panelinput.Controls.Add(this.richTextBoxremark);
@@ -98,6 +129,41 @@
             this.panelinput.Name = "panelinput";
             this.panelinput.Size = new System.Drawing.Size(521, 138);
             this.panelinput.TabIndex = 4;
+            // 
+            // textBoxExtention
+            // 
+            this.textBoxExtention.Location = new System.Drawing.Point(21, 101);
+            this.textBoxExtention.Name = "textBoxExtention";
+            this.textBoxExtention.ReadOnly = true;
+            this.textBoxExtention.Size = new System.Drawing.Size(111, 20);
+            this.textBoxExtention.TabIndex = 9;
+            // 
+            // buttonEnter
+            // 
+            this.buttonEnter.Location = new System.Drawing.Point(416, 90);
+            this.buttonEnter.Name = "buttonEnter";
+            this.buttonEnter.Size = new System.Drawing.Size(102, 36);
+            this.buttonEnter.TabIndex = 8;
+            this.buttonEnter.Text = "Enter";
+            this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(171, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Remarks";
+            // 
+            // richTextBoxremark
+            // 
+            this.richTextBoxremark.Location = new System.Drawing.Point(174, 29);
+            this.richTextBoxremark.Name = "richTextBoxremark";
+            this.richTextBoxremark.Size = new System.Drawing.Size(221, 97);
+            this.richTextBoxremark.TabIndex = 6;
+            this.richTextBoxremark.Text = "";
             // 
             // label3
             // 
@@ -119,11 +185,12 @@
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(112, 21);
             this.comboBoxStatus.TabIndex = 0;
+            this.comboBoxStatus.SelectedIndexChanged += new System.EventHandler(this.comboBoxStatus_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(256, 35);
+            this.label2.Location = new System.Drawing.Point(256, 50);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(45, 13);
@@ -133,7 +200,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 35);
+            this.label1.Location = new System.Drawing.Point(12, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 2;
@@ -141,7 +208,7 @@
             // 
             // textBoxCustomerName
             // 
-            this.textBoxCustomerName.Location = new System.Drawing.Point(26, 51);
+            this.textBoxCustomerName.Location = new System.Drawing.Point(26, 67);
             this.textBoxCustomerName.Name = "textBoxCustomerName";
             this.textBoxCustomerName.ReadOnly = true;
             this.textBoxCustomerName.Size = new System.Drawing.Size(194, 20);
@@ -149,57 +216,11 @@
             // 
             // textBoxReturnID
             // 
-            this.textBoxReturnID.Location = new System.Drawing.Point(259, 51);
+            this.textBoxReturnID.Location = new System.Drawing.Point(259, 67);
             this.textBoxReturnID.Name = "textBoxReturnID";
             this.textBoxReturnID.ReadOnly = true;
             this.textBoxReturnID.Size = new System.Drawing.Size(86, 20);
             this.textBoxReturnID.TabIndex = 0;
-            // 
-            // richTextBoxremark
-            // 
-            this.richTextBoxremark.Location = new System.Drawing.Point(174, 29);
-            this.richTextBoxremark.Name = "richTextBoxremark";
-            this.richTextBoxremark.Size = new System.Drawing.Size(221, 97);
-            this.richTextBoxremark.TabIndex = 6;
-            this.richTextBoxremark.Text = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(171, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Remarks";
-            // 
-            // buttonEnter
-            // 
-            this.buttonEnter.Location = new System.Drawing.Point(416, 90);
-            this.buttonEnter.Name = "buttonEnter";
-            this.buttonEnter.Size = new System.Drawing.Size(102, 36);
-            this.buttonEnter.TabIndex = 8;
-            this.buttonEnter.Text = "Enter";
-            this.buttonEnter.UseVisualStyleBackColor = true;
-            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 90);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Time Left:";
-            // 
-            // labelTimeleft
-            // 
-            this.labelTimeleft.AutoSize = true;
-            this.labelTimeleft.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTimeleft.Location = new System.Drawing.Point(83, 107);
-            this.labelTimeleft.Name = "labelTimeleft";
-            this.labelTimeleft.Size = new System.Drawing.Size(67, 19);
-            this.labelTimeleft.TabIndex = 6;
-            this.labelTimeleft.Text = "time left";
             // 
             // BikeReturn
             // 
@@ -239,5 +260,7 @@
         private System.Windows.Forms.RichTextBox richTextBoxremark;
         private System.Windows.Forms.Label labelTimeleft;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxExtention;
+        private System.Windows.Forms.Label labeltime;
     }
 }

@@ -34,7 +34,7 @@ namespace BikeRentalSystem
            
         }
 
-        MySqlConnection bikeconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+        MySqlConnection bikeconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
         MySqlDataReader bikereader;
       
         private void timerImage_Tick(object sender, EventArgs e)
@@ -107,7 +107,12 @@ namespace BikeRentalSystem
 
         }
 
-       
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            EmployeeOption back = new EmployeeOption();
+            back.Show();
+            this.Hide();
+        }
     }
 
     }

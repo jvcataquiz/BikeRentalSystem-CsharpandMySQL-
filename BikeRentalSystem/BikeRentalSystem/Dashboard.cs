@@ -87,7 +87,7 @@ namespace BikeRentalSystem
             DateTime dateborrowed = DateTime.Now;
             DateTime timeborrowed = DateTime.Now;
 
-            MySqlConnection customerconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+            MySqlConnection customerconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
             MySqlDataReader customerreader;
            
 
@@ -124,7 +124,7 @@ namespace BikeRentalSystem
 
 
 
-            MySqlConnection bikeconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+            MySqlConnection bikeconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
             MySqlDataReader bikereader;
             MySqlCommand bikecmd = new MySqlCommand("UPDATE biketable SET bikeavailability=@bikeavailability where id=@id", bikeconnection);
             bikeconnection.Open();
@@ -137,12 +137,12 @@ namespace BikeRentalSystem
             //**************************************************************************************************************************************
 
 
-            MySqlConnection returnconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+            MySqlConnection returnconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
             MySqlDataReader returnreader;
 
             string timebreturn = Convert.ToString(timeborrowed.AddHours(Convert.ToDouble(numericUpDownHour.Value)));
             string[] returnparts = timebreturn.Split();
-            MessageBox.Show(returnparts[1] + " " + returnparts[2]);
+          
 
             MySqlCommand returncmd = new MySqlCommand("INSERT INTO bikereturn(cashierusernameborrow,dateborrow,timeborrow,hours,returntime,payment,customername,cusimage,bikeid,bikename) VALUES(@cashierusernameborrow,@dateborrow,@timeborrow,@hours,@rtime,@payment_total,@customer_name,@cusimage,@bike_id,@bike_name); ", returnconnection);
             returnconnection.Open();
@@ -278,11 +278,8 @@ namespace BikeRentalSystem
         {
 
            string datenow= DateTime.Now.ToString();
-           string[] parts =   datenow.Split();
-         
-            labeldate.Text = parts[0];
-            labeltime.Text = parts[1];
-
+          
+          
 
             labeltimeanddate.Text = datenow;
 
@@ -335,6 +332,13 @@ namespace BikeRentalSystem
                 cameraDisplay.Stop();
                 buttonOpenCam.Text = "Open";
             }
+        }
+
+        private void buttonback_Click(object sender, EventArgs e)
+        {
+            EmployeeOption back = new EmployeeOption();
+            back.Show();
+            this.Hide();
         }
     }
 }

@@ -35,5 +35,12 @@ namespace BikeRentalSystem
             returnbike.Show();
             this.Hide();
         }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
+            this.Hide();
+        }
     }
 }

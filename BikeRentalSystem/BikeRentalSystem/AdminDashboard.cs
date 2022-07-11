@@ -47,7 +47,7 @@ namespace BikeRentalSystem
         }
 
         //******************************************************Cashier Code Start Here*********************************//
-        MySqlConnection adminconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+        MySqlConnection adminconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
         MySqlDataReader adminreader;
         public AdminDashboard()
         {
@@ -221,7 +221,7 @@ namespace BikeRentalSystem
         string location;
         string pathpicture;
 
-        MySqlConnection bikeconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+        MySqlConnection bikeconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
         MySqlDataReader bikereader;
 
         private void timerUpdaterBike_Tick(object sender, EventArgs e)
@@ -239,6 +239,7 @@ namespace BikeRentalSystem
                 this.panelrightbike.Dock = System.Windows.Forms.DockStyle.None;
                 panelleftbike.Visible = true;
                 buttonBike.Text = "Add";
+              
             }
             else if (comboBoxDropdownBike.SelectedIndex == 2)
             {
@@ -294,7 +295,7 @@ namespace BikeRentalSystem
                 textBoxBikeId.Enabled = true;
                 buttonBike.Text = "Delete";
                 panelBikeInput.Visible = false;
-
+                timerUpdaterBike.Stop();
             }
 
         }
@@ -380,7 +381,7 @@ namespace BikeRentalSystem
         {
 
             bikeconnection.Close();
-            MySqlCommand bikecmd = new MySqlCommand("select * from biketable", bikeconnection);
+            MySqlCommand bikecmd = new MySqlCommand("select id,bikename,bikecolor,bikeavailability,bikeimg from biketable", bikeconnection);
             bikeconnection.Open();
             MySqlDataAdapter bikedata = new MySqlDataAdapter();
             bikedata.SelectCommand = bikecmd;
@@ -395,14 +396,14 @@ namespace BikeRentalSystem
             datagrid.ImageLayout = DataGridViewImageCellLayout.Zoom;
            
             bikeconnection.Close();
-
+            timerUpdaterBike.Stop();
         }
 
 
         private void buttonChooseBikeImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog openfd  = new OpenFileDialog();
-            openfd.Filter = "Image Files(*.jpg; *.jpeg; *.gif;) | *.jpg;*.jpeg; *.gif:";
+            openfd.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.png;) | *.jpg;*.jpeg; *.gif; *.png:";
            if (openfd.ShowDialog() == DialogResult.OK){
 
                 location = openfd.FileName;

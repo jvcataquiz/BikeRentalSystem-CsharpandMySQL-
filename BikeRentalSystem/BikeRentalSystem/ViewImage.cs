@@ -31,7 +31,7 @@ namespace BikeRentalSystem
 
         private void ViewImage_Load(object sender, EventArgs e)
         {
-            MySqlConnection viewconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikerentalsystem");
+            MySqlConnection viewconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
             MySqlDataReader viewreader;
 
            
