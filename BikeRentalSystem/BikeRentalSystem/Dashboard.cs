@@ -112,6 +112,7 @@ namespace BikeRentalSystem
             customercmd.Parameters.AddWithValue("@returntime", timeparts[1]);
             customercmd.Parameters.AddWithValue("@payment", Convert.ToInt32(this.textBoxPayment.Text));
             customercmd.Parameters.AddWithValue("@customerimg", img);
+         
 
             customerreader = customercmd.ExecuteReader();
             customerconnection.Close();
@@ -144,7 +145,7 @@ namespace BikeRentalSystem
             string[] returnparts = timebreturn.Split();
           
 
-            MySqlCommand returncmd = new MySqlCommand("INSERT INTO bikereturn(cashierusernameborrow,dateborrow,timeborrow,hours,returntime,payment,customername,cusimage,bikeid,bikename) VALUES(@cashierusernameborrow,@dateborrow,@timeborrow,@hours,@rtime,@payment_total,@customer_name,@cusimage,@bike_id,@bike_name); ", returnconnection);
+            MySqlCommand returncmd = new MySqlCommand("INSERT INTO bikereturn(cashierusernameborrow,dateborrow,timeborrow,hours,returntime,payment,customername,cusimage,bikeid,bikename,availability,status) VALUES(@cashierusernameborrow,@dateborrow,@timeborrow,@hours,@rtime,@payment_total,@customer_name,@cusimage,@bike_id,@bike_name,@availability,@status); ", returnconnection);
             returnconnection.Open();
 
 
@@ -161,6 +162,8 @@ namespace BikeRentalSystem
 
             returncmd.Parameters.AddWithValue("@bike_id", this.textBoxBikeID.Text);
             returncmd.Parameters.AddWithValue("@bike_name", this.textBoxSelected.Text);
+            returncmd.Parameters.AddWithValue("@availability", 0);
+            returncmd.Parameters.AddWithValue("@status","Okay");
 
             returnreader = returncmd.ExecuteReader();
             returnconnection.Close();
@@ -189,11 +192,10 @@ namespace BikeRentalSystem
             }
             richTextBoxAddress.Text = "";
             pictureBoxCameraImage.Image = null;
-            tabControlDashboard.SelectedIndex = 0;
-            buttonRegistration.BackColor = System.Drawing.Color.Gray;
-            buttonBorrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
-     
-        
+
+            EmployeeOption back = new EmployeeOption();
+            back.Show();
+            this.Hide();
         }
 
        
@@ -298,7 +300,7 @@ namespace BikeRentalSystem
             TextBox[] btnonettext = new[] {textBoxFullname,textBoxEmail,textBoxPhoneNumber, textBoxRefid };
             foreach (var i in btnonettext)
             {
-                if (i.Text.Equals("") || richTextBoxAddress.Text.Equals("") || pictureBoxCameraImage.Image == null)
+                if (i.Text.Equals("") || richTextBoxAddress.Text.Equals("") || pictureBoxCameraImage.Image == null || buttonCapture.Text != "Captured")
                 {
                     buttonBikeSelection.Enabled = false;
                 }

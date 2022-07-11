@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timerReturn = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewDisplay = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxAll = new System.Windows.Forms.ComboBox();
             this.labeltime = new System.Windows.Forms.Label();
             this.labelTimeleft = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelremarks = new System.Windows.Forms.Label();
             this.panelinput = new System.Windows.Forms.Panel();
             this.textBoxExtention = new System.Windows.Forms.TextBox();
             this.buttonEnter = new System.Windows.Forms.Button();
@@ -46,15 +47,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.textBoxReturnID = new System.Windows.Forms.TextBox();
+            this.timerreturn = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelinput.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // timerReturn
-            // 
-            this.timerReturn.Enabled = true;
-            this.timerReturn.Tick += new System.EventHandler(this.timerReturn_Tick);
             // 
             // dataGridViewDisplay
             // 
@@ -74,9 +71,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.comboBoxAll);
             this.panel1.Controls.Add(this.labeltime);
             this.panel1.Controls.Add(this.labelTimeleft);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.labelremarks);
             this.panel1.Controls.Add(this.panelinput);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -87,6 +86,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(921, 138);
             this.panel1.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(433, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Time Left:";
+            // 
+            // comboBoxAll
+            // 
+            this.comboBoxAll.FormattingEnabled = true;
+            this.comboBoxAll.Items.AddRange(new object[] {
+            "All",
+            "Damaged",
+            "Missing"});
+            this.comboBoxAll.Location = new System.Drawing.Point(273, 7);
+            this.comboBoxAll.Name = "comboBoxAll";
+            this.comboBoxAll.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxAll.TabIndex = 2;
+            this.comboBoxAll.SelectedIndexChanged += new System.EventHandler(this.comboBoxAll_SelectedIndexChanged);
             // 
             // labeltime
             // 
@@ -106,14 +127,14 @@
             this.labelTimeleft.Size = new System.Drawing.Size(0, 19);
             this.labelTimeleft.TabIndex = 6;
             // 
-            // label5
+            // labelremarks
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Time Left:";
+            this.labelremarks.AutoSize = true;
+            this.labelremarks.Location = new System.Drawing.Point(23, 102);
+            this.labelremarks.Name = "labelremarks";
+            this.labelremarks.Size = new System.Drawing.Size(54, 13);
+            this.labelremarks.TabIndex = 5;
+            this.labelremarks.Text = "Time Left:";
             // 
             // panelinput
             // 
@@ -222,6 +243,11 @@
             this.textBoxReturnID.Size = new System.Drawing.Size(86, 20);
             this.textBoxReturnID.TabIndex = 0;
             // 
+            // timerreturn
+            // 
+            this.timerreturn.Enabled = true;
+            this.timerreturn.Tick += new System.EventHandler(this.timerreturn_Tick);
+            // 
             // BikeReturn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +259,7 @@
             this.Name = "BikeReturn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BikeReturn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BikeReturn_FormClosing);
             this.Load += new System.EventHandler(this.BikeReturn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -244,8 +271,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer timerReturn;
         private System.Windows.Forms.DataGridView dataGridViewDisplay;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxReturnID;
@@ -259,8 +284,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox richTextBoxremark;
         private System.Windows.Forms.Label labelTimeleft;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelremarks;
         private System.Windows.Forms.TextBox textBoxExtention;
         private System.Windows.Forms.Label labeltime;
+        private System.Windows.Forms.Timer timerreturn;
+        private System.Windows.Forms.ComboBox comboBoxAll;
+        private System.Windows.Forms.Label label6;
     }
 }

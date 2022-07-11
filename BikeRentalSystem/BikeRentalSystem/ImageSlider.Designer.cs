@@ -61,7 +61,8 @@
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(740, 420);
+            this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBack.Location = new System.Drawing.Point(752, 420);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(75, 23);
             this.buttonBack.TabIndex = 0;
