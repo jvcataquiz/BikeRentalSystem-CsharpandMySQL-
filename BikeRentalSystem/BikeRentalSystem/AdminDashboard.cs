@@ -31,7 +31,7 @@ namespace BikeRentalSystem
             MySqlConnection returnconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
             MySqlDataReader returnreader;
 
-            MySqlCommand returncmd = new MySqlCommand("select customername,cusimage,dateborrow,timeborrow,returntime,hours,payment,bikeid,bikename,cashierusernameborrow, id ,remarks from bikereturn", returnconnection);
+            MySqlCommand returncmd = new MySqlCommand("select customername,cusimage,returntime,hours,payment,bikeid,bikename,dateborrow,timeborrow,cashierusernameborrow,cashierusernamereturn, remarks from bikereturn", returnconnection);
             returnconnection.Open();
             MySqlDataAdapter data = new MySqlDataAdapter();
             data.SelectCommand = returncmd;
@@ -507,7 +507,7 @@ namespace BikeRentalSystem
             DataTable data_table;
            conn.Open();
 
-            data = new MySqlDataAdapter("select customername,cusimage,dateborrow,timeborrow,returntime,hours,payment,bikeid,bikename,cashierusernameborrow, id ,remarks from bikereturn WHERE customername LIKE '" + myval + "%'", conn);
+            data = new MySqlDataAdapter("select customername,cusimage,returntime,hours,payment,bikeid,bikename,dateborrow,timeborrow,cashierusernameborrow,cashierusernamereturn, remarks from bikereturn WHERE customername LIKE '" + myval + "%'", conn);
 
             data_table = new DataTable();
             data.Fill(data_table);
