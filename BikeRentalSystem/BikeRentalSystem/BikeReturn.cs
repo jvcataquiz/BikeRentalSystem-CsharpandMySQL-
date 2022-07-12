@@ -31,7 +31,6 @@ namespace BikeRentalSystem
             MySqlDataReader returnreader;
 
             MySqlCommand returncmd = new MySqlCommand("select customername,cusimage,dateborrow,timeborrow,returntime,hours,payment,bikeid,bikename,cashierusernameborrow,id  from bikereturn where availability = @flag and status = @status;", returnconnection); ;
-            //MySqlCommand returncmd = new MySqlCommand("select customername,cusimage,dateborrow,timeborrow,returntime,hours,payment,bikeid,bikename,cashierusernameborrow from bikereturn where availability = '"+false+"');", returnconnection);
 
             returncmd.Parameters.AddWithValue("@flag", 0);
             returncmd.Parameters.AddWithValue("@status", "Okay");
@@ -200,7 +199,7 @@ namespace BikeRentalSystem
             }
             else if (comboBoxAll.SelectedIndex == 1)
             {
-                labelremarks.Text = "Damaged";
+                
                 MySqlConnection returnconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
                 MySqlDataReader returnreader;
 
@@ -224,12 +223,11 @@ namespace BikeRentalSystem
             }
             else
             {
-                labelremarks.Text = "Missing";
+                
                 MySqlConnection returnconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
                 MySqlDataReader returnreader;
 
                 MySqlCommand returncmd = new MySqlCommand("select customername,cusimage,dateborrow,timeborrow,returntime,hours,payment,bikeid,bikename,cashierusernameborrow, id  from bikereturn where status = 'Missing'", returnconnection);
-                //MySqlCommand returncmd = new MySqlCommand("select customername,cusimage,dateborrow,timeborrow,returntime,hours,payment,bikeid,bikename,cashierusernameborrow from bikereturn where availability = '"+false+"');", returnconnection);
                 returnconnection.Open();
                 MySqlDataAdapter data = new MySqlDataAdapter();
                 data.SelectCommand = returncmd;

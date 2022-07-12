@@ -12,38 +12,69 @@ using System.IO;
 namespace BikeRentalSystem
 {
     public partial class AdminDashboard : Form
+
     {
+        string val;
+        string var;
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
-
+            adminview();
+          
             comboBoxDropdown.SelectedIndex = 0;
             comboBoxDropdownBike.SelectedIndex = 0;
-          
+           
 
         }
+        private void adminview()
+        {
+            
+            MySqlConnection returnconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
+            MySqlDataReader returnreader;
 
+            MySqlCommand returncmd = new MySqlCommand("select customername,cusimage,dateborrow,timeborrow,returntime,hours,payment,bikeid,bikename,cashierusernameborrow, id ,remarks from bikereturn", returnconnection);
+            returnconnection.Open();
+            MySqlDataAdapter data = new MySqlDataAdapter();
+            data.SelectCommand = returncmd;
+            DataTable data_table = new DataTable();
+            data.Fill(data_table);
+            dataGridViewDisplay.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridViewDisplay.DataSource = data_table;
+
+            DataGridViewImageColumn datagrid = new DataGridViewImageColumn();
+            datagrid = (DataGridViewImageColumn)dataGridViewDisplay.Columns[1];
+            datagrid.Width = 120;
+
+            datagrid.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            returnconnection.Close();
+        }
         private void tabControlAdminDashboard_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (tabControlAdminDashboard.SelectedIndex == 0)
             {
-
+                
                 timerUpdater.Stop();
                 timerUpdaterBike.Stop();
+                adminview();
             }
             else if (tabControlAdminDashboard.SelectedIndex == 1)
             {
-               bikeconnection.Close();
+               
+                bikeconnection.Close();
                 timerUpdater.Start();
                 timerUpdaterBike.Stop();
                 viewAllData();
             }
             else
-            {
+            { 
                 adminconnection.Close();
                 timerUpdater.Stop();
                 timerUpdaterBike.Start();
                 BikeAllData();
             }
+            comboBoxDropdownBike.SelectedIndex = 0;
+            comboBoxDropdown.SelectedIndex = 0;
         }
 
         //******************************************************Cashier Code Start Here*********************************//
@@ -63,13 +94,14 @@ namespace BikeRentalSystem
             {
               
                 this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-
+                panelLeft.Visible = false;
             }
             else if (comboBoxDropdown.SelectedIndex == 1)
             {
                 textBoxEmployeeId.Enabled = false;
                 panelInputs.Visible = true;
-                this.panelRight.Dock = System.Windows.Forms.DockStyle.None;
+                this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
+
                 panelLeft.Visible = true;
                 buttonAddorUpdateorDelete.Text = "Add";
             }
@@ -77,7 +109,7 @@ namespace BikeRentalSystem
             {
                 
                 panelInputs.Visible = true;
-                this.panelRight.Dock = System.Windows.Forms.DockStyle.None;
+                this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
                 panelLeft.Visible = true;
                 textBoxEmployeeId.Enabled = true;
                 buttonAddorUpdateorDelete.Text = "Update";
@@ -119,7 +151,7 @@ namespace BikeRentalSystem
             else
             {
                 adminconnection.Close();
-                this.panelRight.Dock = System.Windows.Forms.DockStyle.None;
+                this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
                 panelLeft.Visible = true;
                 textBoxEmployeeId.Enabled = true;
                 buttonAddorUpdateorDelete.Text = "Delete";
@@ -226,8 +258,10 @@ namespace BikeRentalSystem
 
         private void timerUpdaterBike_Tick(object sender, EventArgs e)
         {
+
             if (comboBoxDropdownBike.SelectedIndex == 0)
             {
+                panelleftbike2342.Visible = false;
 
                 this.panelrightbike.Dock = System.Windows.Forms.DockStyle.Fill;
 
@@ -236,8 +270,8 @@ namespace BikeRentalSystem
             {
                 textBoxBikeId.Enabled = false;
                 panelBikeInput.Visible = true;
-                this.panelrightbike.Dock = System.Windows.Forms.DockStyle.None;
-                panelleftbike.Visible = true;
+                this.panelrightbike.Dock = System.Windows.Forms.DockStyle.Fill;
+                panelleftbike2342.Visible = true;
                 buttonBike.Text = "Add";
               
             }
@@ -245,8 +279,8 @@ namespace BikeRentalSystem
             {
 
                 panelBikeInput.Visible = true;
-                this.panelrightbike.Dock = System.Windows.Forms.DockStyle.None;
-                panelleftbike.Visible = true;
+                this.panelrightbike.Dock = System.Windows.Forms.DockStyle.Fill;
+                panelleftbike2342.Visible = true;
                textBoxBikeId.Enabled = true;
                 buttonBike.Text = "Update";
 
@@ -290,8 +324,8 @@ namespace BikeRentalSystem
             else
             {
                 bikeconnection.Close();
-                this.panelrightbike.Dock = System.Windows.Forms.DockStyle.None;
-                panelleftbike.Visible = true;
+                this.panelrightbike.Dock = System.Windows.Forms.DockStyle.Fill;
+                panelleftbike2342.Visible = true;
                 textBoxBikeId.Enabled = true;
                 buttonBike.Text = "Delete";
                 panelBikeInput.Visible = false;
@@ -447,6 +481,58 @@ namespace BikeRentalSystem
                 i.Text = "No Data Found";
             }
             pictureBoxBikeImage.Image = null;
+        }
+
+        private void AdminDashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Admin back = new Admin();
+            back.Show();
+            this.Hide();
+        }
+
+        private void tabPageCashier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+
+        private void searchview(string myvar,string myval)
+        {
+            string returnconnection = "server=localhost;username=root;password=root;database=bikesystem";
+           MySqlConnection conn = new MySqlConnection(returnconnection);    
+            MySqlDataAdapter data;
+
+            DataTable data_table;
+           conn.Open();
+
+            data = new MySqlDataAdapter("select customername,cusimage,dateborrow,timeborrow,returntime,hours,payment,bikeid,bikename,cashierusernameborrow, id ,remarks from bikereturn WHERE customername LIKE '" + myval + "%'", conn);
+
+            data_table = new DataTable();
+            data.Fill(data_table);
+
+            
+            dataGridViewDisplay.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridViewDisplay.DataSource = data_table;
+
+            DataGridViewImageColumn datagrid = new DataGridViewImageColumn();
+            datagrid = (DataGridViewImageColumn)dataGridViewDisplay.Columns[1];
+            datagrid.Width = 120;
+
+            datagrid.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            conn.Close();
+        }
+
+        private void textBoxSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            timerUpdater.Stop();
+            timerUpdaterBike.Stop();
+            if (textBoxSearch.Text != "")
+            {
+                searchview(var, this.textBoxSearch.Text);
+            }
         }
     }
 }

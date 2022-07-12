@@ -255,7 +255,7 @@
             this.ClientSize = new System.Drawing.Size(921, 499);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewDisplay);
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "BikeReturn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BikeReturn";
