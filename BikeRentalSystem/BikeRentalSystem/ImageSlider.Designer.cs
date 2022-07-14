@@ -80,6 +80,7 @@
             this.Controls.Add(this.flowLayoutPanelDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ImageSlider";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImageList";
             this.Load += new System.EventHandler(this.ImageSlider_Load);

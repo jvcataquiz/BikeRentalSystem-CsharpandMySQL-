@@ -181,7 +181,7 @@ namespace BikeRentalSystem
 
 
 
-            MessageBox.Show("Data successcully Added");
+            MessageBox.Show("Data Successfully Added");
           
             TextBox[] btnonettext = new[] { textBoxFullname, textBoxEmail, textBoxPhoneNumber, textBoxRefid };
             foreach (var i in btnonettext)

@@ -354,7 +354,7 @@ namespace BikeRentalSystem
                 bikecmd.Parameters.AddWithValue("@bikeimg",img);
              
                 bikereader = bikecmd.ExecuteReader();
-                MessageBox.Show("Data successcully Added");
+                MessageBox.Show("Data Successfully Added");
                 bikeconnection.Close();
                 pictureBoxBikeImage.Image = null;
                 BikeAllData();
@@ -390,7 +390,7 @@ namespace BikeRentalSystem
                     bikereader = bikecmd.ExecuteReader();
                     bikeconnection.Close();
                 }
-                MessageBox.Show("Data successcully Updated");
+                MessageBox.Show("Data Successfully Updated");
                 bikeconnection.Close();
                 BikeAllData();
                 timerUpdaterBike.Start();
@@ -403,7 +403,7 @@ namespace BikeRentalSystem
                 bikeconnection.Open();
                 bikecmd.Parameters.AddWithValue("@id", this.textBoxBikeId.Text);
                 bikereader = bikecmd.ExecuteReader();
-                MessageBox.Show("Data successcully Deleted");
+                MessageBox.Show("Data Successfully Deleted");
                 bikeconnection.Close();
                 BikeAllData();
 

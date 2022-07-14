@@ -62,6 +62,7 @@
             this.Controls.Add(this.buttonSelect);
             this.Controls.Add(this.pictureBoxView);
             this.Name = "ViewImage";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewImage";
             this.Load += new System.EventHandler(this.ViewImage_Load);

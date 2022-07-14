@@ -64,12 +64,18 @@ namespace BikeRentalSystem
         {
             try
             {
-                DataGridViewRow row = this.dataGridViewDisplay.Rows[e.RowIndex];
-                textBoxReturnID.Text = row.Cells[7].Value.ToString();
-                textBoxCustomerName.Text = row.Cells[0].Value.ToString();
-              returnid  = row.Cells[10].Value.ToString();
-                hours = row.Cells[4].Value.ToString();
-                panelinput.Enabled = true;
+                
+                    DataGridViewRow row = this.dataGridViewDisplay.Rows[e.RowIndex];
+                    textBoxReturnID.Text = row.Cells[7].Value.ToString();
+                    textBoxCustomerName.Text = row.Cells[0].Value.ToString();
+                    returnid = row.Cells[10].Value.ToString();
+                    hours = row.Cells[4].Value.ToString();
+                    panelinput.Enabled = true;
+               
+                  
+               
+               
+                  
 
             }
             catch (Exception)
@@ -153,9 +159,10 @@ namespace BikeRentalSystem
             labeltime.Text = timeborrowed.ToShortDateString();
 
             parts = datenow.Split();
-
-            if (hours != null)
+            labelTimeleft.Visible = false;
+            if (hours != null && comboBoxAll.SelectedIndex == 0 && hours != "")
             {
+                labelTimeleft.Visible = true;
                 labelTimeleft.Text = Convert.ToString(DateTime.Parse(hours) - DateTime.Parse(parts[1] + " " + parts[2]));
                 if (labelTimeleft.Text.Contains("-"))
                 {
@@ -167,6 +174,10 @@ namespace BikeRentalSystem
                     labelTimeleft.ForeColor = System.Drawing.Color.Black;
                     textBoxExtention.Text = "0";
                 }
+            }
+            else
+            {
+                labelTimeleft.Text = "";
             }
 
             if (comboBoxStatus.SelectedIndex == 0)
@@ -195,6 +206,7 @@ namespace BikeRentalSystem
         {
             if (comboBoxAll.SelectedIndex == 0)
             {
+                
                 load();
             }
             else if (comboBoxAll.SelectedIndex == 1)
@@ -244,6 +256,11 @@ namespace BikeRentalSystem
                 datagrid.ImageLayout = DataGridViewImageCellLayout.Zoom;
                 returnconnection.Close();
             }
+            textBoxCustomerName.Text = "";
+            textBoxReturnID.Text = "";
+            labelTimeleft.Text = "";
+           
+            hours = "";
         }
 
         private void BikeReturn_FormClosing(object sender, FormClosingEventArgs e)
@@ -252,5 +269,6 @@ namespace BikeRentalSystem
             back.Show();
             this.Hide();
         }
+
     }
 }

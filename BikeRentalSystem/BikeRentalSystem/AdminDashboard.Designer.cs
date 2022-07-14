@@ -128,7 +128,7 @@
             this.tabPageadmin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabPageadmin.Size = new System.Drawing.Size(883, 552);
             this.tabPageadmin.TabIndex = 0;
-            this.tabPageadmin.Text = "admin";
+            this.tabPageadmin.Text = "Admin";
             // 
             // dataGridViewDisplay
             // 
@@ -647,6 +647,7 @@
             this.Controls.Add(this.tabControlAdminDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AdminDashboard";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDashboard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminDashboard_FormClosing);

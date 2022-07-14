@@ -38,7 +38,7 @@ namespace BikeRentalSystem
            
             if (adminreader.Read())
             {
-                MessageBox.Show("Welcome  " + textBoxUsername.Text);
+                MessageBox.Show("Welcome " + textBoxUsername.Text);
               
                 adminconnection.Close();
                 AdminDashboard admindash = new AdminDashboard();
@@ -66,7 +66,7 @@ namespace BikeRentalSystem
 
                 if (employeecount == 1)
                 {
-                    MessageBox.Show("Welcome  " + textBoxUsername.Text);
+                    MessageBox.Show("Welcome " + textBoxUsername.Text);
                     Employeeconnection.Close();
                     EmployeeOption employeeopt = new EmployeeOption();
                     employeeopt.cashierusername = textBoxUsername.Text;
