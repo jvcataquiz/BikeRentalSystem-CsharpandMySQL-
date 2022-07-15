@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageSlider));
             this.timerImage = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanelDisplay = new System.Windows.Forms.FlowLayoutPanel();
             this.CustomerSelected = new System.Windows.Forms.Label();
@@ -62,6 +63,7 @@
             // buttonBack
             // 
             this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBack.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBack.Location = new System.Drawing.Point(752, 420);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(75, 23);
@@ -79,8 +81,8 @@
             this.Controls.Add(this.CustomerSelected);
             this.Controls.Add(this.flowLayoutPanelDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ImageSlider";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImageList";
             this.Load += new System.EventHandler(this.ImageSlider_Load);

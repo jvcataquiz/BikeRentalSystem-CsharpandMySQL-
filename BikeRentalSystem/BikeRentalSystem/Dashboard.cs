@@ -194,6 +194,7 @@ namespace BikeRentalSystem
             pictureBoxCameraImage.Image = null;
 
             EmployeeOption back = new EmployeeOption();
+            back.cashierusername = cashierusername;
             back.Show();
             this.Hide();
         }
@@ -339,6 +340,7 @@ namespace BikeRentalSystem
         private void buttonback_Click(object sender, EventArgs e)
         {
             EmployeeOption back = new EmployeeOption();
+            back.cashierusername = cashierusername;
             back.Show();
             this.Hide();
         }

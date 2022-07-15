@@ -18,6 +18,7 @@ namespace BikeRentalSystem
         public EmployeeOption()
         {
             InitializeComponent();
+                  
         }
 
         private void buttonBorrow_Click(object sender, EventArgs e)
@@ -41,6 +42,11 @@ namespace BikeRentalSystem
             Admin admin = new Admin();
             admin.Show();
             this.Hide();
+        }
+
+        private void EmployeeOption_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewImage));
             this.pictureBoxView = new System.Windows.Forms.PictureBox();
             this.buttonSelect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).BeginInit();
@@ -46,6 +47,7 @@
             // buttonSelect
             // 
             this.buttonSelect.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonSelect.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSelect.Location = new System.Drawing.Point(0, 431);
             this.buttonSelect.Name = "buttonSelect";
             this.buttonSelect.Size = new System.Drawing.Size(615, 40);
@@ -61,8 +63,8 @@
             this.ClientSize = new System.Drawing.Size(615, 471);
             this.Controls.Add(this.buttonSelect);
             this.Controls.Add(this.pictureBoxView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewImage";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewImage";
             this.Load += new System.EventHandler(this.ViewImage_Load);

@@ -62,7 +62,7 @@
             this.buttonLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonLogin.FlatAppearance.BorderSize = 3;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonLogin.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonLogin.Location = new System.Drawing.Point(333, 238);
             this.buttonLogin.Name = "buttonLogin";
@@ -109,33 +109,33 @@
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.labelUsername.Location = new System.Drawing.Point(109, 73);
+            this.labelUsername.Location = new System.Drawing.Point(109, 75);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(98, 21);
+            this.labelUsername.Size = new System.Drawing.Size(90, 19);
             this.labelUsername.TabIndex = 5;
             this.labelUsername.Text = "Username";
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPassword.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.labelPassword.Location = new System.Drawing.Point(109, 152);
+            this.labelPassword.Location = new System.Drawing.Point(109, 154);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(95, 21);
+            this.labelPassword.Size = new System.Drawing.Size(86, 19);
             this.labelPassword.TabIndex = 4;
             this.labelPassword.Text = "Password";
             // 
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogin.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.labelLogin.Location = new System.Drawing.Point(224, 33);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(63, 24);
+            this.labelLogin.Size = new System.Drawing.Size(62, 21);
             this.labelLogin.TabIndex = 3;
             this.labelLogin.Text = "Login";
             // 
@@ -188,11 +188,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe Script", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Papyrus", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(129, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 57);
+            this.label1.Size = new System.Drawing.Size(221, 55);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bike Rental";
             // 
@@ -207,8 +207,8 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Chocolate;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Admin";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Page";
             this.Load += new System.EventHandler(this.Admin_Load);

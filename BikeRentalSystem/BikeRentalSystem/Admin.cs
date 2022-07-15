@@ -89,5 +89,6 @@ namespace BikeRentalSystem
         {
             this.MaximizeBox = false;
         }
+       
     }
 }

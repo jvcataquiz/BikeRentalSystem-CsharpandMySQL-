@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using BikeRentalSystem;
 namespace BikeRentalSystem
 {
     public partial class BikeReturn : Form
@@ -27,6 +28,7 @@ namespace BikeRentalSystem
       
         private void load()
         {
+        
             MySqlConnection returnconnection = new MySqlConnection(@"server=localhost;username=root;password=root;database=bikesystem");
             MySqlDataReader returnreader;
 
@@ -266,6 +268,8 @@ namespace BikeRentalSystem
         private void BikeReturn_FormClosing(object sender, FormClosingEventArgs e)
         {
             EmployeeOption back = new EmployeeOption();
+
+            back.cashierusername = cashierusername;
             back.Show();
             this.Hide();
         }

@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BikeReturn));
             this.dataGridViewDisplay = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.comboBoxAll = new System.Windows.Forms.ComboBox();
             this.labeltime = new System.Windows.Forms.Label();
             this.labelTimeleft = new System.Windows.Forms.Label();
             this.labelremarks = new System.Windows.Forms.Label();
             this.panelinput = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBoxExtention = new System.Windows.Forms.TextBox();
             this.buttonEnter = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,7 +50,6 @@
             this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.textBoxReturnID = new System.Windows.Forms.TextBox();
             this.timerreturn = new System.Windows.Forms.Timer(this.components);
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelinput.SuspendLayout();
@@ -71,6 +73,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.comboBoxAll);
             this.panel1.Controls.Add(this.labeltime);
             this.panel1.Controls.Add(this.labelTimeleft);
@@ -86,8 +89,20 @@
             this.panel1.Size = new System.Drawing.Size(921, 157);
             this.panel1.TabIndex = 1;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 15);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Date:";
+            // 
             // comboBoxAll
             // 
+            this.comboBoxAll.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAll.FormattingEnabled = true;
             this.comboBoxAll.Items.AddRange(new object[] {
             "All",
@@ -103,7 +118,7 @@
             // 
             this.labeltime.AutoSize = true;
             this.labeltime.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltime.Location = new System.Drawing.Point(23, 15);
+            this.labeltime.Location = new System.Drawing.Point(54, 15);
             this.labeltime.Name = "labeltime";
             this.labeltime.Size = new System.Drawing.Size(35, 13);
             this.labeltime.TabIndex = 7;
@@ -144,8 +159,19 @@
             this.panelinput.Size = new System.Drawing.Size(521, 157);
             this.panelinput.TabIndex = 4;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(18, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Extended Time";
+            // 
             // textBoxExtention
             // 
+            this.textBoxExtention.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxExtention.Location = new System.Drawing.Point(21, 101);
             this.textBoxExtention.Name = "textBoxExtention";
             this.textBoxExtention.ReadOnly = true;
@@ -194,6 +220,7 @@
             // 
             // comboBoxStatus
             // 
+            this.comboBoxStatus.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxStatus.FormattingEnabled = true;
             this.comboBoxStatus.Items.AddRange(new object[] {
             "Okay",
@@ -228,6 +255,7 @@
             // 
             // textBoxCustomerName
             // 
+            this.textBoxCustomerName.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCustomerName.Location = new System.Drawing.Point(26, 67);
             this.textBoxCustomerName.Name = "textBoxCustomerName";
             this.textBoxCustomerName.ReadOnly = true;
@@ -236,6 +264,7 @@
             // 
             // textBoxReturnID
             // 
+            this.textBoxReturnID.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxReturnID.Location = new System.Drawing.Point(259, 67);
             this.textBoxReturnID.Name = "textBoxReturnID";
             this.textBoxReturnID.ReadOnly = true;
@@ -247,16 +276,6 @@
             this.timerreturn.Enabled = true;
             this.timerreturn.Tick += new System.EventHandler(this.timerreturn_Tick);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Extended Time";
-            // 
             // BikeReturn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,8 +283,8 @@
             this.ClientSize = new System.Drawing.Size(921, 499);
             this.Controls.Add(this.dataGridViewDisplay);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BikeReturn";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BikeReturn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BikeReturn_FormClosing);
@@ -299,5 +318,6 @@
         private System.Windows.Forms.Timer timerreturn;
         private System.Windows.Forms.ComboBox comboBoxAll;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

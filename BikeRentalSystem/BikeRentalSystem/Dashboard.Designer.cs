@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelAside = new System.Windows.Forms.Panel();
+            this.buttonback = new System.Windows.Forms.Button();
             this.buttonBorrow = new System.Windows.Forms.Button();
             this.buttonRegistration = new System.Windows.Forms.Button();
             this.tabControlDashboard = new System.Windows.Forms.TabControl();
@@ -60,6 +62,7 @@
             this.labelFullname = new System.Windows.Forms.Label();
             this.tabPageBorrow = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.labeltimeanddate = new System.Windows.Forms.Label();
             this.labelCAdd = new System.Windows.Forms.Label();
             this.labelCRID = new System.Windows.Forms.Label();
@@ -87,8 +90,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.timerCustomerSelection = new System.Windows.Forms.Timer(this.components);
-            this.buttonback = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelCC = new System.Windows.Forms.Label();
+            this.labelCcontact = new System.Windows.Forms.Label();
             this.panelAside.SuspendLayout();
             this.tabControlDashboard.SuspendLayout();
             this.tabPageRegistration.SuspendLayout();
@@ -105,12 +108,24 @@
             // panelAside
             // 
             this.panelAside.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
+            this.panelAside.Controls.Add(this.buttonback);
             this.panelAside.Controls.Add(this.buttonBorrow);
             this.panelAside.Controls.Add(this.buttonRegistration);
             this.panelAside.Location = new System.Drawing.Point(12, 87);
             this.panelAside.Name = "panelAside";
             this.panelAside.Size = new System.Drawing.Size(200, 432);
             this.panelAside.TabIndex = 1;
+            // 
+            // buttonback
+            // 
+            this.buttonback.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonback.Location = new System.Drawing.Point(56, 382);
+            this.buttonback.Name = "buttonback";
+            this.buttonback.Size = new System.Drawing.Size(85, 27);
+            this.buttonback.TabIndex = 24;
+            this.buttonback.Text = "Back";
+            this.buttonback.UseVisualStyleBackColor = true;
+            this.buttonback.Click += new System.EventHandler(this.buttonback_Click);
             // 
             // buttonBorrow
             // 
@@ -211,20 +226,20 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(155, 45);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 21);
+            this.label7.Size = new System.Drawing.Size(69, 20);
             this.label7.TabIndex = 26;
             this.label7.Text = "Bike ID";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(20, 45);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 21);
+            this.label6.Size = new System.Drawing.Size(99, 20);
             this.label6.TabIndex = 25;
             this.label6.Text = "Bike Name";
             // 
@@ -274,11 +289,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(389, 10);
+            this.label3.Location = new System.Drawing.Point(388, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 21);
+            this.label3.Size = new System.Drawing.Size(83, 21);
             this.label3.TabIndex = 20;
             this.label3.Text = "Camera";
             // 
@@ -294,11 +309,11 @@
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddress.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAddress.ForeColor = System.Drawing.Color.Black;
             this.labelAddress.Location = new System.Drawing.Point(18, 309);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(85, 21);
+            this.labelAddress.Size = new System.Drawing.Size(81, 20);
             this.labelAddress.TabIndex = 18;
             this.labelAddress.Text = "Address:";
             // 
@@ -314,11 +329,11 @@
             // labelCustomerBikeSelected
             // 
             this.labelCustomerBikeSelected.AutoSize = true;
-            this.labelCustomerBikeSelected.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCustomerBikeSelected.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCustomerBikeSelected.ForeColor = System.Drawing.Color.Black;
             this.labelCustomerBikeSelected.Location = new System.Drawing.Point(3, 7);
             this.labelCustomerBikeSelected.Name = "labelCustomerBikeSelected";
-            this.labelCustomerBikeSelected.Size = new System.Drawing.Size(242, 21);
+            this.labelCustomerBikeSelected.Size = new System.Drawing.Size(267, 21);
             this.labelCustomerBikeSelected.TabIndex = 16;
             this.labelCustomerBikeSelected.Text = "Customer\'s Bike Selected:";
             // 
@@ -387,55 +402,55 @@
             // labelPhoneNumber
             // 
             this.labelPhoneNumber.AutoSize = true;
-            this.labelPhoneNumber.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhoneNumber.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPhoneNumber.ForeColor = System.Drawing.Color.Black;
             this.labelPhoneNumber.Location = new System.Drawing.Point(18, 202);
             this.labelPhoneNumber.Name = "labelPhoneNumber";
-            this.labelPhoneNumber.Size = new System.Drawing.Size(140, 21);
+            this.labelPhoneNumber.Size = new System.Drawing.Size(132, 20);
             this.labelPhoneNumber.TabIndex = 6;
             this.labelPhoneNumber.Text = "Phone Number";
             // 
             // labelRefId
             // 
             this.labelRefId.AutoSize = true;
-            this.labelRefId.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRefId.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRefId.ForeColor = System.Drawing.Color.Black;
             this.labelRefId.Location = new System.Drawing.Point(293, 257);
             this.labelRefId.Name = "labelRefId";
-            this.labelRefId.Size = new System.Drawing.Size(57, 19);
+            this.labelRefId.Size = new System.Drawing.Size(59, 20);
             this.labelRefId.TabIndex = 5;
             this.labelRefId.Text = "Ref Id";
             // 
             // labelIDtype
             // 
             this.labelIDtype.AutoSize = true;
-            this.labelIDtype.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIDtype.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIDtype.ForeColor = System.Drawing.Color.Black;
             this.labelIDtype.Location = new System.Drawing.Point(18, 255);
             this.labelIDtype.Name = "labelIDtype";
-            this.labelIDtype.Size = new System.Drawing.Size(78, 21);
+            this.labelIDtype.Size = new System.Drawing.Size(75, 20);
             this.labelIDtype.TabIndex = 4;
             this.labelIDtype.Text = "ID Type";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail.ForeColor = System.Drawing.Color.Black;
             this.labelEmail.Location = new System.Drawing.Point(19, 149);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(59, 21);
+            this.labelEmail.Size = new System.Drawing.Size(57, 20);
             this.labelEmail.TabIndex = 3;
             this.labelEmail.Text = "Email:";
             // 
             // labelFullname
             // 
             this.labelFullname.AutoSize = true;
-            this.labelFullname.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFullname.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFullname.ForeColor = System.Drawing.Color.Black;
             this.labelFullname.Location = new System.Drawing.Point(18, 96);
             this.labelFullname.Name = "labelFullname";
-            this.labelFullname.Size = new System.Drawing.Size(92, 21);
+            this.labelFullname.Size = new System.Drawing.Size(87, 20);
             this.labelFullname.TabIndex = 1;
             this.labelFullname.Text = "Fullname:";
             // 
@@ -453,6 +468,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Controls.Add(this.labelCC);
+            this.panel1.Controls.Add(this.labelCcontact);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.labeltimeanddate);
             this.panel1.Controls.Add(this.labelCAdd);
@@ -479,12 +496,21 @@
             this.panel1.Size = new System.Drawing.Size(556, 422);
             this.panel1.TabIndex = 17;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(302, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Date & Time:";
+            // 
             // labeltimeanddate
             // 
             this.labeltimeanddate.AutoSize = true;
             this.labeltimeanddate.BackColor = System.Drawing.Color.White;
             this.labeltimeanddate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltimeanddate.Location = new System.Drawing.Point(319, 43);
+            this.labeltimeanddate.Location = new System.Drawing.Point(370, 14);
             this.labeltimeanddate.Name = "labeltimeanddate";
             this.labeltimeanddate.Size = new System.Drawing.Size(45, 19);
             this.labeltimeanddate.TabIndex = 30;
@@ -495,7 +521,7 @@
             this.labelCAdd.AutoSize = true;
             this.labelCAdd.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCAdd.ForeColor = System.Drawing.Color.Black;
-            this.labelCAdd.Location = new System.Drawing.Point(14, 261);
+            this.labelCAdd.Location = new System.Drawing.Point(36, 269);
             this.labelCAdd.Name = "labelCAdd";
             this.labelCAdd.Size = new System.Drawing.Size(57, 15);
             this.labelCAdd.TabIndex = 29;
@@ -506,7 +532,7 @@
             this.labelCRID.AutoSize = true;
             this.labelCRID.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCRID.ForeColor = System.Drawing.Color.Black;
-            this.labelCRID.Location = new System.Drawing.Point(163, 209);
+            this.labelCRID.Location = new System.Drawing.Point(196, 229);
             this.labelCRID.Name = "labelCRID";
             this.labelCRID.Size = new System.Drawing.Size(45, 15);
             this.labelCRID.TabIndex = 28;
@@ -517,7 +543,7 @@
             this.labelCIDT.AutoSize = true;
             this.labelCIDT.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCIDT.ForeColor = System.Drawing.Color.Black;
-            this.labelCIDT.Location = new System.Drawing.Point(14, 209);
+            this.labelCIDT.Location = new System.Drawing.Point(36, 229);
             this.labelCIDT.Name = "labelCIDT";
             this.labelCIDT.Size = new System.Drawing.Size(57, 15);
             this.labelCIDT.TabIndex = 27;
@@ -528,7 +554,7 @@
             this.labelCFN.AutoSize = true;
             this.labelCFN.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCFN.ForeColor = System.Drawing.Color.Black;
-            this.labelCFN.Location = new System.Drawing.Point(14, 111);
+            this.labelCFN.Location = new System.Drawing.Point(36, 111);
             this.labelCFN.Name = "labelCFN";
             this.labelCFN.Size = new System.Drawing.Size(63, 15);
             this.labelCFN.TabIndex = 26;
@@ -539,7 +565,7 @@
             this.labelCE.AutoSize = true;
             this.labelCE.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCE.ForeColor = System.Drawing.Color.Black;
-            this.labelCE.Location = new System.Drawing.Point(14, 160);
+            this.labelCE.Location = new System.Drawing.Point(36, 189);
             this.labelCE.Name = "labelCE";
             this.labelCE.Size = new System.Drawing.Size(39, 15);
             this.labelCE.TabIndex = 25;
@@ -550,7 +576,7 @@
             this.labelCBN.AutoSize = true;
             this.labelCBN.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCBN.ForeColor = System.Drawing.Color.Black;
-            this.labelCBN.Location = new System.Drawing.Point(14, 62);
+            this.labelCBN.Location = new System.Drawing.Point(36, 62);
             this.labelCBN.Name = "labelCBN";
             this.labelCBN.Size = new System.Drawing.Size(76, 15);
             this.labelCBN.TabIndex = 24;
@@ -561,7 +587,7 @@
             this.labelCBID.AutoSize = true;
             this.labelCBID.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCBID.ForeColor = System.Drawing.Color.Black;
-            this.labelCBID.Location = new System.Drawing.Point(177, 62);
+            this.labelCBID.Location = new System.Drawing.Point(196, 62);
             this.labelCBID.Name = "labelCBID";
             this.labelCBID.Size = new System.Drawing.Size(54, 15);
             this.labelCBID.TabIndex = 23;
@@ -570,66 +596,66 @@
             // labelCrefID
             // 
             this.labelCrefID.AutoSize = true;
-            this.labelCrefID.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCrefID.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCrefID.ForeColor = System.Drawing.Color.Black;
-            this.labelCrefID.Location = new System.Drawing.Point(162, 186);
+            this.labelCrefID.Location = new System.Drawing.Point(176, 206);
             this.labelCrefID.Name = "labelCrefID";
-            this.labelCrefID.Size = new System.Drawing.Size(65, 21);
+            this.labelCrefID.Size = new System.Drawing.Size(62, 20);
             this.labelCrefID.TabIndex = 22;
             this.labelCrefID.Text = "Ref ID";
             // 
             // labelCbikeID
             // 
             this.labelCbikeID.AutoSize = true;
-            this.labelCbikeID.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCbikeID.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCbikeID.ForeColor = System.Drawing.Color.Black;
             this.labelCbikeID.Location = new System.Drawing.Point(176, 41);
             this.labelCbikeID.Name = "labelCbikeID";
-            this.labelCbikeID.Size = new System.Drawing.Size(73, 21);
+            this.labelCbikeID.Size = new System.Drawing.Size(69, 20);
             this.labelCbikeID.TabIndex = 21;
             this.labelCbikeID.Text = "Bike ID";
             // 
             // labelCAddress
             // 
             this.labelCAddress.AutoSize = true;
-            this.labelCAddress.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCAddress.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCAddress.ForeColor = System.Drawing.Color.Black;
-            this.labelCAddress.Location = new System.Drawing.Point(13, 240);
+            this.labelCAddress.Location = new System.Drawing.Point(13, 248);
             this.labelCAddress.Name = "labelCAddress";
-            this.labelCAddress.Size = new System.Drawing.Size(81, 21);
+            this.labelCAddress.Size = new System.Drawing.Size(77, 20);
             this.labelCAddress.TabIndex = 20;
             this.labelCAddress.Text = "Address";
             // 
             // labelCIDtype
             // 
             this.labelCIDtype.AutoSize = true;
-            this.labelCIDtype.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCIDtype.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCIDtype.ForeColor = System.Drawing.Color.Black;
-            this.labelCIDtype.Location = new System.Drawing.Point(13, 186);
+            this.labelCIDtype.Location = new System.Drawing.Point(13, 206);
             this.labelCIDtype.Name = "labelCIDtype";
-            this.labelCIDtype.Size = new System.Drawing.Size(78, 21);
+            this.labelCIDtype.Size = new System.Drawing.Size(75, 20);
             this.labelCIDtype.TabIndex = 19;
             this.labelCIDtype.Text = "ID Type";
             // 
             // labelCEmail
             // 
             this.labelCEmail.AutoSize = true;
-            this.labelCEmail.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCEmail.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCEmail.ForeColor = System.Drawing.Color.Black;
-            this.labelCEmail.Location = new System.Drawing.Point(13, 139);
+            this.labelCEmail.Location = new System.Drawing.Point(13, 168);
             this.labelCEmail.Name = "labelCEmail";
-            this.labelCEmail.Size = new System.Drawing.Size(55, 21);
+            this.labelCEmail.Size = new System.Drawing.Size(53, 20);
             this.labelCEmail.TabIndex = 18;
             this.labelCEmail.Text = "Email";
             // 
             // labelCFullname
             // 
             this.labelCFullname.AutoSize = true;
-            this.labelCFullname.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCFullname.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCFullname.ForeColor = System.Drawing.Color.Black;
             this.labelCFullname.Location = new System.Drawing.Point(13, 90);
             this.labelCFullname.Name = "labelCFullname";
-            this.labelCFullname.Size = new System.Drawing.Size(88, 21);
+            this.labelCFullname.Size = new System.Drawing.Size(83, 20);
             this.labelCFullname.TabIndex = 17;
             this.labelCFullname.Text = "Fullname";
             // 
@@ -642,15 +668,15 @@
             this.panelPayment.Controls.Add(this.labelPayment);
             this.panelPayment.Controls.Add(this.labelHours);
             this.panelPayment.Enabled = false;
-            this.panelPayment.Location = new System.Drawing.Point(83, 279);
+            this.panelPayment.Location = new System.Drawing.Point(83, 289);
             this.panelPayment.Name = "panelPayment";
-            this.panelPayment.Size = new System.Drawing.Size(413, 140);
+            this.panelPayment.Size = new System.Drawing.Size(413, 130);
             this.panelPayment.TabIndex = 16;
             // 
             // textBoxPayment
             // 
             this.textBoxPayment.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPayment.Location = new System.Drawing.Point(198, 55);
+            this.textBoxPayment.Location = new System.Drawing.Point(198, 46);
             this.textBoxPayment.Name = "textBoxPayment";
             this.textBoxPayment.Size = new System.Drawing.Size(150, 28);
             this.textBoxPayment.TabIndex = 22;
@@ -658,7 +684,7 @@
             // numericUpDownHour
             // 
             this.numericUpDownHour.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownHour.Location = new System.Drawing.Point(67, 56);
+            this.numericUpDownHour.Location = new System.Drawing.Point(67, 47);
             this.numericUpDownHour.Maximum = new decimal(new int[] {
             10,
             0,
@@ -672,7 +698,7 @@
             // buttonConfrim
             // 
             this.buttonConfrim.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfrim.Location = new System.Drawing.Point(307, 98);
+            this.buttonConfrim.Location = new System.Drawing.Point(307, 89);
             this.buttonConfrim.Name = "buttonConfrim";
             this.buttonConfrim.Size = new System.Drawing.Size(70, 27);
             this.buttonConfrim.TabIndex = 20;
@@ -683,40 +709,40 @@
             // labelPayment
             // 
             this.labelPayment.AutoSize = true;
-            this.labelPayment.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPayment.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPayment.ForeColor = System.Drawing.Color.White;
-            this.labelPayment.Location = new System.Drawing.Point(194, 32);
+            this.labelPayment.Location = new System.Drawing.Point(194, 23);
             this.labelPayment.Name = "labelPayment";
-            this.labelPayment.Size = new System.Drawing.Size(87, 21);
+            this.labelPayment.Size = new System.Drawing.Size(83, 20);
             this.labelPayment.TabIndex = 19;
             this.labelPayment.Text = "Payment";
             // 
             // labelHours
             // 
             this.labelHours.AutoSize = true;
-            this.labelHours.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHours.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHours.ForeColor = System.Drawing.Color.White;
-            this.labelHours.Location = new System.Drawing.Point(63, 32);
+            this.labelHours.Location = new System.Drawing.Point(63, 23);
             this.labelHours.Name = "labelHours";
-            this.labelHours.Size = new System.Drawing.Size(62, 21);
+            this.labelHours.Size = new System.Drawing.Size(58, 20);
             this.labelHours.TabIndex = 17;
             this.labelHours.Text = "Hours";
             // 
             // labelCbikename
             // 
             this.labelCbikename.AutoSize = true;
-            this.labelCbikename.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCbikename.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCbikename.ForeColor = System.Drawing.Color.Black;
             this.labelCbikename.Location = new System.Drawing.Point(13, 41);
             this.labelCbikename.Name = "labelCbikename";
-            this.labelCbikename.Size = new System.Drawing.Size(103, 21);
+            this.labelCbikename.Size = new System.Drawing.Size(99, 20);
             this.labelCbikename.TabIndex = 15;
             this.labelCbikename.Text = "Bike Name";
             // 
             // pictureBoxCamera
             // 
             this.pictureBoxCamera.BackColor = System.Drawing.Color.White;
-            this.pictureBoxCamera.Location = new System.Drawing.Point(330, 107);
+            this.pictureBoxCamera.Location = new System.Drawing.Point(331, 62);
             this.pictureBoxCamera.Name = "pictureBoxCamera";
             this.pictureBoxCamera.Size = new System.Drawing.Size(200, 154);
             this.pictureBoxCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -726,11 +752,11 @@
             // labelImage
             // 
             this.labelImage.AutoSize = true;
-            this.labelImage.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImage.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelImage.ForeColor = System.Drawing.Color.Black;
-            this.labelImage.Location = new System.Drawing.Point(399, 75);
+            this.labelImage.Location = new System.Drawing.Point(400, 40);
             this.labelImage.Name = "labelImage";
-            this.labelImage.Size = new System.Drawing.Size(61, 21);
+            this.labelImage.Size = new System.Drawing.Size(66, 21);
             this.labelImage.TabIndex = 3;
             this.labelImage.Text = "Image";
             // 
@@ -748,7 +774,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.panel2.Controls.Add(this.buttonback);
             this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
@@ -758,37 +783,40 @@
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe Script", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Papyrus", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(22, 18);
+            this.labelTitle.Location = new System.Drawing.Point(3, 23);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(314, 40);
+            this.labelTitle.Size = new System.Drawing.Size(354, 55);
             this.labelTitle.TabIndex = 23;
-            this.labelTitle.Text = "BIKE RENTAL SYSTEM";
+            this.labelTitle.Text = "Bike Rental System";
             // 
             // timerCustomerSelection
             // 
             this.timerCustomerSelection.Enabled = true;
             this.timerCustomerSelection.Tick += new System.EventHandler(this.timerCustomerSelection_Tick);
             // 
-            // buttonback
+            // labelCC
             // 
-            this.buttonback.Location = new System.Drawing.Point(685, 18);
-            this.buttonback.Name = "buttonback";
-            this.buttonback.Size = new System.Drawing.Size(84, 37);
-            this.buttonback.TabIndex = 24;
-            this.buttonback.Text = "Back";
-            this.buttonback.UseVisualStyleBackColor = true;
-            this.buttonback.Click += new System.EventHandler(this.buttonback_Click);
+            this.labelCC.AutoSize = true;
+            this.labelCC.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCC.ForeColor = System.Drawing.Color.Black;
+            this.labelCC.Location = new System.Drawing.Point(36, 151);
+            this.labelCC.Name = "labelCC";
+            this.labelCC.Size = new System.Drawing.Size(58, 15);
+            this.labelCC.TabIndex = 33;
+            this.labelCC.Text = "Contact";
             // 
-            // label1
+            // labelCcontact
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Date & Time:";
+            this.labelCcontact.AutoSize = true;
+            this.labelCcontact.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCcontact.ForeColor = System.Drawing.Color.Black;
+            this.labelCcontact.Location = new System.Drawing.Point(13, 130);
+            this.labelCcontact.Name = "labelCcontact";
+            this.labelCcontact.Size = new System.Drawing.Size(76, 20);
+            this.labelCcontact.TabIndex = 32;
+            this.labelCcontact.Text = "Contact";
             // 
             // Dashboard
             // 
@@ -800,9 +828,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControlDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Dashboard";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
@@ -886,5 +914,7 @@
         private System.Windows.Forms.Label labeltimeanddate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonback;
+        private System.Windows.Forms.Label labelCC;
+        private System.Windows.Forms.Label labelCcontact;
     }
 }
