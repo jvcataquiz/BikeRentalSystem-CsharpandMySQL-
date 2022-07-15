@@ -67,6 +67,7 @@
             this.Name = "ViewImage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewImage";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewImage_FormClosing);
             this.Load += new System.EventHandler(this.ViewImage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).EndInit();
             this.ResumeLayout(false);

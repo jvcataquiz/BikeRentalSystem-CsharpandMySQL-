@@ -40,6 +40,7 @@ namespace BikeRentalSystem
             InitializeComponent();
             BikeRentalSystem.rounded diplayPanel = new rounded();
             diplayPanel.roundedElements(panelAside);
+            diplayPanel.roundedElements(panelPayment);
         }
 
         private void btnDashboard(object sender, EventArgs e)
@@ -248,7 +249,7 @@ namespace BikeRentalSystem
             labelCbikename.Text = textBoxSelected.Text;
             labelCbikeID.Text = textBoxBikeID.Text;
             labelCFullname.Text = textBoxFullname.Text;
-           
+            labelCC.Text = textBoxPhoneNumber.Text;
           labelCEmail.Text =  textBoxEmail.Text;
 
             labelCIDtype.Text = comboBoxIDtype.Text;

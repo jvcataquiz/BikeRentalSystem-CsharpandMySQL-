@@ -165,6 +165,7 @@ namespace BikeRentalSystem
         {
             if (buttonAddorUpdateorDelete.Text == "Add")
             {
+                adminconnection.Close();
                 MySqlCommand admincmd = new MySqlCommand("INSERT INTO  employeetable(username,password,name,address,contact,email) VALUES('" + this.textBoxUsername.Text + "','" + this.textBoxPassword.Text + "','" + this.textBoxName.Text + "','" + this.textBoxAddress.Text + "','" + textBoxContact.Text + "','" + textBoxEmail.Text + "');", adminconnection);
                 adminconnection.Open();
                 adminreader = admincmd.ExecuteReader();
@@ -175,6 +176,7 @@ namespace BikeRentalSystem
             }
             else if (buttonAddorUpdateorDelete.Text == "Update")
             {
+                adminconnection.Close();
                 MySqlCommand admincmd = new MySqlCommand("UPDATE employeetable SET username=@username,password=@password,name=@name,address=@address,contact=@contact,email=@email where id=@id", adminconnection);
                 adminconnection.Open();
                 admincmd.Parameters.AddWithValue("@id", this.textBoxEmployeeId.Text);
@@ -193,6 +195,7 @@ namespace BikeRentalSystem
             }
             else
             {
+                adminconnection.Close();
                 MySqlCommand admincmd = new MySqlCommand("Delete From employeetable where id=@id", adminconnection);
                 adminconnection.Open();
                 admincmd.Parameters.AddWithValue("@id", this.textBoxEmployeeId.Text);

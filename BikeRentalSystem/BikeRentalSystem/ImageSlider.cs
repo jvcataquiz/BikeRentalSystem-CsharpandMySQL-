@@ -55,7 +55,8 @@ namespace BikeRentalSystem
             view.customerIdRefview = customerIdRefImage;
            view.customerAddressview= customerAddressImage;
             view.cashierusername = cashierusername;
-        view.Show();
+             view.Show();
+            this.Hide();
             //textBoxCustomerSelected.Text = btn.Text;
         }
         private void ImageSlider_Load(object sender, EventArgs e)

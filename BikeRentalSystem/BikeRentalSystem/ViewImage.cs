@@ -80,5 +80,13 @@ namespace BikeRentalSystem
                 this.Hide();
            
         }
+
+        private void ViewImage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+          ImageSlider imageSlider1 = new ImageSlider();
+            imageSlider1.Show();
+            imageSlider1.cashierusername = cashierusername;
+            this.Hide();
+        }
     }
 }

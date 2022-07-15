@@ -126,7 +126,7 @@
             this.tabPageadmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabPageadmin.Location = new System.Drawing.Point(24, 4);
             this.tabPageadmin.Name = "tabPageadmin";
-            this.tabPageadmin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageadmin.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageadmin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabPageadmin.Size = new System.Drawing.Size(882, 552);
             this.tabPageadmin.TabIndex = 0;
@@ -192,7 +192,7 @@
             this.tabPageCashier.Controls.Add(this.panel);
             this.tabPageCashier.Location = new System.Drawing.Point(24, 4);
             this.tabPageCashier.Name = "tabPageCashier";
-            this.tabPageCashier.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageCashier.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageCashier.Size = new System.Drawing.Size(882, 552);
             this.tabPageCashier.TabIndex = 1;
             this.tabPageCashier.Text = "Cashier";
@@ -422,6 +422,7 @@
             // 
             // comboBoxDropdown
             // 
+            this.comboBoxDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDropdown.FormattingEnabled = true;
             this.comboBoxDropdown.Items.AddRange(new object[] {
             "SHOW ALL",
@@ -618,6 +619,7 @@
             // 
             // comboBoxDropdownBike
             // 
+            this.comboBoxDropdownBike.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDropdownBike.FormattingEnabled = true;
             this.comboBoxDropdownBike.Items.AddRange(new object[] {
             "SHOW ALL",
